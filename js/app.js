@@ -8,6 +8,7 @@ $( document ).ready(function() {
     	$('.context').load(template,function(){
     		$(".root-background").css('height',($( document ).height()+256)+'px');
     	});
-    	$(".root-background").css('height','0xp');    	
+    	$(".root-background").css('height','0xp');
+    	$(".root-background").height(0);   	
     });
 });
