@@ -5,8 +5,9 @@ $( document ).ready(function() {
     $('.menu-card').click(function(){
     	var template = util.get_template_byID($(this).attr('id'));
     	console.log($(this).attr('id')+','+template);
-    	$('.context').load(template);
-    	$(".root-background").css('height','0xp');
-    	$(".root-background").css('height',($( document ).height()+256)+'px');
+    	$('.context').load(template,function(){
+    		$(".root-background").css('height',($( document ).height()+256)+'px');
+    	});
+    	$(".root-background").css('height','0xp');    	
     });
 });
