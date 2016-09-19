@@ -15,6 +15,7 @@ html {
 body {
     display: table-cell;
     vertical-align: middle;
+    overflow: scroll;
 }
 
 
@@ -137,8 +138,6 @@ body {
 
 .root-background{
 	position: relative;
-	padding-top: 3.875em;
-  	overflow: hidden;
 	width: auto;
 	height: 100%;
 	margin-top: 240px;
