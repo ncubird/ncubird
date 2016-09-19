@@ -1,0 +1,130 @@
+
+
+html, body {
+    min-height: 100% !important;
+    height: 100%; 
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    font-family: 'Indie Flower','cwTeXFangSong', cursive;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+.logo{
+	text-align: left;
+	vertical-align: bottom;
+	display: inline-block;
+	height: 100%;
+}
+
+.logo-text{
+	padding: 0;
+	font-size: 64px;
+	display: inline-block;
+}
+
+.logo-bird{
+	margin-left: 10%;
+}
+
+.logo-ncu{
+	float: right;
+	height: 50px;
+	display: inline-block;
+}
+
+.cssroot{
+	position: absolute;
+	z-index: 2;
+	left: 0px;
+	right: 0px;
+}
+
+@media screen and (max-width: 700px){
+	.cssroot{
+		width: 100% !important;
+	}
+
+	.menu-card{
+		display: none !important;
+	}
+	
+
+}
+
+
+
+@media screen and (min-width: 700px) and (max-width: 960px) {
+	.menu-card{
+		width: 100px !important;
+		height: 100px !important;
+	}
+
+	.menu-card:hover{
+		width: 110px !important;
+		height: 110px !important;
+	}
+}
+
+.root-background{
+	position: relative;
+	width: auto;
+	height: 100%;
+	margin-top: 240px;
+	margin-left: 5%;
+	margin-right: 5%;
+	border: 10px #000 solid;
+	border-radius: 30px;
+	z-index: 1;
+}
+
+.menu-card{
+	position: absolute;
+	box-shadow: 0px;
+	border-radius: 50% !important;
+	width: 130px;
+	height: 130px;
+	right: 5px;
+	margin: 0;
+	display: inline-block;
+	border: 2px #fff solid;
+}
+
+.menu-bird{
+	width: 30px;
+	height: 30px;
+	margin-left: -25px;
+	margin-bottom: -30px;
+	-ms-transform: rotate(-45deg); /* IE 9 */
+    -ms-transform-origin: 20% 40%; /* IE 9 */
+    -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+    -webkit-transform-origin: 20% 40%; /* Chrome, Safari, Opera */
+    transform: rotate(-45deg);
+    transform-origin: 20% 40%;
+	float: left;
+}
+.menu-card:hover{
+	width: 140px;
+	height: 140px;
+	border-width: 2px;
+	border-color: rgba(233,233,233,0.9);
+	background-color: rgb(129,194,214);
+	-webkit-transition: width 0.2s,height 0.2s,background-color 0.2s,border 0.2s; /* Safari */
+    transition: width 0.2s,height 0.2s,background-color 0.2s,border 0.2s;
+}
+
+.menu-card:active{
+	background-color: rgb(129,146,214);
+}
+
+
