@@ -1,5 +1,3 @@
-
-
 html, body {
     min-height: 100% !important;
     height: 100%; 
@@ -59,6 +57,18 @@ body {
 	right: 0px;
 }
 
+@media screen and (min-width: 700px) and (max-width: 960px) {
+	.menu-card{
+		width: 100px !important;
+		height: 100px !important;
+	}
+
+	.menu-card:hover{
+		width: 110px !important;
+		height: 110px !important;
+	}
+}
+
 @media screen and (max-width: 700px){
 	.cssroot{
 		width: 100% !important;
@@ -86,17 +96,7 @@ body {
 
 
 
-@media screen and (min-width: 700px) and (max-width: 960px) {
-	.menu-card{
-		width: 100px !important;
-		height: 100px !important;
-	}
 
-	.menu-card:hover{
-		width: 110px !important;
-		height: 110px !important;
-	}
-}
 
 .root-background{
 	position: relative;
