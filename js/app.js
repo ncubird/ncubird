@@ -7,7 +7,7 @@ $( document ).ready(function() {
     	console.log($(this).attr('id')+','+template);
     	$('.context').load(template);
     	$(".root-background").attr({
-			height: $( document ).height()
+			height: $( document ).height()+'px'
 		});
     });
 });
