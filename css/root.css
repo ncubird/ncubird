@@ -22,25 +22,28 @@ body {
 
 .logo{
 	text-align: left;
-	vertical-align: bottom;
-	display: inline-block;
-	height: 100%;
+	display: table;
+	height: 256px;
 }
 
 .logo-text{
 	padding: 0;
 	font-size: 64px;
-	display: inline-block;
+	vertical-align: bottom;
+	display: table-cell;
 }
 
 .logo-subtext{
 	padding: 0;
-	font-size: 48px;
-	display: inline-block;
+	font-size: 24px;
+	vertical-align: bottom;
+	display: table-cell;
 }
 
 .logo-bird{
 	margin-left: 10%;
+	display: inline-block;
+	height: 256px;
 }
 
 .logo-ncu{
@@ -64,7 +67,20 @@ body {
 	.menu-card{
 		display: none !important;
 	}
-	
+
+	.logo-text{
+		font-size: 48px;
+	}
+
+
+}
+
+
+@media screen and (max-width: 480px){
+
+	.logo-ncu{
+		display: none !important;
+	}
 
 }
 
