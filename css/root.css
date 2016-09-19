@@ -192,7 +192,7 @@ body {
 
 .menu-content{
 	padding: 0px !important;
-	padding-left: 20px;
+	padding-left: 20px !important;
 }
 
 .menu-title{
