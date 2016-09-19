@@ -7,4 +7,16 @@ $( document ).ready(function() {
     	console.log($(this).attr('id')+','+template);
     	$('.context').load(template);
     });
+
+    var $winwidth = $(window).width();
+	$(".root-background").attr({
+		height: $winheight
+	});
+
+	$(window).bind("resize", function(){ 
+		var $winheight = $(window).height();
+		$(".root-background").attr({
+			height: $winheight
+		});
+	 }); 
 });
