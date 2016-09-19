@@ -127,4 +127,7 @@ body {
 	background-color: rgb(129,146,214);
 }
 
+.context{
+	z-index: 2;
+}
 
