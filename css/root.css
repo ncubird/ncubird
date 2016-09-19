@@ -69,7 +69,6 @@ body {
 	}
 
 	.menu-content{
-		padding: 0px !important;
 		padding-left: 20px !important;
 	}
 
@@ -95,6 +94,11 @@ body {
 		font-size: 48px;
 	}
 
+	.menu-content{
+		padding-left: 15px !important;
+	}
+
+
 	.menu-title{
 		font-size: 16px !important;
 	}
@@ -111,6 +115,10 @@ body {
 
 	.logo-ncu{
 		display: none !important;
+	}
+
+	.menu-content{
+		padding-left: 10px !important;
 	}
 
 	.menu-title{
@@ -183,7 +191,7 @@ body {
 }
 
 .menu-content{
-	padding: 0px;
+	padding: 0px !important;
 	padding-left: 20px;
 }
 
