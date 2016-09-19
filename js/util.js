@@ -5,7 +5,7 @@ function Util(){
 var TEMPLATE = [
 	{
 		_id : "main",
-		template : "../templates/home.html"
+		template : "./templates/home.html"
 	},
 	{
 		_id : "calander",
