@@ -33,6 +33,12 @@ body {
 	display: inline-block;
 }
 
+.logo-subtext{
+	padding: 0;
+	font-size: 48px;
+	display: inline-block;
+}
+
 .logo-bird{
 	margin-left: 10%;
 }
