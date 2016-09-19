@@ -15,7 +15,7 @@ html {
 body {
     display: table-cell;
     vertical-align: middle;
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 
