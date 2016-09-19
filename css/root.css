@@ -137,7 +137,7 @@ body {
 
 .root-background{
 	position: relative;
-	overflow-y:auto;
+	overflow: auto;
 	width: auto;
 	height: 100%;
 	margin-top: 240px;
