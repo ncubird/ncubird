@@ -6,8 +6,6 @@ $( document ).ready(function() {
     	var template = util.get_template_byID($(this).attr('id'));
     	console.log($(this).attr('id')+','+template);
     	$('.context').load(template);
-    	$(".root-background").attr({
-			height: $( document ).height()+'px'
-		});
+    	$(".root-background").css('height',$( document ).height()+'px');
     });
 });
