@@ -6,17 +6,8 @@ $( document ).ready(function() {
     	var template = util.get_template_byID($(this).attr('id'));
     	console.log($(this).attr('id')+','+template);
     	$('.context').load(template);
+    	$(".root-background").attr({
+			height: $( document ).height()
+		});
     });
-
- //    var $winwidth = $(window).width();
-	// $(".root-background").attr({
-	// 	height: $winheight
-	// });
-
-	// $(window).bind("resize", function(){ 
-	// 	var $winheight = $(window).height();
-	// 	$(".root-background").attr({
-	// 		height: $winheight
-	// 	});
-	//  }); 
 });
