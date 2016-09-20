@@ -59,4 +59,5 @@
 
 .calander-day-people-chip{
 	margin: 5px;
+	text-overflow:ellipsis;
 }
