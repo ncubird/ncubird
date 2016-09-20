@@ -91,7 +91,8 @@
 	margin: 0px;
 	width: 100%;
 	height: 25px;
-	background-color: #EEE; 
+	background-color: #EEE;
+	border-bottom: 2px #FFF solid; 
 }
 
 .calander-day-panel-text{
