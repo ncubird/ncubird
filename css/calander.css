@@ -52,6 +52,7 @@
     margin-right: 3px !important;
     overflow-x:hidden;
 	overflow-y:auto;
+	line-height: 0px;
 
 	filter: chroma( color = #eeebff );
 	scrollbar-face-color: #eeebff;
