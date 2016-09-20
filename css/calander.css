@@ -46,8 +46,13 @@
 }
 
 .calander-day-item{
-	width: 100px;
-    height: 80px;
+	width: 10%;
+    height: 20%;
     margin-left: 3px !important;
     margin-right: 3px !important;
+}
+
+.calander-day-people-photo{
+	width: 20%;
+	height: auto;
 }
