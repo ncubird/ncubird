@@ -131,6 +131,10 @@ body {
 		display: none !important;
 	}
 
+	.logo-text{
+		font-size: 32px;
+	}
+
 	.menu-content{
 		padding-left: 10px !important;
 	}
@@ -141,15 +145,6 @@ body {
 
 	.menu-strong{
 		font-size: 40px !important;
-	}
-
-	.logo-bird{
-		height: 200px !important;
-		width: auto;
-	}
-	.root-background{
-		margin-top: 180px !important;
-		border: 8px #000 solid !important;
 	}
 	
 
