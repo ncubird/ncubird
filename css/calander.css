@@ -51,7 +51,16 @@
     margin-left: 3px !important;
     margin-right: 3px !important;
     overflow-x:hidden;
-	overflow-y:hidden;
+	overflow-y:auto;
+
+	FILTER: Chroma( Color = #EEEBFF );
+	SCROLLBAR-FACE-COLOR: #EEEBFF;
+	SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+	SCROLLBAR-SHADOW-COLOR: #FFFFFF; 
+	SCROLLBAR-3DLIGHT-COLOR: #EEEBFF; 
+	SCROLLBAR-DARKSHADOW-COLOR: #EEEBFF;
+	SCROLLBAR-ARROW-COLOR: #FFFFFF; 
+	SCROLLBAR-TRACK-COLOR: #EEEBFF
 }
 
 .calander-day-people-photo{
@@ -60,7 +69,7 @@
 }
 
 .calander-day-people-chip{
-	margin: 5px;
+	margin: 2px !important;
 	overflow:hidden;
 	white-space:nowrap;
 	text-overflow:ellipsis;
