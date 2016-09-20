@@ -53,14 +53,14 @@
     overflow-x:hidden;
 	overflow-y:auto;
 
-	FILTER: Chroma( Color = #EEEBFF );
-	SCROLLBAR-FACE-COLOR: #EEEBFF;
-	SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
-	SCROLLBAR-SHADOW-COLOR: #FFFFFF; 
-	SCROLLBAR-3DLIGHT-COLOR: #EEEBFF; 
-	SCROLLBAR-DARKSHADOW-COLOR: #EEEBFF;
-	SCROLLBAR-ARROW-COLOR: #FFFFFF; 
-	SCROLLBAR-TRACK-COLOR: #EEEBFF
+	filter: chroma( color = #eeebff );
+	scrollbar-face-color: #eeebff;
+	scrollbar-highlight-color: #ffffff;
+	scrollbar-shadow-color: #ffffff; 
+	scrollbar-3dlight-color: #eeebff; 
+	scrollbar-darkshadow-color: #eeebff;
+	scrollbar-arrow-color: #ffffff; 
+	scrollbar-track-color: #eeebff
 }
 
 .calander-day-people-photo{
