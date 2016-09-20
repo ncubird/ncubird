@@ -80,7 +80,8 @@
 }
 
 .calander-day-people-chip{
-	margin: 2px !important;
+	margin: 0px;
+	margin-top: 2px;
 	overflow:hidden;
 	white-space:nowrap;
 	text-overflow:ellipsis;
