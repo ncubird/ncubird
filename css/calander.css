@@ -44,3 +44,10 @@
     color:#777;
     font-size: 16px;
 }
+
+.calander-day-item{
+	width: 250px;
+	height: 200px;
+	margin-left: 3px;
+	margin-right: 3px;
+}
