@@ -17,6 +17,10 @@ body {
     vertical-align: middle;
 }
 
+.fluid{
+	width: 100% !important;
+}
+
 
 .logo{
 	text-align: left;
