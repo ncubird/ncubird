@@ -50,6 +50,8 @@
     height: 150px;
     margin-left: 3px !important;
     margin-right: 3px !important;
+    overflow-x:hidden;
+	overflow-y:auto;
 }
 
 .calander-day-people-photo{
@@ -59,5 +61,7 @@
 
 .calander-day-people-chip{
 	margin: 5px;
+	overflow:hidden;
+	white-space:nowrap;
 	text-overflow:ellipsis;
 }
