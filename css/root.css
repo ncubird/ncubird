@@ -129,6 +129,11 @@ body {
 	.menu-strong{
 		font-size: 40px !important;
 	}
+	.root-background{
+		margin-left: 1%;
+		margin-right: 1%;
+		border: 8px #000 solid;
+	}
 
 }
 
