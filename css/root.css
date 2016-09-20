@@ -86,9 +86,6 @@ body {
 }
 
 @media screen and (max-width: 700px){
-	.cssroot{
-		width: 100% !important;
-	}
 
 	.menu-card{
 		display: none !important;
