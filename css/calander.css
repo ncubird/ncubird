@@ -61,7 +61,17 @@
 	scrollbar-darkshadow-color: #eeebff;
 	scrollbar-arrow-color: #ffffff; 
 	scrollbar-track-color: #eeebff;
+
+
 }
+
+::-webkit-scrollbar { width: 0px; height: 0px;}
+::-webkit-scrollbar-button {  background-color: #eeebff; }
+::-webkit-scrollbar-track {  background-color: #eeebff;}
+::-webkit-scrollbar-track-piece { background-color: #eeebff;}
+::-webkit-scrollbar-thumb {background-color: #eeebff;}
+::-webkit-scrollbar-corner { background-color: #eeebff;}}
+::-webkit-resizer { background-color: #eeebff;}
 
 .calander-day-people-photo{
 	width: 20%;
