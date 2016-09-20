@@ -144,11 +144,11 @@ body {
 	}
 
 	.logo-bird{
-		height: 200px;
+		height: 200px !important;
 		width: auto;
 	}
 	.root-background{
-		margin-top: 180px;
+		margin-top: 180px !important;
 		border: 8px #000 solid !important;
 	}
 	
