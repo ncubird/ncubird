@@ -51,7 +51,7 @@
     margin-left: 3px !important;
     margin-right: 3px !important;
     overflow-x:hidden;
-	overflow-y:auto;
+	overflow-y:hidden;
 }
 
 .calander-day-people-photo{
