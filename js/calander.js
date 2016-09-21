@@ -23,7 +23,7 @@ const TODAY_20160901={
 
 const MONTH = ['January','February','March','April','May','June','July','August','September','October','November' ,'December'];
 const WEEK = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
-const MONTH_DAYS = [0,31,28,31,30,31,30,31,31,30,31,30,31];
+const MONTH_DAYS = [31,28,31,30,31,30,31,31,30,31,30,31];
 
 Calander_controller.prototype.set_today_and_sync = function(){
 	var now = new Date();
