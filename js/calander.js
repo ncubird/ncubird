@@ -66,7 +66,7 @@ Calander_controller.prototype.set_click_event = function(event_callback){
 	$('.calander-slider-right').unbind("click");
 	$('.calander-slider-right').click(function(){
 		self.change_month(1);
-		self.set_calander_template(this.year,this.month,event_callback);
+		self.set_calander_template(self.year,self.month,event_callback);
 		event_callback();
 		
 	})
@@ -74,7 +74,7 @@ Calander_controller.prototype.set_click_event = function(event_callback){
 	$('.calander-slider-left').unbind("click");
 	$('.calander-slider-left').click(function(){
 		self.change_month(-1);
-		self.set_calander_template(this.year,this.month,event_callback);
+		self.set_calander_template(self.year,self.month,event_callback);
 		event_callback();
 	})
 
