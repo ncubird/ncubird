@@ -35,6 +35,6 @@ $( document ).ready(function() {
     });
 
 
-    var module_google_script = Module_google_script();
+    var module_google_script = new Module_google_script();
     module_google_script.test();
 });
