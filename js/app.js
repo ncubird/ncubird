@@ -23,6 +23,7 @@ $( document ).ready(function() {
                         canalnder_contoller.set_calander_tag(2016,8,20,100000244681661,"test");
                     });
                     console.log("calander");
+                    canalnder_contoller.set_calander_tag(2016,8,20,100000244681661,"test");
                     
                 }
                 break;
