@@ -17,7 +17,7 @@ $( document ).ready(function() {
                     var canalnder_contoller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
                     canalnder_contoller.set_today_and_sync();
                     canalnder_contoller.generate_offset();
-                    canalnder_contoller.set_calander_template(canalnder_contoller.year,canalnder_contoller.month);
+                    canalnder_contoller.set_calander_template(canalnder_contoller.year,canalnder_contoller.month,'root-background');
                     console.log("calander");
                 }
                 break;

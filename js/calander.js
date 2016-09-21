@@ -67,17 +67,17 @@ Calander_controller.prototype.set_calander_template = function (year,month,root_
 	$('.calander-slider-right').unbind("click");
 	$('.calander-slider-right').click(function(){
 		self.change_month(1);
-		$(".root-background").css('height','0xp');
-    	$(".root-background").height(0);
-    	$(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
+		$("."+root_background).css('height','0xp');
+    	$("."+root_background).height(0);
+    	$("."+root_background).css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
 	})
 
 	$('.calander-slider-left').unbind("click");
 	$('.calander-slider-left').click(function(){
 		self.change_month(-1);
-		$(".root-background").css('height','0xp');
-    	$(".root-background").height(0);
-    	$(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
+		$("."+root_background).css('height','0xp');
+    	$("."+root_background).height(0);
+    	$("."+root_background).css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
 	})
 }
 
