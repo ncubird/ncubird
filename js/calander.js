@@ -121,5 +121,5 @@ Calander_controller.prototype.change_month = function(add_or_minutes){
 	this.set_calander_template(this.year,this.month);
 
 	$('.'+this.title_year_class).html(this.year);
-	$('.'+this.title_month_class).html(MONTH_DAYS[this.month]);
+	$('.'+this.title_month_class).html(MONTH[this.month]);
 }
