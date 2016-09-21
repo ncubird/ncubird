@@ -9,6 +9,7 @@ function Module_google_script(){
 
 Module_google_script.prototype.test = function() {
 	var data={
+		event_title : "onepiece",
 		function_type : '2016',
 		startyear : '2016',
 		endyear : '2016',
