@@ -38,7 +38,7 @@ Calander_controller.prototype.generate_offset = function (year,month) {
 
 Calander_controller.prototype.set_calander_template = function (year,month,event_callback) {
 	this.generate_offset(year,month);
-	var self = this;
+	
 	console.log('---'+year+'==='+month+','+this.offset);
 	if($('.'+this.calander_class) != undefined){
 		console.log($('.'+this.calander_class));
@@ -62,6 +62,7 @@ Calander_controller.prototype.set_calander_template = function (year,month,event
 }
 
 Calander_controller.prototype.set_click_event = function(event_callback){
+	var self = this;
 	$('.calander-slider-right').unbind("click");
 	$('.calander-slider-right').click(function(){
 		self.change_month(1);
