@@ -80,6 +80,9 @@ Calander_controller.prototype.set_calander_template = function (year,month,root_
     	$("."+root_background).height(0);
     	$("."+root_background).css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
 	})
+
+	$('.'+this.title_year_class).html(this.year);
+	$('.'+this.title_month_class).html(MONTH[this.month]);
 }
 
 Calander_controller.prototype.template_calander_classlebox = function(){
@@ -121,6 +124,4 @@ Calander_controller.prototype.change_month = function(add_or_minutes){
 	this.generate_offset(this.year,this.month);
 	this.set_calander_template(this.year,this.month);
 
-	$('.'+this.title_year_class).html(this.year);
-	$('.'+this.title_month_class).html(MONTH[this.month]);
 }
