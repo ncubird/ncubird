@@ -7,7 +7,7 @@ $( document ).ready(function() {
     	var template = util.get_template_byID($(this).attr('id'));
     	console.log($(this).attr('id')+','+template);
 
-        switch(template){
+        switch($(this).attr('id')){
             case 'calander':{
                 var canalnder_contoller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
                 canalnder_contoller.set_today_and_sync();
