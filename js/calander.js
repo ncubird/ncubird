@@ -41,10 +41,10 @@ Calander_controller.prototype.is_spectial_Feb = function(year){
 
 Calander_controller.prototype.generate_offset = function (year,month) {
 	var target_point = new Date(year,month,1);
-	this.offset = target_point.getDay()-1;
+	this.offset = target_point.getDay();
 }
 
-Calander_controller.prototype.set_calander_template = function (year,month) {
+Calander_controller.prototype.set_calander_template = function (year,month,root_background) {
 	this.generate_offset(year,month);
 	var self = this;
 	console.log('---'+year+'==='+month+','+this.offset);
@@ -67,11 +67,17 @@ Calander_controller.prototype.set_calander_template = function (year,month) {
 	$('.calander-slider-right').unbind("click");
 	$('.calander-slider-right').click(function(){
 		self.change_month(1);
+		$(".root-background").css('height','0xp');
+    	$(".root-background").height(0);
+    	$(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
 	})
 
 	$('.calander-slider-left').unbind("click");
 	$('.calander-slider-left').click(function(){
 		self.change_month(-1);
+		$(".root-background").css('height','0xp');
+    	$(".root-background").height(0);
+    	$(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
 	})
 }
 
