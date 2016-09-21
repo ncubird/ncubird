@@ -10,7 +10,7 @@ $( document ).ready(function() {
         var self = this;
 
     	$('.context').load(template,function(){
-    		$(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
+    		
 
             switch($(self).attr('id')){
                 case 'calander':{
@@ -22,6 +22,8 @@ $( document ).ready(function() {
                 }
                 break;
             }
+
+            $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
     	});
     	$(".root-background").css('height','0xp');
     	$(".root-background").height(0);   	
