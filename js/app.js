@@ -15,7 +15,6 @@ $( document ).ready(function() {
             switch($(self).attr('id')){
                 case 'calander':{                    
                     canalnder_contoller.set_today_and_sync();
-                    canalnder_contoller.generate_offset();
                     canalnder_contoller.set_calander_template(canalnder_contoller.year,canalnder_contoller.month,function(){
                         $(".root-background").css('height','0xp');
                         $(".root-background").height(0);
