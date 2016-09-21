@@ -41,7 +41,7 @@ Calander_controller.prototype.is_spectial_Feb = function(year){
 
 Calander_controller.prototype.generate_offset = function (year,month) {
 	var target_point = new Date(year,month,1);
-	this.offset = target_point.getDay()-1;
+	this.offset = target_point.getDay();
 }
 
 Calander_controller.prototype.set_calander_template = function (year,month,root_background) {
@@ -51,7 +51,7 @@ Calander_controller.prototype.set_calander_template = function (year,month,root_
 	if($('.'+this.calander_class) != undefined){
 		console.log($('.'+this.calander_class));
 		$('.'+this.calander_class).html("");
-		for(var i=0;i<this.offset;i++){
+		for(var i=1;i<this.offset;i++){
 			$('.'+this.calander_class).html($('.'+this.calander_class).html() + this.template_calander_classlebox());
 		}
 
