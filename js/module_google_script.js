@@ -11,9 +11,18 @@ Module_google_script.prototype.test = function() {
 	var data={
 		test : "123"
 	}
-	$.post(google_app_url, data, function (data) {
-        console.log("--------------------------");
-        console.log("Result = "+data);
-        console.log("--------------------------");
-    });
+
+	$.ajax({
+	    url: google_script_url+"?data="+JSON.stringify(data), 
+	    type: "GET",   
+	    dataType: 'jsonp',
+	    cache: false,
+	    success: function(response){
+	        console.log("success" + response);;
+	    },
+	    error: function(response){
+	        console.log(response);
+	    }   
+	  });
+	
 };
