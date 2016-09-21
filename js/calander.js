@@ -22,7 +22,7 @@ const TODAY_20160901={
 }
 
 const MONTH = ['January','February','March','April','May','June','July','August','September','October','November' ,'December'];
-const WEEK = ['MON','TUE','WED','THU','FRI','SAT','SUN'];
+const WEEK = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
 const MONTH_DAYS = [0,31,28,31,30,31,30,31,31,30,31,30,31];
 
 Calander_controller.prototype.set_today_and_sync = function(){
@@ -41,7 +41,7 @@ Calander_controller.prototype.is_spectial_Feb = function(year){
 
 Calander_controller.prototype.generate_offset = function (year,month) {
 	var target_point = new Date(year,month,1);
-	this.offset = target_point.getDay();
+	this.offset = target_point.getDay()-1;
 }
 
 Calander_controller.prototype.set_calander_template = function (year,month) {
