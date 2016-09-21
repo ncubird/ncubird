@@ -10,7 +10,7 @@ function Module_google_script(){
 Module_google_script.prototype.test = function() {
 	var data={
 		event_title : "onepiece",
-		function_type : '2016',
+		function_type : 'add_to_calander',
 		startyear : '2016',
 		endyear : '2016',
 		startdate : 'September 22',
