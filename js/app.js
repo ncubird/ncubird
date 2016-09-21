@@ -1,8 +1,8 @@
-var canalnder_contoller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
+
 
 $( document ).ready(function() {
 	var util = new Util();
-
+    var canalnder_contoller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
     $('.menu-card').click(function(){
     	var template = util.get_template_byID($(this).attr('id'));
     	console.log($(this).attr('id')+','+template);
