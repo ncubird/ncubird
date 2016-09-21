@@ -58,7 +58,7 @@ Calander_controller.prototype.set_calander_template = function (year,month,root_
 
 	$('.calander-slider-right').unbind("click");
 	$('.calander-slider-right').click(function(){
-		self.change_month(1);
+		self.change_month(1,root_background);
 		$("."+root_background).css('height','0xp');
     	$("."+root_background).height(0);
     	$("."+root_background).css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
@@ -66,7 +66,7 @@ Calander_controller.prototype.set_calander_template = function (year,month,root_
 
 	$('.calander-slider-left').unbind("click");
 	$('.calander-slider-left').click(function(){
-		self.change_month(-1);
+		self.change_month(-1,root_background);
 		$("."+root_background).css('height','0xp');
     	$("."+root_background).height(0);
     	$("."+root_background).css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
@@ -92,7 +92,7 @@ Calander_controller.prototype.template_calander_box = function(year,month,day){
 		    +"</li>"
 }
 
-Calander_controller.prototype.change_month = function(add_or_minutes){
+Calander_controller.prototype.change_month = function(add_or_minute,root_backgrounds){
 
 	
 
@@ -113,6 +113,6 @@ Calander_controller.prototype.change_month = function(add_or_minutes){
 	}
 
 	this.generate_offset(this.year,this.month);
-	this.set_calander_template(this.year,this.month);
+	this.set_calander_template(this.year,this.month,root_background);
 
 }
