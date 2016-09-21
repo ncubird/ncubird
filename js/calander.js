@@ -47,11 +47,11 @@ Calander_controller.prototype.set_calander_template = function (year,month,root_
 			$('.'+this.calander_class).html($('.'+this.calander_class).html() + this.template_calander_classlebox());
 		}
 
-		for(var i=0;i<=MONTH_DAYS[month];i++){
+		for(var i=1;i<=MONTH_DAYS[month];i++){
 			$('.'+this.calander_class).html($('.'+this.calander_class).html() + this.template_calander_box(year,month,i));
 		}
 
-		if(month == 2 && this.is_spectial_Feb(year)){
+		if(month == 1 && this.is_spectial_Feb(year)){
 			$('.'+this.calander_class).html($('.'+this.calander_class).html() + this.template_calander_box(year,month,29));
 		}
 	}
