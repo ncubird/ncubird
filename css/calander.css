@@ -7,6 +7,19 @@
     transform-origin: 20% 40%;
 }
 
+.calander-slider-month{
+    font-size: 16px;
+}
+
+.calander-slider-year{
+    font-size: 16px;
+}
+
+.calander-slider{
+    vertical-align: middle;
+}
+
+
 .css-calender-month{
 	width: 85% !important;
 }
