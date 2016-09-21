@@ -92,7 +92,7 @@ Calander_controller.prototype.template_calander_box = function(year,month,day){
 		    +"</li>"
 }
 
-Calander_controller.prototype.change_month = function(add_or_minutes,root_backgrounds){
+Calander_controller.prototype.change_month = function(add_or_minutes,root_background){
 
 	
 
