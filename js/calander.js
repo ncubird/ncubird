@@ -41,6 +41,7 @@ Calander_controller.prototype.is_spectial_Feb = function(year){
 
 Calander_controller.prototype.generate_offset = function (year,month) {
 	var target_point = new Date(year,month,1);
+	console.log(target_point.getDay());
 	this.offset = target_point.getDay();
 }
 
