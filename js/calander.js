@@ -52,7 +52,7 @@ Calander_controller.prototype.set_calander_template = function (year,month,root_
 	if($('.'+this.calander_class) != undefined){
 		console.log($('.'+this.calander_class));
 		$('.'+this.calander_class).html("");
-		for(var i=1;i<this.offset;i++){
+		for(var i=0;i<this.offset;i++){
 			$('.'+this.calander_class).html($('.'+this.calander_class).html() + this.template_calander_classlebox());
 		}
 
