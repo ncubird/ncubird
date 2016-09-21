@@ -126,6 +126,7 @@ body {
 
 	.root-header{
 		margin-right: 1% !important;
+		float: right;
 	}
 
 }
@@ -177,8 +178,9 @@ body {
 	width: auto;
 	height: 235px;
 	margin-top: 0px;
-	margin-left: 50%;
-	margin-right: 5%;
+	margin-left: 5%;
+	margin-right: 25%;
+	float: right;
 
 	-moz-transform:scaleX(-1);
     -webkit-transform:scaleX(-1);
