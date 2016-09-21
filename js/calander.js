@@ -47,7 +47,7 @@ Calander_controller.prototype.generate_offset = function (year,month) {
 Calander_controller.prototype.set_calander_template = function (year,month) {
 	this.generate_offset(year,month);
 	var self = this;
-	console.log($('.'+this.calander_class) != undefined);
+	console.log('---'+year+'==='+month);
 	if($('.'+this.calander_class) != undefined){
 		console.log($('.'+this.calander_class));
 		$('.'+this.calander_class).html("");
