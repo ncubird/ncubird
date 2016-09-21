@@ -97,16 +97,16 @@ Calander_controller.prototype.change_month = function(add_or_minutes){
 	
 
 	if(add_or_minutes > 0){
-		if(this.month ==12 ){
+		if(this.month ==11 ){
 			this.year++;
-			this.month = 1;
+			this.month = 0;
 		}else{
 			this.month++;
 		}		
 	}else if(add_or_minutes <0 ){
-		if(this.month == 1){
+		if(this.month == 0){
 			this.year--;
-			this.month = 12;
+			this.month = 11;
 		}else{
 			this.month--;
 		}		
