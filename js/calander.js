@@ -101,7 +101,7 @@ Calander_controller.prototype.template_calander_tag = function(facebook_id,messa
 
 Calander_controller.prototype.set_calander_tag = function(year,month,day,facebook_id,message){
 	if($('#'+"calender-"+year+'-'+month+'-'+day) != undefined){
-		$('#'+"calender-"+year+'-'+month+'-'+day).html($('#'+"calender-"+year+'-'+month+'-'+day).html()+this.template_calander_tag(facebook_id,mesage));
+		$('#'+"calender-"+year+'-'+month+'-'+day).html($('#'+"calender-"+year+'-'+month+'-'+day).html()+this.template_calander_tag(facebook_id,message));
 	}
 }
 
