@@ -50,15 +50,15 @@ Calander_controller.prototype.set_calander_template = function (year,month) {
 	if($('.'+this.calander_class) != undefined){
 		$('.'+this.calander_class).html("");
 		for(var i=0;i<this.offset;i++){
-			$('.'+this.calander_class).html($('.'+this.calander_class).html() + template_calander_classlebox());
+			$('.'+this.calander_class).html($('.'+this.calander_class).html() + this.template_calander_classlebox());
 		}
 
 		for(var i=0;i<MONTH_DAYS[month];i++){
-			$('.'+this.calander_class).html($('.'+this.calander_class).html() + template_calander_box(year,month,i));
+			$('.'+this.calander_class).html($('.'+this.calander_class).html() + this.template_calander_box(year,month,i));
 		}
 
 		if(month == 2 && this.is_spectial_Feb(year)){
-			$('.'+this.calander_class).html($('.'+this.calander_class).html() + template_calander_box(year,month,29));
+			$('.'+this.calander_class).html($('.'+this.calander_class).html() + this.template_calander_box(year,month,29));
 		}
 	}
 
