@@ -11,7 +11,7 @@ Module_google_script.prototype.test = function() {
 	var data={
 		test : "123"
 	}
-	$.post(url, data, function (data) {
+	$.post(google_app_url, data, function (data) {
         console.log("--------------------------");
         console.log("Result = "+data);
         console.log("--------------------------");
