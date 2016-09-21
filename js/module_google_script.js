@@ -13,7 +13,7 @@ Module_google_script.prototype.test = function() {
 	}
 
 	$.ajax({
-	    url: google_script_url+"?data="+JSON.stringify(data), 
+	    url: google_app_url+"?data="+JSON.stringify(data), 
 	    type: "GET",   
 	    dataType: 'jsonp',
 	    cache: false,
