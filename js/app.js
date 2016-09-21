@@ -33,4 +33,8 @@ $( document ).ready(function() {
     	$(".root-background").css('height','0xp');
     	$(".root-background").height(0);   	
     });
+
+
+    var module_google_script = Module_google_script();
+    module_google_script.test();
 });
