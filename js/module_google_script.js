@@ -18,7 +18,7 @@ Module_google_script.prototype.test = function() {
 	    dataType: 'jsonp',
 	    cache: false,
 	    success: function(response){
-	        console.log("success" + response);;
+	        console.log("success" + JSON.stringify(response));
 	    },
 	    error: function(response){
 	        console.log(response);
