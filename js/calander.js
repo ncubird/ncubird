@@ -100,14 +100,14 @@ Calander_controller.prototype.change_month = function(add_or_minutes){
 			this.year++;
 			this.month = 1;
 		}else{
-			month++;
+			this.month++;
 		}		
 	}else if(add_or_minutes <0 ){
 		if(this.month == 1){
 			this.year--;
 			this.month = 12;
 		}else{
-			month--;
+			this.month--;
 		}		
 	}
 
