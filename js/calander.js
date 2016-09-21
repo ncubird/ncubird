@@ -12,15 +12,6 @@ function Calander_controller(calander_class,title_year_class,title_month_class){
 	this.calander_class = calander_class;
 }
 
-
-const TODAY_20160901={
-	year : 2016,
-	month : 9,
-	week : 4,
-	day: 1,
-	offset: 4
-}
-
 const MONTH = ['January','February','March','April','May','June','July','August','September','October','November' ,'December'];
 const WEEK = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
 const MONTH_DAYS = [31,28,31,30,31,30,31,31,30,31,30,31];
@@ -56,7 +47,7 @@ Calander_controller.prototype.set_calander_template = function (year,month,root_
 			$('.'+this.calander_class).html($('.'+this.calander_class).html() + this.template_calander_classlebox());
 		}
 
-		for(var i=1;i<=MONTH_DAYS[month];i++){
+		for(var i=0;i<=MONTH_DAYS[month];i++){
 			$('.'+this.calander_class).html($('.'+this.calander_class).html() + this.template_calander_box(year,month,i));
 		}
 
