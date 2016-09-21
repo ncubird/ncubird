@@ -166,6 +166,16 @@ body {
 	z-index: 1;
 }
 
+.root-header{
+	position: relative;
+	width: auto;
+	height: 240px;
+	margin-top: 0px;
+	margin-left: 5%;
+	margin-right: 5%;
+	z-index: 1;
+}
+
 .menu-card{
 	position: absolute;
 	box-shadow: 0px;
