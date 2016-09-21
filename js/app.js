@@ -1,4 +1,4 @@
-
+var canalnder_contoller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
 
 $( document ).ready(function() {
 	var util = new Util();
@@ -13,12 +13,12 @@ $( document ).ready(function() {
     		
 
             switch($(self).attr('id')){
-                case 'calander':{
-                    var canalnder_contoller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
+                case 'calander':{                    
                     canalnder_contoller.set_today_and_sync();
                     canalnder_contoller.generate_offset();
                     canalnder_contoller.set_calander_template(canalnder_contoller.year,canalnder_contoller.month,'root-background');
                     console.log("calander");
+                    canalnder_contoller.set_calander_tag(2016,8,20,100000244681661,"test");
                 }
                 break;
             }

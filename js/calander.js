@@ -92,6 +92,19 @@ Calander_controller.prototype.template_calander_box = function(year,month,day){
 		    +"</li>"
 }
 
+Calander_controller.prototype.template_calander_tag = function(facebook_id,message){
+	return "<div class=\"chip calander-day-people-chip\">"
+			  	+"<img class=\"calander-day-people-photo circle\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" />"
+			  	+message
+			+"</div>"
+}
+
+Calander_controller.prototype.set_calander_tag = function(year,month,day,facebook_id,message){
+	if($('#'+"calender-"+year+'-'+month+'-'+day) != undefined){
+		$('#'+"calender-"+year+'-'+month+'-'+day).html($('#'+"calender-"+year+'-'+month+'-'+day).html()+template_calander_tag(facebook_id,mesage));
+	}
+}
+
 Calander_controller.prototype.change_month = function(add_or_minutes,root_background){
 
 	
