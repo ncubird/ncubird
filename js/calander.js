@@ -21,8 +21,8 @@ const TODAY_20160901={
 	offset: 4
 }
 
-const MONTH = ['none','January','February','March','April','May','June','July','August','September','October','November' ,'December'];
-const WEEK = ['none','SUN','MON','TUE','WED','THU','FRI','SAT'];
+const MONTH = ['January','February','March','April','May','June','July','August','September','October','November' ,'December'];
+const WEEK = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
 const MONTH_DAYS = [0,31,28,31,30,31,30,31,31,30,31,30,31];
 
 Calander_controller.prototype.set_today_and_sync = function(){
