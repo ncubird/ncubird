@@ -9,7 +9,14 @@ function Module_google_script(){
 
 Module_google_script.prototype.test = function() {
 	var data={
-		test : "123"
+		function_type : '2016',
+		startyear : '2016'
+		endyear : '2016'
+		startdate : 'September 22',
+		enddate : 'September 23',
+		starttime : '00:00:00',
+		endtime : '00:00:00',
+		other_message : {facebook_id:"123123132132132"}	
 	}
 
 	$.ajax({
