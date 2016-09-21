@@ -23,12 +23,12 @@ const TODAY_20160901={
 
 const MONTH = ['January','February','March','April','May','June','July','August','September','October','November' ,'December'];
 const WEEK = ['MON','TUE','WED','THU','FRI','SAT','SUN'];
-const MONTH_DAYS = [31,28,31,30,31,30,31,31,30,31,30,31];
+const MONTH_DAYS = [0,31,28,31,30,31,30,31,31,30,31,30,31];
 
 Calander_controller.prototype.set_today_and_sync = function(){
 	var now = new Date();
 	this.now = now;
-	this.year = now.getYear();
+	this.year+1900 = now.getYear();
 	this.month = now.getMonth();
 	this.hour = now.getHours();
 	this.day = now.getDay();
@@ -47,7 +47,7 @@ Calander_controller.prototype.generate_offset = function (year,month) {
 Calander_controller.prototype.set_calander_template = function (year,month) {
 	this.generate_offset(year,month);
 	var self = this;
-	console.log('---'+year+'==='+month);
+	console.log('---'+year+'==='+month+','+this.offset);
 	if($('.'+this.calander_class) != undefined){
 		console.log($('.'+this.calander_class));
 		$('.'+this.calander_class).html("");
