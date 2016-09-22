@@ -19,7 +19,7 @@ Fb_sdk.prototype.init = function() {
            });
 
         } else {
-           $('.cssroot').html("請先登入");
+           window.location.reload();
         }
     },{scope: 'public_profile,email'});    
 
