@@ -51,13 +51,6 @@
 	             $('#facebook_name').text(response.name);
 	          });
 
-	          FB.ui({
-			        method:'send',
-			        app_id:'177786062658873',
-			        link:"https://ncubird.github.io/ncubird/",
-			        to:response.id
-			  });
-
 	        } else {
 	           $('#menu').html('Please log into this app.');
 	        }
