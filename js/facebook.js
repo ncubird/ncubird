@@ -5,34 +5,9 @@ function Fb_sdk(){
 Fb_sdk.prototype.init = function() {
   var self = this;
   // body...
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '177786062658873',
-      xfbml      : true,
-      version    : 'v2.7'
-    });
-
-    FB.login(function(response) {
-        if (response.authResponse) {         
-          FB.api('/me', function(response) {
-             console.log('Good to see you, ' + response.name + '.');
-           });
-
-        } else {
-           
-        }
-    },{scope: 'public_profile,email'});    
-
-  };
-
   FB.getLoginStatus(function(response) {
     self.statusChangeCallback(response);
   });
-
-
-  
-
- 
 };
 
 Fb_sdk.prototype.statusChangeCallback = function(response) {
@@ -46,11 +21,11 @@ Fb_sdk.prototype.statusChangeCallback = function(response) {
       // Logged into your app and Facebook.
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      $('.cssroot').html('Please log into this app.');
+      $('#menu').html('Please log into this app.');
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
-      $('.cssroot').html('Please log into Facebook.');
+      $('#menu').html('Please log into Facebook.');
     }
 }
 
