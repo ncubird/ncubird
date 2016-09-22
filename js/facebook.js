@@ -13,17 +13,16 @@ Fb_sdk.prototype.init = function() {
     });
 
     FB.login(function(response) {
-        if (response.authResponse) {
-         
-         FB.api('/me', function(response) {
-           console.log('Good to see you, ' + response.name + '.');
-         });
+        if (response.authResponse) {         
+          FB.api('/me', function(response) {
+             console.log('Good to see you, ' + response.name + '.');
+           });
         } else {
            $('.cssroot').html("請先登入");
         }
     }{scope: 'public_profile,email,user_likes'});
 
-  };
+  });
 
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
