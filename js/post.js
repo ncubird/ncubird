@@ -21,7 +21,6 @@ Post_controller.prototype.init = function(eventcallback){
 		if($("#post_type").val() == 'post_find_seat') {
 			console.log('chahge');
 		    $('#post_people_number').val("2");
-		    $('#post_people_number').addClass("active");
 		    $('#post_people_number').prop("disabled", "disabled");
 		} else {
 		    $('#post_people_number').prop("disabled", "");
