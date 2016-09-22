@@ -16,8 +16,15 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			Materialize.toast('請輸入姓名', 2000);
 			return;
 		}
-		var major = $("#gender").val();
-		if(major == "性別"){
+
+		var major = $("#major").val();
+		if(major == "" || major == null || major == undefined){
+			Materialize.toast('請輸入系所或職業', 2000);
+			return;
+		}
+
+		var gender = $("#gender").val();
+		if(gender == "性別"){
 			Materialize.toast('請輸入性別', 2000);
 			return;
 		}
