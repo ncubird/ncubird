@@ -72,6 +72,8 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			sdate = smonth +' '+ sday + ', ' +syear + ' '
 		}
 
+		var edate = sdate;
+
 		var shour = $('#post_time_from_hour').val();
 		console.log(shour);
 
@@ -93,40 +95,13 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			sdate = sdate + shour + ':' + sminute + ':00';
 		}
 
-		var edate = $('#post_time_to_date').val();
-		console.log(edate);
-
-		if(edate == "" || edate == null || edate == undefined){
-			Materialize.toast('請輸入時間', 2000);
-			return;
-		}else {
-			var split_edate = edate.split('-');
-			var eyear = split_edate[0];
-			var emonth = POST_MONTH[parseInt(split_edate[1])];
-			var eday = split_edate[2];
-			edate = emonth +' '+ eday + ', ' +eyear + ' '
-		}
-
-		var ehour = $('#post_time_to_hour').val();
+		var ehour = '24';
 		console.log(ehour);
 
-		var eminute = $('#post_time_to_minute').val();
+		var eminute = '0';
 		console.log(eminute);
 
-		if(ehour == "" || ehour == null || ehour == undefined
-			|| eminute == "" || eminute == null || eminute == undefined){
-			Materialize.toast('請輸入時間', 2000);
-			return;
-		}else{
-			if(parseInt(ehour) < 10 ){
-				ehour = "0"+ehour;
-			}
-
-			if(parseInt(eminute) < 10){
-				eminute = "0"+eminute;
-			}
-			edate = edate + ehour + ':' + eminute + ':00';
-		}
+		edate = edate + ehour + ':' + eminute + ':00';
 
 		if(!check_if_date_invalid(sdate,edate)){
 			return;
