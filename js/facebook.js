@@ -12,9 +12,17 @@ Fb_sdk.prototype.init = function() {
       version    : 'v2.7'
     });
 
-    FB.getLoginStatus(function(response) {
-      self.statusChangeCallback(response);
-    });
+    FB.login(function(response) {
+        if (response.authResponse) {
+         
+         FB.api('/me', function(response) {
+           console.log('Good to see you, ' + response.name + '.');
+         });
+        } else {
+           $('.cssroot').html("請先登入");
+        }
+    }{scope: 'public_profile,email,user_likes'});
+
   };
 
   (function(d, s, id){
