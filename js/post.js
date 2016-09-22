@@ -131,9 +131,10 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		var others = $('#post_other_message').val();
 
 		var peroid = [];
-		if($("#post_only_ontime").prop("checked")) {
+		if(!$("#post_only_ontime").prop("checked")) {
 		    $("input[name='post_peroid']").each(function() {
 		        if($(this).prop("checked")){
+		        	console.log($(this).val())
 		        	peroid.push($(this).val());
 		        };
 		    });
