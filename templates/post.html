@@ -14,7 +14,7 @@
 	      	</div>
 
 	        <div class="input-field col s3">
-	          	<select class="icons">
+	          	<select id="gender" class="icons">
 			        <option value="boy" data-icon="images/boy.png" class="left circle">男</option>
 			        <option value="girl" data-icon="images/girl.png" class="left circle">女</option>
 			        <option value="other" data-icon="images/unknow.png" class="left circle">其他</option>
@@ -90,7 +90,7 @@
         	</div>
 
       		<div class="input-field col s8 m4">
-          		<input placeholder="40 NT/人" id="bonus_response" type="text" class="validate">
+          		<input placeholder="40 NT/人 ( 若不需要請寫無 )" id="bonus_response" type="text" class="validate">
           		<label class="active" for="bonus_response">回饋方式</label>
         	</div>        	
       	</div>
@@ -103,7 +103,10 @@
       	</div>
 
       	<div class="row">
-      		<div class="waves-effect waves-light btn" id="post_button">送出</a>
+      		<div class="col s2 offset-s10">
+          		<div class="waves-effect waves-light btn" id="post_button">送出</a>
+        	</div>
+      		
       	</div>
 
 
