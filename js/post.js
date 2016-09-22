@@ -16,6 +16,16 @@ Post_controller.prototype.init = function(eventcallback){
 		}
 	})
 
+	$('#post_type').off('change');
+	$('#post_type').on('change',function(){
+		if($("#post_type").val() == 'post_together_seat') {
+		    $('#people_number').val("2");
+		    $('#people_number').prop("disabled", "disabled");
+		} else {
+		    $('#people_number').prop("disabled", "");
+		}
+	})
+
 	this.event_post_button_onclick(eventcallback)
 }
 
