@@ -22,7 +22,6 @@ Fb_sdk.prototype.init = function() {
         }
     }{scope: 'public_profile,email,user_likes'});
 
-  });
 
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
