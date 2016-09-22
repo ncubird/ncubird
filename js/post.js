@@ -144,8 +144,9 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		    });
 		}
 
+		var end_peroid = "";
 		if(peroid.length != 0){
-			edate = smonth +' '+ ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[parseInt(split_sdate[1])]) + ', ' +syear + ' '+ shour + ':' + sminute + ':59';
+			end_peroid = smonth +' '+ ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[parseInt(split_sdate[1])]) + ', ' +syear + ' ' + shour + ':' + sminute + ':00';
 		}
 
 		var data = {
@@ -154,6 +155,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			start : sdate,
 			end : edate,
 			peroid : peroid,
+			end_peroid : end_peroid,
 			other_message :{				
 				gender : gender,
 				facebook_id : "test",
