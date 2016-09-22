@@ -19,6 +19,7 @@ Post_controller.prototype.init = function(eventcallback){
 	$('#post_type').off('change');
 	$('#post_type').on('change',function(){
 		if($("#post_type").val() == 'post_together_seat') {
+			console.log('chahge');
 		    $('#people_number').val("2");
 		    $('#people_number').prop("disabled", "disabled");
 		} else {
