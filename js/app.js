@@ -45,7 +45,7 @@ $( document ).ready(function() {
 
                 case 'about':{
                         about_controller.test(function(){
-                            fb_sdk.send_message($('#facebook_userid'));
+                            fb_sdk.send_message($('#facebook_userid').text());
                         })                        
                     }
                     break;
