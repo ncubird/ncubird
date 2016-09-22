@@ -34,3 +34,21 @@ Module_google_script.prototype.test = function() {
 	  });
 	
 };
+
+Module_google_script.prototype.generate_data = function(event_title,function_type,syear,eyear,smonth,emonth,sdate,edate,shour,ehour,other_message) {
+	var data_starttime = shour + ":00:00";
+	var data_endtime = ehour + ":00:00";
+	var data_startdate = smonth + ' ' + sdate;
+	var data_enddate = emonth + ' ' + edate;
+	return {
+		event_title : event_title,
+		function_type : function_type,
+		startyear : syear,
+		endyear : eyear,
+		startdate : data_startdate,
+		enddate : data_enddate,
+		starttime : data_starttime,
+		endtime : data_endtime,
+		other_message : other_message,
+	}
+};
