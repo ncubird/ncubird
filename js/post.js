@@ -128,7 +128,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			edate = edate + ehour + ':' + eminute + ':00 GMT+8';
 		}
 
-		if(check_if_date_invalid(sdate,edate)){
+		if(!check_if_date_invalid(sdate,edate)){
 			return;
 		}
 
