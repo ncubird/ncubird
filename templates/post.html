@@ -3,13 +3,15 @@
 <div class="row">
     <form class="col s12">
     	<div class="row">
-    		<select id="post_type" class="icons">
-			    <option value="post_find_seat" data-icon="images/boy.png" class="left circle">我再找車</option>
-			    <option value="post_have_seat" data-icon="images/girl.png" class="left circle">我有位子</option>
-			    <option value="post_together_seat" data-icon="images/unknow.png" class="left circle">找人共乘</option>
-			</select>
-			    <label>方式</label>
-    		</div>
+    		<div class="input-field col s12">
+    			<select id="post_type" class="icons">
+				    <option value="post_find_seat" >我再找車</option>
+				    <option value="post_have_seat">我有位子</option>
+				    <option value="post_together_seat">找人共乘</option>
+				</select>
+				<label>方式</label>
+			</div>
+    	</div>
         <div class="row">
             <div class="input-field col s5">
           		<input placeholder="王大明" id="post_name" type="text" class="validate">
@@ -95,12 +97,12 @@
         	</div>
 
         	<div class="input-field col s3 m1">
-          		<input id="post_time_from_hour" type="number" class="validate" min="0" max="23">       		
+          		<input id="post_time_from_hour" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="number" class="validate" min="0" max="23">       		
           		<label class="active" >時</label>
         	</div>
 
         	<div class="input-field col s3 m1">
-          		<input id="post_time_from_minute" type="number" class="validate" min="0" max="59">
+          		<input id="post_time_from_minute" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="number" class="validate" min="0" max="59">
           		<label class="active" >分</label>
         	</div>
 
@@ -114,12 +116,12 @@
         	</div>
 
         	<div class="input-field col s3 m1">
-          		<input id="post_time_to_hour" type="number" class="validate" min="0" max="23">       		
+          		<input id="post_time_to_hour" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="number" class="validate" min="0" max="23">       		
           		<label class="active" >時</label>
         	</div>
 
         	<div class="input-field col s3 m1">
-          		<input id="post_time_to_minute" type="number" class="validate" min="0" max="59">		
+          		<input id="post_time_to_minute" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="number" class="validate" min="0" max="59">		
           		<label class="active" >分</label>
         	</div>
       	</div>
@@ -132,8 +134,8 @@
         	</div>
 
       		<div class="input-field col s4 m2">
-          		<input id="post_people_number" type="number" class="validate">
-          		<label class="active" for="people_number">人數</label>
+          		<input id="post_people_number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="number" class="validate" min="2">
+          		<label class="active" for="people_number" >人數</label>
         	</div>
 
       		<div class="input-field col s8 m4">

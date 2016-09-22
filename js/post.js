@@ -72,10 +72,10 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			sdate = smonth +' '+ sday + ', ' +syear + ' '
 		}
 
-		var shour = $('#post_time_form_hour').val();
+		var shour = $('#post_time_from_hour').val();
 		console.log(shour);
 
-		var sminute = $('#post_time_form_minute').val();
+		var sminute = $('#post_time_from_minute').val();
 		console.log(sminute);
 
 		if(shour == "" || shour == null || shour == undefined
