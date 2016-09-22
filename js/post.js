@@ -134,7 +134,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		if($("#post_only_ontime").prop("checked")) {
 		    $("input[name='post_peroid']").each(function() {
 		        if($(this).prop("checked")){
-		        	peroid.push($(this).prop("value"));
+		        	peroid.push($(this).val());
 		        };
 		    });
 		}
