@@ -160,23 +160,28 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			end_peroid = smonth +' '+ ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[parseInt(split_sdate[1])]) + ', ' +syear + ' ' + shour + ':' + sminute + ':00';
 		}
 
+		// var data = {
+		// 	function_type : "add_to_calander",
+		// 	event_title : type,
+		// 	start : sdate,
+		// 	end : edate,
+		// 	peroid : peroid,
+		// 	end_peroid : end_peroid,
+		// 	other_message :{				
+		// 		gender : gender,
+		// 		facebook_id : "test",
+		// 		location_from : location_from,
+		// 		location_to : location_to,
+		// 		bonus_response : bonus_response,
+		// 		people_number : people_number,
+		// 		others : others,
+		// 		peroid : peroid,
+		// 		passenger: []
+		// 	}
+		// }
 		var data = {
-			function_type : "add_to_calander",
-			event_title : type,
-			start : sdate,
-			end : edate,
-			peroid : peroid,
-			end_peroid : end_peroid,
-			other_message :{				
-				gender : gender,
-				facebook_id : "test",
-				location_from : location_from,
-				location_to : location_to,
-				bonus_response : bonus_response,
-				people_number : people_number,
-				others : others,
-				passenger: []
-			}
+			function_type : "get_event_forday",
+			date : (smonth +' '+ ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[parseInt(split_sdate[1])]) + ', ' +syear)
 		}
 		eventcallback(data);
 	})
