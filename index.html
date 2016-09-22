@@ -36,7 +36,10 @@
 	    FB.init({
 	      appId      : '177786062658873',
 	      xfbml      : true,
+	      status: true,
+    	  cookie: true,
 	      version    : 'v2.7'
+	      
 	    });
 
 	    FB.login(function(response) {
@@ -58,7 +61,7 @@
 
 
 <!-- <test> -->
-
+<div id="fb-root"></div>
 <div id="facebook_userid" style="display:none;"></div>
 <div id="facebook_name" style="display:none;"></div>
 
