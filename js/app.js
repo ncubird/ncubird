@@ -1,11 +1,14 @@
 
 window.onload = function() {
-    var Facebook_sdk = new Fb_sdk();
-    Facebook_sdk.init();
+    
 }
 
 
-$( document ).ready(function() {    
+$( document ).ready(function() {
+
+    console.log("ready");
+    var Facebook_sdk = new Fb_sdk();
+    Facebook_sdk.init();  
 
 	var util = new Util();
     var calendar_controller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
