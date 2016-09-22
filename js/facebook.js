@@ -22,6 +22,10 @@ Fb_sdk.prototype.init = function() {
         }
     },{scope: 'public_profile,email,user_likes'});
 
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+
   };
 
 
