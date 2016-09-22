@@ -90,7 +90,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			if(parseInt(sminute) < 10){
 				sminute = "0"+sminute;
 			}
-			sdate = sdate + shour + ':' + sminute + ':00 GMT+8';
+			sdate = sdate + shour + ':' + sminute + ':00';
 		}
 
 		var edate = $('#post_time_to_date').val();
@@ -125,7 +125,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			if(parseInt(eminute) < 10){
 				eminute = "0"+eminute;
 			}
-			edate = edate + ehour + ':' + eminute + ':00 GMT+8';
+			edate = edate + ehour + ':' + eminute + ':00';
 		}
 
 		if(!check_if_date_invalid(sdate,edate)){
