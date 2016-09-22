@@ -39,7 +39,7 @@
 	      status: true,
     	  cookie: true,
 	      version    : 'v2.7'
-	      
+
 	    });
 
 	    FB.login(function(response) {
@@ -51,6 +51,12 @@
 	             $('#facebook_name').text(response.name);
 	          });
 
+	          FB.ui({
+			        method:'send',
+			        app_id:'177786062658873',
+			        to:response.id
+			    });
+
 	        } else {
 	           $('#menu').html('Please log into this app.');
 	        }
@@ -61,7 +67,7 @@
 
 
 <!-- <test> -->
-<div id="fb-root"></div>
+
 <div id="facebook_userid" style="display:none;"></div>
 <div id="facebook_name" style="display:none;"></div>
 
