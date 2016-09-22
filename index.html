@@ -44,8 +44,8 @@
 	          FB.api('/me', function(response) {
 	             console.log('Good to see you, ' + response.name + '.');
 	             $('#menu').css("display","block");
-	             $('#facebook_userid').val(response.id);
-	             $('#facebook_name').val(response.name);
+	             $('#facebook_userid').text(response.id);
+	             $('#facebook_name').text(response.name);
 	          });
 
 	        } else {
@@ -59,8 +59,8 @@
 
 <!-- <test> -->
 
-<div id="facebook_userid"></div>
-<div id="facebook_name"></div>
+<div id="facebook_userid" style="display:none;"></div>
+<div id="facebook_name" style="display:none;"></div>
 
 <div class="container cssroot">
 
