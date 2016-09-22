@@ -17,14 +17,15 @@ Fb_sdk.prototype.init = function() {
           FB.api('/me', function(response) {
              console.log('Good to see you, ' + response.name + '.');
            });
+          FB.getLoginStatus(function(response) {
+            self.statusChangeCallback(response);
+          });
         } else {
            $('.cssroot').html("請先登入");
         }
     },{scope: 'public_profile,email'});
 
-    FB.getLoginStatus(function(response) {
-      self.statusChangeCallback(response);
-    });
+    
 
   };
 
