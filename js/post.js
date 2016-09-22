@@ -167,7 +167,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 				location_from : location_from,
 				location_to : location_to,
 				bonus_response : bonus_response,
-				people_number : people_number
+				people_number : people_number,
 				others : others,
 				passenger: []
 			}
