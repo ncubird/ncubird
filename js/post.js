@@ -189,7 +189,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			function_type : "delete_to_calander",
 			facebook_id : "test",
 			start : smonth +' '+ ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[parseInt(split_sdate[1])] + ', ' +syear + ' ' + '12:00:00'),
-			end : smonth +' '+ ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[parseInt(split_sdate[1])] + ', ' +syear + ' ' + '12:00:00'),
+			end : smonth +' '+ ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[parseInt(split_sdate[1])] + ', ' +syear + ' ' + '12:01:00'),
 			peroid :["MON"]
 		}
 		eventcallback(data);
