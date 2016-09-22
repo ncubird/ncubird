@@ -5,9 +5,7 @@ window.onload = function() {
 }
 
 
-$( document ).ready(function() {
-
-    
+$( document ).ready(function() {    
 
 	var util = new Util();
     var calendar_controller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
