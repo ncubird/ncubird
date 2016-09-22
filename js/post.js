@@ -23,7 +23,7 @@ Post_controller.prototype.init = function(eventcallback){
 	this.event_post_button_onclick(eventcallback)
 }
 
-const MONTH = ['null','January','February','March','April','May','June','July','August','September','October','November' ,'December'];
+const POST_MONTH = ['null','January','February','March','April','May','June','July','August','September','October','November' ,'December'];
 
 Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 	$('#'+this.post_button_id).unbind('click');
@@ -71,7 +71,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		}else {
 			var split_sdate = sdate.split('-');
 			var syear = split_sdate[0];
-			var smonth = parseInt(split_sdate[1]);
+			var smonth = POST_MONTH[parseInt(split_sdate[1])];
 			var sday = split_sdate[2];
 			sdate = smonth +' '+ sday + ', ' +syear + ' '
 		}
@@ -97,10 +97,10 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			Materialize.toast('請輸入時間', 2000);
 			return;
 		}else {
-			var eplit_sdate = edate.split('-');
-			var eyear = eplit_sdate[0];
-			var emonth = parseInt(eplit_sdate[1]);
-			var eday = eplit_sdate[2];
+			var split_edate = edate.split('-');
+			var eyear = split_edate[0];
+			var emonth = POST_MONTH[parseInt(split_edate[1])];
+			var eday = split_edate[2];
 			edate = emonth +' '+ eday + ', ' +eyear + ' '
 		}
 
