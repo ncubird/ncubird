@@ -95,13 +95,12 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			sdate = sdate + shour + ':' + sminute + ':00';
 		}
 
-		var ehour = '23';
+		var ehour = shour;
 		console.log(ehour);
 
-		var eminute = '59';
-		console.log(eminute);
+		var eminute = sminute;
 
-		edate = edate + ehour + ':' + eminute + ':00';
+		edate = edate + ehour + ':' + eminute + ':59';
 
 		if(!check_if_date_invalid(sdate,edate)){
 			return;
