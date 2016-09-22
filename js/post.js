@@ -10,9 +10,9 @@ Post_controller.prototype.init = function(eventcallback){
 	$('#post_only_ontime').unbind('click');
 	$('#post_only_ontime').click(function(){
 		if($("#post_only_ontime").prop("checked")) {
-		    $("input[name='post_peroid']").prop("disable", "disabled");
+		    $("input[name='post_peroid']").prop("disabled", "disabled");
 		} else {
-		    $("input[name='post_peroid']").prop("disable", "");
+		    $("input[name='post_peroid']").prop("disabled", "");
 		}
 	})
 
