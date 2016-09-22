@@ -20,7 +20,7 @@ Fb_sdk.prototype.init = function() {
         } else {
            $('.cssroot').html("請先登入");
         }
-    }{scope: 'public_profile,email,user_likes'});
+    },{scope: 'public_profile,email,user_likes'});
 
 
   (function(d, s, id){
