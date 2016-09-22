@@ -3,7 +3,7 @@
 $( document ).ready(function() {
 	var util = new Util();
     var canalnder_controller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
-    var post_controller = new Post_controller();
+    var post_controller = new Post_controller('post_button');
     $('.menu-card').click(function(){
     	var template = util.get_template_byID($(this).attr('id'));
     	console.log($(this).attr('id')+','+template);
@@ -29,8 +29,11 @@ $( document ).ready(function() {
                 break;
 
                 case 'post':{
-                    post_controller.init();
+                    post_controller.init(function(){
+                        
+                    });
                 }
+                break;
             }
 
             $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');

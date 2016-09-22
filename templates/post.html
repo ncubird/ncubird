@@ -4,8 +4,8 @@
     <form class="col s12">
         <div class="row">
             <div class="input-field col s5">
-          		<input placeholder="王大明" id="name" type="text" class="validate">
-          		<label class="active" for="name">您的真實姓名</label>
+          		<input placeholder="王大明" id="post-name" type="text" class="validate">
+          		<label class="active" for="post-name">您的真實姓名</label>
         	</div>
 
         	<div class="input-field col s4">
@@ -17,7 +17,7 @@
 	          	<select class="icons">
 			        <option value="boy" data-icon="images/boy.png" class="left circle">男</option>
 			        <option value="girl" data-icon="images/girl.png" class="left circle">女</option>
-			        <option value="girl" data-icon="images/unknow.png" class="left circle">其他</option>
+			        <option value="other" data-icon="images/unknow.png" class="left circle">其他</option>
 			    </select>
 			    <label>性別</label>
 	        </div>
@@ -48,12 +48,12 @@
         	</div>
 
         	<div class="input-field col s3 m1">
-          		<input id="time_from_hour" type="number" class="validate">       		
+          		<input id="time_from_hour" type="number" class="validate" min="0" max="23">       		
           		<label class="active" >時</label>
         	</div>
 
         	<div class="input-field col s3 m1">
-          		<input id="time_from_minute" type="number" class="validate">
+          		<input id="time_from_minute" type="number" class="validate" min="0" max="59">
           		<label class="active" >分</label>
         	</div>
 
@@ -67,12 +67,12 @@
         	</div>
 
         	<div class="input-field col s3 m1">
-          		<input id="time_to_hour" type="number" class="validate">       		
+          		<input id="time_to_hour" type="number" class="validate" min="0" max="23">       		
           		<label class="active" >時</label>
         	</div>
 
         	<div class="input-field col s3 m1">
-          		<input id="time_to_minute" type="number" class="validate">		
+          		<input id="time_to_minute" type="number" class="validate" min="0" max="59">		
           		<label class="active" >分</label>
         	</div>
       	</div>
@@ -100,6 +100,10 @@
           		<textarea id="other_message" class="materialize-textarea"></textarea>
           		<label for="other_message">其他備註</label>
         	</div>
+      	</div>
+
+      	<div class="row">
+      		<div class="waves-effect waves-light btn" id="post_button">送出</a>
       	</div>
 
 
