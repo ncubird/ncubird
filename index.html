@@ -33,28 +33,33 @@
 	}(document, 'script', 'facebook-jssdk'));
 
 	window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '177786062658873',
-      xfbml      : true,
-      version    : 'v2.7'
-    });
+	    FB.init({
+	      appId      : '177786062658873',
+	      xfbml      : true,
+	      version    : 'v2.7'
+	    });
 
-    FB.login(function(response) {
-        if (response.authResponse) {         
-          FB.api('/me', function(response) {
-             console.log('Good to see you, ' + response.name + '.');
-           });
+	    FB.login(function(response) {
+	        if (response.authResponse) {         
+	          FB.api('/me', function(response) {
+	             console.log('Good to see you, ' + response.name + '.');
+	             $('#facebook_userid').val(response.id);
+	             $('#facebook_name').val(response.name);
+	          });
 
-        } else {
-           
-        }
-    },{scope: 'public_profile,email'});    
+	        } else {
+	           
+	        }
+	    },{scope: 'public_profile,email'});    
 
-  };
+  	};
   </script>
 
 
 <!-- <test> -->
+
+<div id="facebook_userid"></div>
+<div id="facebook_name"></div>
 
 <div class="container cssroot">
 
