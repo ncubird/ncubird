@@ -3,6 +3,7 @@ function Fb_sdk(){
 }
 
 Fb_sdk.prototype.init = function() {
+  var self = this;
   // body...
   window.fbAsyncInit = function() {
     FB.init({
@@ -12,7 +13,7 @@ Fb_sdk.prototype.init = function() {
     });
 
     FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
+      self.statusChangeCallback(response);
     });
   };
 
