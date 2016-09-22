@@ -33,13 +33,44 @@
       	</div>
 
       	<div class="row">
-      		<div class="input-field col s12">
-          		從
-          		<input id="time_from" type="date" class="validate">
-          		到
-          		<input id="time_to" type="date" class="validate">
-          		<label class="active" >時間</label>
+      		<div class="col s2">
+      			<span>時間：從</span>
+      		</div>
+      		<div class="input-field col s2">
+          		<input id="time_from_date" type="date" class="validate">          		
+          		<label class="active" >日期</label>
         	</div>
+
+        	<div class="input-field col s1">
+          		<input id="time_from_hour" type="number" class="validate">       		
+          		<label class="active" >時</label>
+        	</div>
+
+        	<div class="input-field col s1">
+          		<input id="time_from_minute" type="number" class="validate">		
+          		<label class="active" >分</label>
+        	</div>
+
+        	<div class="col s2">
+      			<span>到</span>
+      		</div>
+
+        	<div class="input-field col s2">
+          		<input id="time_to_date" type="date" class="validate">          		
+          		<label class="active" >日期</label>
+        	</div>
+
+        	<div class="input-field col s1">
+          		<input id="time_to_hour" type="number" class="validate">       		
+          		<label class="active" >時</label>
+        	</div>
+
+        	<div class="input-field col s1">
+          		<input id="time_to_minute" type="number" class="validate">		
+          		<label class="active" >分</label>
+        	</div>
+
+        	<div class="input-field col s3">
       	</div>
 
       	<div class="row">
@@ -61,7 +92,7 @@
       	</div>
 
       	<div class="row">
-      		<div class="input-field col s4">
+      		<div class="input-field col s12">
           		<textarea id="other_message" class="materialize-textarea"></textarea>
           		<label for="other_message">其他備註</label>
         	</div>
