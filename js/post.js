@@ -24,6 +24,7 @@ const POST_MONTH_DAYS = [0,31,28,31,30,31,30,31,31,30,31,30,31];
 
 Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 	$('#'+this.post_button_id).unbind('click');
+	var self = this;
 	$('#'+this.post_button_id).click(function(){
 
 		var type = $("#post_type").val();
@@ -103,7 +104,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 
 		edate = edate + ehour + ':' + eminute + ':59';
 
-		if(!this.check_if_date_invalid(sdate,edate)){
+		if(!self.check_if_date_invalid(sdate,edate)){
 			return;
 		}
 
@@ -142,7 +143,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		}
 
 		if(peroid.length != 0){
-			edate = smonth +' '+ ((this.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[smonth]) + ', ' +syear + ' '
+			edate = smonth +' '+ ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[smonth]) + ', ' +syear + ' '
 		}
 
 		var data = {
