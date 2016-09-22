@@ -43,6 +43,7 @@
 	        if (response.authResponse) {         
 	          FB.api('/me', function(response) {
 	             console.log('Good to see you, ' + response.name + '.');
+	             $('#menu').css("display:auto;");
 	             $('#facebook_userid').val(response.id);
 	             $('#facebook_name').val(response.name);
 	          });
@@ -77,7 +78,7 @@
 		</div>
 	</div>
 	
-	<div class="row" id="menu" >
+	<div class="row" id="menu" style="display:none;">
 
 		<div class="col s12 m2">
           	<div class="card darken-1 menu-card" id="main">
