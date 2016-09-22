@@ -1,5 +1,5 @@
 function Fb_sdk(){
-  
+
 }
 
 Fb_sdk.prototype.init = function() {
@@ -9,6 +9,10 @@ Fb_sdk.prototype.init = function() {
       appId      : '177786062658873',
       xfbml      : true,
       version    : 'v2.7'
+    });
+
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
     });
   };
 
@@ -20,9 +24,7 @@ Fb_sdk.prototype.init = function() {
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
+ 
 };
 
 Fb_sdk.prototype.statusChangeCallback = function(response) {
