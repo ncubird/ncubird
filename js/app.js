@@ -4,6 +4,7 @@ $( document ).ready(function() {
 	var util = new Util();
     var canalnder_controller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
     var post_controller = new Post_controller('post_button');
+    var module_google_script = new Module_google_script();
     $('.menu-card').click(function(){
     	var template = util.get_template_byID($(this).attr('id'));
     	console.log($(this).attr('id')+','+template);
@@ -29,8 +30,9 @@ $( document ).ready(function() {
                 break;
 
                 case 'post':{
-                    post_controller.init(function(){
-                        
+                    post_controller.init(function(send_data){
+                        console.log(JSON.stringify(send_data));
+                        module_google_script.send_event(send_data);
                     });
                 }
                 break;
@@ -43,6 +45,6 @@ $( document ).ready(function() {
     });
 
 
-    var module_google_script = new Module_google_script();
-    module_google_script.test();
+    
+    
 });
