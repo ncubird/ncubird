@@ -5,6 +5,7 @@ $( document ).ready(function() {
     var Facebook_sdk = new Fb_sdk();
 
     Facebook_sdk.init();
+    Facebook_sdk.checkLoginState();
 
 	var util = new Util();
     var calendar_controller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
