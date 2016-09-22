@@ -167,12 +167,12 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 	})
 }
 
-Calander_controller.prototype.is_spectial_Feb = function(year){
+Post_controller.prototype.is_spectial_Feb = function(year){
 	return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
 }
 
 
-Calander_controller.prototype.check_if_date_invalid =function(from,to){
+Post_controller.prototype.check_if_date_invalid =function(from,to){
 	var from_date = new Date(from);
 	var to_date = new Date(to);
 
