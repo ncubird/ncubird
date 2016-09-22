@@ -21,7 +21,7 @@ Fb_sdk.prototype.init = function() {
         } else {
            
         }
-    },{scope: 'public_profile,email',auth_type: 'reauthenticate'});    
+    },{scope: 'public_profile,email'});    
 
   };
 
