@@ -166,12 +166,12 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		}
 
 		var data = {
+			function_type : "add_to_calander",
 			event_title : type,
 			start : sdate,
 			end : edate,
 			peroid : peroid,
-			other_message :{
-				function_type : "add_to_calander",
+			other_message :{				
 				gender : gender,
 				facebook_id : "test",
 				location_from : location_from,

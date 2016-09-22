@@ -2,7 +2,7 @@
 
 $( document ).ready(function() {
 	var util = new Util();
-    var canalnder_controller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
+    var calendar_controller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
     var post_controller = new Post_controller('post_button');
     var module_google_script = new Module_google_script();
     $('.menu-card').click(function(){
@@ -16,15 +16,15 @@ $( document ).ready(function() {
 
             switch($(self).attr('id')){
                 case 'calander':{                    
-                    canalnder_controller.set_today_and_sync();
-                    canalnder_controller.set_calander_template(canalnder_controller.year,canalnder_controller.month,function(){
+                    calendar_controller.set_today_and_sync();
+                    calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,function(){
                         $(".root-background").css('height','0xp');
                         $(".root-background").height(0);
                         $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
-                        canalnder_controller.set_calander_tag(2016,8,20,100000244681661,"test");
+                        calendar_controller.set_calander_tag(2016,8,20,100000244681661,"test");
                     });
                     console.log("calander");
-                    canalnder_controller.set_calander_tag(2016,8,20,100000244681661,"test");
+                    calendar_controller.set_calander_tag(2016,8,20,100000244681661,"test");
                     
                 }
                 break;
