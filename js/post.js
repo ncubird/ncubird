@@ -143,7 +143,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		}
 
 		if(peroid.length != 0){
-			edate = smonth +' '+ ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[smonth]) + ', ' +syear + ' '
+			edate = smonth +' '+ ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[parseInt(split_sdate[1])]) + ', ' +syear + ' '
 		}
 
 		var data = {
