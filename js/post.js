@@ -179,9 +179,18 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		// 		passenger: []
 		// 	}
 		// }
-		var data = {
-			function_type : "get_event_forday",
-			date : (smonth +' '+ ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[parseInt(split_sdate[1])]) + ', ' +syear)
+
+		// var data = {
+		// 	function_type : "get_event_forday",
+		// 	date : (smonth +' '+ ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[parseInt(split_sdate[1])]) + ', ' +syear)
+		// }
+
+		var data={
+			function_type : "delete_to_calander",
+			facebook_id : "test",
+			start : smonth +' '+ ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[parseInt(split_sdate[1])] + ', ' +syear + ' ' + '00:00:00'),
+			end : smonth +' '+ ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[parseInt(split_sdate[1])] + ', ' +syear + ' ' + '23:59:00'),
+			peroid :[]
 		}
 		eventcallback(data);
 	})
