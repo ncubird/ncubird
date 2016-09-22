@@ -20,6 +20,7 @@ Post_controller.prototype.init = function(eventcallback){
 }
 
 const POST_MONTH = ['null','January','February','March','April','May','June','July','August','September','October','November' ,'December'];
+const POST_MONTH_DAYS = [0,31,28,31,30,31,30,31,31,30,31,30,31];
 
 Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 	$('#'+this.post_button_id).unbind('click');
@@ -102,7 +103,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 
 		edate = edate + ehour + ':' + eminute + ':59';
 
-		if(!check_if_date_invalid(sdate,edate)){
+		if(!this.check_if_date_invalid(sdate,edate)){
 			return;
 		}
 
@@ -140,6 +141,10 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		    });
 		}
 
+		if(peroid.length != 0){
+			edate = smonth +' '+ ((this.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[smonth]) + ', ' +syear + ' '
+		}
+
 		var data = {
 			function_type : "add_to_calander",
 			event_title : type,
@@ -161,7 +166,12 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 	})
 }
 
-function check_if_date_invalid(from,to){
+Calander_controller.prototype.is_spectial_Feb = function(year){
+	return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+}
+
+
+Calander_controller.prototype.check_if_date_invalid =function(from,to){
 	var from_date = new Date(from);
 	var to_date = new Date(to);
 
