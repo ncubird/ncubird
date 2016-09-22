@@ -83,6 +83,13 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			Materialize.toast('請輸入時間', 2000);
 			return;
 		}else{
+			if(parseInt(shour) < 10 ){
+				shour = "0"+shour;
+			}
+
+			if(parseInt(sminute) < 10){
+				sminute = "0"+sminute;
+			}
 			sdate = sdate + shour + ':' + sminute + ':00 GMT+8';
 		}
 
@@ -111,6 +118,13 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			Materialize.toast('請輸入時間', 2000);
 			return;
 		}else{
+			if(parseInt(ehour) < 10 ){
+				ehour = "0"+ehour;
+			}
+
+			if(parseInt(eminute) < 10){
+				eminute = "0"+eminute;
+			}
 			edate = edate + ehour + ':' + eminute + ':00 GMT+8';
 		}
 

@@ -32,7 +32,7 @@ $( document ).ready(function() {
                 case 'post':{
                     post_controller.init(function(send_data){
                         console.log(JSON.stringify(send_data));
-                        module_google_script.send_event(send_data);
+                        module_google_script.event_add(send_data);
                     });
                 }
                 break;

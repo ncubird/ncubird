@@ -7,7 +7,7 @@ function Module_google_script(){
 }
 
 
-Module_google_script.prototype.add_event = function(data) {
+Module_google_script.prototype.event_add = function(data) {
 
 	$.ajax({
 	    url: google_app_url+"?data="+JSON.stringify(data), 
