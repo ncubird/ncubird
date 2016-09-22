@@ -95,10 +95,10 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			sdate = sdate + shour + ':' + sminute + ':00';
 		}
 
-		var ehour = '24';
+		var ehour = '23';
 		console.log(ehour);
 
-		var eminute = '0';
+		var eminute = '59';
 		console.log(eminute);
 
 		edate = edate + ehour + ':' + eminute + ':00';
