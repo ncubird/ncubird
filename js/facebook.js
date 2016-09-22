@@ -23,7 +23,7 @@ Fb_sdk.prototype.init = function() {
     },{scope: 'public_profile,email'});
 
     FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
+      self.statusChangeCallback(response);
     });
 
   };
