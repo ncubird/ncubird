@@ -19,9 +19,9 @@ Fb_sdk.prototype.init = function() {
            });
 
         } else {
-           window.location.reload();
+           
         }
-    },{scope: 'public_profile,email'});    
+    },{scope: 'public_profile,email',auth_type: 'reauthenticate'});    
 
   };
 
