@@ -43,7 +43,7 @@
 	        if (response.authResponse) {         
 	          FB.api('/me', function(response) {
 	             console.log('Good to see you, ' + response.name + '.');
-	             $('#menu').css("display:block;");
+	             $('#menu').css("display","block");
 	             $('#facebook_userid').val(response.id);
 	             $('#facebook_name').val(response.name);
 	          });
