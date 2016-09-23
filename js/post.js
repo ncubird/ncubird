@@ -1,5 +1,6 @@
 function Post_controller(post_button_id){
 	this.post_button_id = post_button_id;
+	this.gmap = new Google_map('post_map');
 }
 
 Post_controller.prototype.init = function(eventcallback){
@@ -29,9 +30,9 @@ Post_controller.prototype.init = function(eventcallback){
 
 	console.log(document.getElementById('post_map'));
 
-	var gmap = new Google_map('post_map');
-	gmap.add_marker('from','post_location_from','pin-green.png');
-	gmap.add_marker('to','post_location_to','pin-red.png');
+	
+	this.gmap.add_marker('from','post_location_from','pin-green.png');
+	this.gmap.add_marker('to','post_location_to','pin-red.png');
 
 	
 	this.event_post_button_onclick(eventcallback)

@@ -80,6 +80,7 @@ Google_map.prototype.reset_bound = function(){
 	for(var i=0;i<markers.length;i++){
 		if(markers[i]['object'] != undefined){
 			bounds.extend(markers[i]['object'].getPosition());
+			console.log(markers[i]['object'].getPosition());
 		}		
 	}
 	
