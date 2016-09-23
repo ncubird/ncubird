@@ -69,9 +69,9 @@ Post_controller.prototype.init = function(eventcallback){
 
 	    var icon = {
 	        url: "./images/pin-green.png",
-	        size: new google.maps.Size(71, 71),
+	        size: new google.maps.Size(46, 71),
 	        origin: new google.maps.Point(0, 0),
-	        anchor: new google.maps.Point(17, 34),
+	        anchor: new google.maps.Point(0, 36),
 	        scaledSize: new google.maps.Size(25, 25)
 	    };
 
@@ -81,6 +81,10 @@ Post_controller.prototype.init = function(eventcallback){
 	        title: place.name,
 	        position: place.geometry.location
 	    })
+
+	    map.addListener(marker_to, 'dragend', function () {
+            geocodePosition(geocoder, marker_to.getPosition(), cityCircle, marker_to);
+        });
 
 	    if (place.geometry.viewport) {
 	        // Only geocodes have viewport.
@@ -122,9 +126,7 @@ Post_controller.prototype.init = function(eventcallback){
 	        position: place.geometry.location
 	    })
 
-	    google.maps.event.addListener(marker_to, 'dragend', function () {
-            geocodePosition(geocoder, marker_to.getPosition(), cityCircle, marker_to);
-        });
+	 
 
 	    if (place.geometry.viewport) {
 	        // Only geocodes have viewport.
@@ -147,7 +149,7 @@ function geocodePosition(geocoder, pos, cityCircle, marker) {
             if (results[0]) {
                 document.getElementById("address").value = results[0].formatted_address;
                 $scope.$apply(function () {
-                    vm.location.address = document.getElementById('post_location_to').value;
+                    vm.location.address = document.getElementById('post_location_from').value;
                     vm.location.longitude = pos.lng().toFixed(6);
                     vm.location.latitude = pos.lng().toFixed(6);
                 });
