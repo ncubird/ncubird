@@ -5,6 +5,6 @@
 
 .profile-my-photo{
 	height: 64px !important;
-	width: auto;
+	width: auto !important;
 	left: 3% !important;
 }
