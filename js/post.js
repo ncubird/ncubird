@@ -27,9 +27,12 @@ Post_controller.prototype.init = function(eventcallback){
 		}
 	})
 
+	console.log(document.getElementById('post_map'));
+
 	var map = new google.maps.Map(document.getElementById('post_map'), {
 	  center: {lat: -34.397, lng: 150.644},
-	  zoom: 8
+	  zoom: 8,
+	  mapTypeId: google.maps.MapTypeId.ROADMAP
 	});
 
 	this.event_post_button_onclick(eventcallback)
