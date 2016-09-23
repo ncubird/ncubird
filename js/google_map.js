@@ -39,6 +39,7 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id,pin_image
     	searchbox.setBounds(self.map.getBounds());
   	});
 
+
   	searchbox.addListener('places_changed',function(){
   		var places = searchbox.getPlaces();
 
@@ -67,6 +68,11 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id,pin_image
 	        title: place.name,
 	        position: place.geometry.location
 	    })
+
+	    $('#'+bind_searchbox_id).on("change",function(){
+	    	self.markers[cursur]['object'].setMap(null);
+	    	$('#'+bind_searchbox_id).off("change");
+	    });
 
 	    self.reset_bound();
   	});

@@ -38,6 +38,8 @@ Post_controller.prototype.init = function(eventcallback){
 	this.gmap.add_marker(INPUT_TO_MARKERID,'post_location_to','pin-red.png');
 
 	
+
+	
 	this.event_post_button_onclick(eventcallback)
 }
 
