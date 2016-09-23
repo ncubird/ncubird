@@ -1,3 +1,7 @@
 #post_map { 
 	height: 200px; 
 }
+
+form.post-form > div.row {
+	margin-bottom: 10px;
+}
