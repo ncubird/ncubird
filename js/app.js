@@ -66,11 +66,11 @@ $( document ).ready(function() {
     function calander_add_tag(res){
         for(var i=0;i<res.length;i++){
             console.log("====== addtag ======");
-            var start_time = new Date(res['start']);
-            var end_time = new Date(res['end']);
-            console.log(res['other_message']);
-            var other_message = JSON.parse(res['other_message']);                            
-            calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth()+1,start_time.getDate()+1,other_message['facebook_id'],res['event_title']);
+            var start_time = new Date(res[i]['start']);
+            var end_time = new Date(res[i]['end']);
+            console.log(res[i]['other_message']);
+            var other_message = JSON.parse(res[i]['other_message']);                            
+            calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth()+1,start_time.getDate()+1,other_message['facebook_id'],res[i]['event_title']);
         }
     }
 
