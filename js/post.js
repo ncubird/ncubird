@@ -69,10 +69,10 @@ Post_controller.prototype.init = function(eventcallback){
 
 	    var icon = {
 	        url: "./images/pin-green.png",
-	        size: new google.maps.Size(46, 92),
+	        size: new google.maps.Size(46, 71),
 	        origin: new google.maps.Point(0, 0),
-	        anchor: new google.maps.Point(0, 36),
-	        scaledSize: new google.maps.Size(25, 25)
+	        anchor: new google.maps.Point(0, 17),
+	        scaledSize: new google.maps.Size(23, 35)
 	    };
 
 	    marker_form = new google.maps.Marker({
