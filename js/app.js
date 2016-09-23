@@ -67,6 +67,7 @@ $( document ).ready(function() {
 
 function calander_add_tag(res){
     for(var i=0;i<res.length;i++){
+        console.log("====== addtag ======");
         var start_time = new Date(res['start']);
         var end_time = new Date(res['end']);
         var other_message = res['other_message'];                            
