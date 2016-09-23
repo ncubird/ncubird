@@ -18,8 +18,12 @@
 	height: 48px;
 }
 
-.profile-photo{
+.profile-photo-myself{
 	width: 80%;
+}
+
+.profile-photo-join{
+	width: 40%;
 }
 
 .profile-data{
