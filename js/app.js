@@ -68,6 +68,7 @@ $( document ).ready(function() {
     });
 
     const EVENT_TITLE = { post_have_seat:"我有位子",post_find_seat:"我找司機",post_together_seat:"找人共乘"}
+    const GENDER = { boy:"男", girl:"女"}
 
     function calander_add_tag(res){
         for(var i=0;i<res.length;i++){
@@ -76,25 +77,19 @@ $( document ).ready(function() {
             var end_time = new Date(res[i]['end']);
             var other_message = res[i]['other_message'];
             var message = undefined;
-            if(calendar_controller.search_type != 'all'){
-                if(calendar_controller.search_type == res[i]['event_title']){
-                    message = EVENT_TITLE[''+res[i]['event_title']] + '\n';
-                }
-            }else{
-                 message = EVENT_TITLE[''+res[i]['event_title']] + '\n';
-            }
-
             if(calendar_controller.search_type != 'all'){               
-                message = message + other_message[calendar_controller.search_type] + '\n';                
+                message = other_message[calendar_controller.search_type] + '\n';                
             }else{
-                message = message + other_message['gender'] + '\n' + other_message['location_from'] + '\n' + other_message['location_to'] + '\n' + other_message['bonus_response'];     
+                message = '我是' + GENDER[other_message['gender']] + '生，' +  '想從' + other_message['location_from'] + '做到' + other_message['location_to'] + '，坐一次' + other_message['bonus_response'];     
             }
 
             if(message != undefined){
                 if(calendar_controller.search_type != 'all'){
-                    calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],message,other_message['gender']);
+                    if(calendar_controller.search_type == res[i]['event_title']){
+                        calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],message,other_message['gender']);
+                    }
                 }else{
-                    calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],message,res[i]['event_title']);
+                    calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],EVENT_TITLE[message,res[i]['event_title']]);
                 }
             }                        
             
