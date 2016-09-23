@@ -37,7 +37,7 @@ Post_controller.prototype.init = function(eventcallback){
 	this.gmap.add_marker(INPUT_FROM_MARKERID,'post_location_from','pin-green.png');
 	this.gmap.add_marker(INPUT_TO_MARKERID,'post_location_to','pin-red.png');
 
-	
+
 
 	
 	this.event_post_button_onclick(eventcallback)
@@ -85,6 +85,8 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		}else{
 			console.log(self.gmap.get_location(INPUT_TO_MARKERID));
 			console.log(self.gmap.get_location(INPUT_FROM_MARKERID));
+			location_from_latlng = self.gmap.get_location(INPUT_FROM_MARKERID);
+			location_to_latlng = self.gmap.get_location(INPUT_TO_MARKERID);
 		}
 
 		var sdate = $('#post_time_from_date').val();
@@ -187,7 +189,9 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 				gender : gender,
 				facebook_id : "test",
 				location_from : location_from,
+				location_from_latlng : location_from_latlng,
 				location_to : location_to,
+				location_to_latlng : location_to_latlng,
 				bonus_response : bonus_response,
 				people_number : people_number,
 				others : others,

@@ -71,6 +71,7 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id,pin_image
 
 	    $('#'+bind_searchbox_id).on("change",function(){
 	    	self.markers[cursur]['object'].setMap(null);
+	    	console.log("change");
 	    	$('#'+bind_searchbox_id).off("change");
 	    });
 
@@ -86,7 +87,7 @@ Google_map.prototype.reset_bound = function(){
 	for(var i=0;i<markers.length;i++){
 		if(markers[i]['object'] != undefined){
 			bounds.extend(markers[i]['object'].getPosition());
-			console.log(markers[i]['object'].getPosition());
+			// console.log(markers[i]['object'].getPosition());
 		}		
 	}
 	
