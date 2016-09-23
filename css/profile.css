@@ -9,6 +9,11 @@
     vertical-align: middle;
 }
 
+.profile-time{
+	display: table-cell;
+    vertical-align: middle;
+}
+
 .profile-card{
 	height: 48px;
 }
