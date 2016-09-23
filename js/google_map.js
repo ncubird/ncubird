@@ -10,7 +10,7 @@ function Google_map(map_id){
 
 Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
 	var self= this;
-	this.map = google.maps.Map(document.getElementById(this.map_id), {
+	this.map = google.maps.Map(document.getElementById('post_map'), {
 	  center: {lat: 25.02, lng: 121.30},
 	  zoom: 8,
 	  mapTypeId: google.maps.MapTypeId.ROADMAP
