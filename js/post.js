@@ -28,8 +28,12 @@ Post_controller.prototype.init = function(eventcallback){
 	})
 
 	console.log(document.getElementById('post_map'));
-
-	var gmap = new Google_map('post_map');
+	var map = google.maps.Map(document.getElementById('post_map'), {
+	  center: {lat: 25.02, lng: 121.30},
+	  zoom: 8,
+	  mapTypeId: google.maps.MapTypeId.ROADMAP
+	});
+	var gmap = new Google_map(map);
 	gmap.add_marker('from','input_location_from');
 
 	
