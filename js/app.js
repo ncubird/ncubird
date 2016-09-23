@@ -32,7 +32,7 @@ $( document ).ready(function() {
                         });
                     });
                     console.log("calander");
-                    var now_time = new Data();
+                    var now_time = new Date();
                     module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),function(res){
                         calander_add_tag(res);
                     });
