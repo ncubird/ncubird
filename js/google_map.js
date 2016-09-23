@@ -23,8 +23,8 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
     	searchbox.setBounds(self.map.getBounds());
   	});
 
-  	marker_obj.addListener('places_changed',function(){
-  		var places = marker_obj.getPlaces();
+  	searchbox.addListener('places_changed',function(){
+  		var places = searchbox.getPlaces();
 
 	    if (places.length == 0 || places.length >1 ) {
 	      return;
