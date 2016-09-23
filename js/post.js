@@ -48,7 +48,7 @@ Post_controller.prototype.init = function(eventcallback){
     	searchBox_location_from.setBounds(map.getBounds());
   	});
 
-  	searchBox_location_from.addListener('places_changes',function(){
+  	searchBox_location_from.addListener('places_changed',function(){
   		var places = searchBox_location_from.getPlaces();
 
 	    if (places.length == 0) {
