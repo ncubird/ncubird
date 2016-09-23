@@ -46,7 +46,8 @@ Module_google_script.prototype.get_event_for_month = function(year,month,callbac
 	    success: function(response){
 	        console.log("success" + JSON.stringify(response));
 	        if(response['resultcode'] == 200 ){
-	        	callback(response.data);
+	        	 console.log("success" + JSON.stringify(response['data']));
+	        	callback(response['data']);
 	        }	        
 	    },
 	    error: function(response){
