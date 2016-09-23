@@ -51,8 +51,7 @@ Post_controller.prototype.init = function(eventcallback){
   	searchBox_location_from.addListener('places_changed',function(){
   		var places = searchBox_location_from.getPlaces();
 
-	    if (places.length == 0) {
-	      console.log("test");
+	    if (places.length == 0 || places.length >1 ) {
 	      return;
 	    }
 
@@ -61,6 +60,8 @@ Post_controller.prototype.init = function(eventcallback){
 	    }
 
 	    var bounds = new google.maps.LatLngBounds();
+
+	    var place = places[0];
 
 	    var icon = {
 	        url: "./images/pin-green.png",
