@@ -89,12 +89,13 @@ $( document ).ready(function() {
             }else{
                 message = message + other_message['gender'] + '\n' + other_message['location_from'] + '\n' + other_message['location_to'] + '\n' + other_message['bonus_response'];     
             }
-            
+
             if(message != undefined){
                 calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],res[i]['event_title']);
             }                        
             
         }
+        $('.tooltipped').tooltip({delay: 50});
     }
 
 });
