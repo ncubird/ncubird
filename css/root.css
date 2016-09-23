@@ -18,8 +18,9 @@ body {
 }
 
 .blockmodal {
-    display: none; /* Hidden by default */
+    display: table; /* Hidden by default */
     position: fixed; /* Stay in place */
+    padding-top: 100%;
     z-index: 100; /* Sit on top */
     left: 0;
     bottom: 0;
@@ -31,10 +32,11 @@ body {
     -webkit-animation-name: fadeIn; /* Fade in the background */
     -webkit-animation-duration: 0.4s;
     animation-name: fadeIn;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
 }
 
 .blockmodal-child {
+	display: table-cell;
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
