@@ -79,11 +79,12 @@ Post_controller.prototype.init = function(eventcallback){
 	        map: map,
 	        icon: icon,
 	        title: place.name,
+	        dragend: true,
 	        position: place.geometry.location
 	    })
 
-	    map.addListener(marker_to, 'dragend', function () {
-            geocodePosition(geocoder, marker_to.getPosition(), cityCircle, marker_to);
+	    google.maps.event.addListener(marker_form, 'dragend', function () {
+            geocodePosition(geocoder, marker_form.getPosition(), cityCircle, marker_form);
         });
 
 	    if (place.geometry.viewport) {
