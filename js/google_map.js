@@ -87,5 +87,20 @@ Google_map.prototype.reset_bound = function(){
     this.map.fitBounds(bounds);
 }
 
+Google_map.prototype.get_location = function(marker_id){
+	var markers = this.markers;
+	var bounds = new google.maps.LatLngBounds();
+
+	for(var i=0;i<markers.length;i++){
+		if(markers[i]['id'] == marker_id){
+			if(markers[i]['object'] != undefined){
+				return markers[i]['object'].getPosition().toJSON();
+			}			
+		}		
+	}
+
+	return null;
+}
+
 
 

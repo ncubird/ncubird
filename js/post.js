@@ -3,6 +3,9 @@ function Post_controller(post_button_id){
 	this.gmap;
 }
 
+const INPUT_FROM_MARKERID = 'from';
+const INPUT_TO_MARKERID = 'to';
+
 Post_controller.prototype.init = function(eventcallback){
 	Materialize.updateTextFields();
 	$('select').material_select();
@@ -31,8 +34,8 @@ Post_controller.prototype.init = function(eventcallback){
 	console.log(document.getElementById('post_map'));
 
 	this.gmap = new Google_map('post_map');
-	this.gmap.add_marker('from','post_location_from','pin-green.png');
-	this.gmap.add_marker('to','post_location_to','pin-red.png');
+	this.gmap.add_marker(INPUT_FROM_MARKERID,'post_location_from','pin-green.png');
+	this.gmap.add_marker(INPUT_TO_MARKERID,'post_location_to','pin-red.png');
 
 	
 	this.event_post_button_onclick(eventcallback)
@@ -77,6 +80,9 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			|| location_to == "" || location_to == null || location_to == undefined){
 			Materialize.toast('請輸入地點', 2000);
 			return;
+		}else{
+			console.log(self.gmap.get_location(INPUT_TO_MARKERID));
+			console.log(self.gmap.get_location(INPUT_FROM_MARKERID));
 		}
 
 		var sdate = $('#post_time_from_date').val();
