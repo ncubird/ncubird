@@ -181,7 +181,12 @@ Calander_controller.prototype.calander_refresh_tag = function(res){
         if(message != undefined){
             if(this.search_type != 'all'){
                 if(this.search_type == res[i]['event_title']){
-                    this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],message,GENDER[other_message['gender']]);
+                	if(this.search_info == 'gender'){
+                		this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],message,GENDER[other_message['gender']]);
+                	}else{
+                		this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],message,other_message[this.search_info]);
+                	}
+                    
                 }
             }else{
                 this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],message,EVENT_TITLE[res[i]['event_title']]);
