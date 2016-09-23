@@ -103,16 +103,16 @@ Calander_controller.prototype.template_calander_box = function(year,month,day){
 		    +"</li>"
 }
 
-Calander_controller.prototype.template_calander_tag = function(facebook_id,message){
-	return "<div class=\"tooltipped chip calander-day-people-chip\">"
-			  	+"<img class=\"calander-day-people-photo circle\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\""+message+"\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" />"
+Calander_controller.prototype.template_calander_tag = function(facebook_id,toast_message,message){
+	return "<div class=\"tooltipped chip calander-day-people-chip\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\""+toast_message+"\">"
+			  	+"<img class=\"calander-day-people-photo circle\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" />"
 			  	+message
 			+"</div>"
 }
 
-Calander_controller.prototype.set_calander_tag = function(year,month,day,facebook_id,message){
+Calander_controller.prototype.set_calander_tag = function(year,month,day,facebook_id,toast_message,message){
 	if($('#'+"calender-"+year+'-'+month+'-'+day) != undefined){
-		$('#'+"calender-"+year+'-'+month+'-'+day).html($('#'+"calender-"+year+'-'+month+'-'+day).html()+this.template_calander_tag(facebook_id,message));
+		$('#'+"calender-"+year+'-'+month+'-'+day).html($('#'+"calender-"+year+'-'+month+'-'+day).html()+this.template_calander_tag(facebook_id,toast_message,message));
 	}
 }
 

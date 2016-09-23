@@ -91,7 +91,11 @@ $( document ).ready(function() {
             }
 
             if(message != undefined){
-                calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],res[i]['event_title']);
+                if(calendar_controller.search_type != 'all'){
+                    calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],message,other_message['gender']);
+                }else{
+                    calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],message,res[i]['event_title']);
+                }
             }                        
             
         }
