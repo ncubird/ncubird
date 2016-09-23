@@ -52,6 +52,7 @@ Post_controller.prototype.init = function(eventcallback){
   		var places = searchBox_location_from.getPlaces();
 
 	    if (places.length == 0) {
+	      console.log("test");
 	      return;
 	    }
 
