@@ -140,7 +140,7 @@ Calander_controller.prototype.set_today = function(){
 	var now_time = new Date();
 	console.log($('#'+"calender-"+now_time.getYear()+1900+'-'+now_time.getMonth()+'-'+now_time.getDate()));
 	if($('#'+"calender-"+now_time.getYear()+1900+'-'+now_time.getMonth()+'-'+now_time.getDate()) != undefined){
-		console.log($('#'+"calender-"+now_time.getYear()+1900+'-'+now_time.getMonth()+'-'+now_time.getDate()));
-		$('#'+"calender-"+now_time.getYear()+1900+'-'+now_time.getMonth()+'-'+now_time.getDate()).addClass("calander-today");
+		console.log($('#'+"calender-"+(now_time.getYear()+1900)+'-'+now_time.getMonth()+'-'+now_time.getDate()));
+		$('#'+"calender-"+(now_time.getYear()+1900)+'-'+now_time.getMonth()+'-'+now_time.getDate()).addClass("calander-today");
 	}	
 }
