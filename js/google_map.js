@@ -30,7 +30,7 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
 
     if(cursur < 0){
     	this.markers.push(marker);
-    	cursur = self.markers.length;
+    	cursur = self.markers.length-1;
     }
 	var input_searchbox = document.getElementById(bind_searchbox_id);
 	var searchbox = new google.maps.places.SearchBox(input_searchbox,{bounds: this.defaultBounds});
@@ -45,7 +45,6 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
 	    if (places.length == 0 || places.length >1 ) {
 	      return;
 	    }
-
 	   	if(self.markers[cursur]['object'] != undefined){
 	   		self.markers[cursur]['object'].setMap(null);
 	   	}
