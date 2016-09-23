@@ -30,7 +30,7 @@ Post_controller.prototype.init = function(eventcallback){
 	console.log(document.getElementById('post_map'));
 
 	var map = new google.maps.Map(document.getElementById('post_map'), {
-	  center: {lat: -34.397, lng: 150.644},
+	  center: {lat: 25.02, lng: 121.30},
 	  zoom: 8,
 	  mapTypeId: google.maps.MapTypeId.ROADMAP
 	});
@@ -38,11 +38,15 @@ Post_controller.prototype.init = function(eventcallback){
 	var marker_form = undefined;
 	var marker_to;
 
+	var defaultBounds = new google.maps.LatLngBounds(
+	  new google.maps.LatLng(25.18, 120.04),
+	  new google.maps.LatLng(21.54, 121.59));
+
 	var input_location_from = document.getElementById('post_location_from');
-  	var searchBox_location_from = new google.maps.places.SearchBox(input_location_from);
+  	var searchBox_location_from = new google.maps.places.SearchBox(input_location_from,{bounds: defaultBounds});
 
   	var input_location_to = document.getElementById('post_location_to');
-  	var searchBox_location_to = new google.maps.places.SearchBox(input_location_to);
+  	var searchBox_location_to = new google.maps.places.SearchBox(input_location_to,{bounds: defaultBounds});
 
   	map.addListener('bounds_changed', function() {
     	searchBox_location_from.setBounds(map.getBounds());
@@ -65,6 +69,45 @@ Post_controller.prototype.init = function(eventcallback){
 
 	    var icon = {
 	        url: "./images/pin-green.png",
+	        size: new google.maps.Size(71, 71),
+	        origin: new google.maps.Point(0, 0),
+	        anchor: new google.maps.Point(17, 34),
+	        scaledSize: new google.maps.Size(25, 25)
+	    };
+
+	    marker_form = new google.maps.Marker({
+	        map: map,
+	        icon: icon,
+	        title: place.name,
+	        position: place.geometry.location
+	    })
+
+	    if (place.geometry.viewport) {
+	        // Only geocodes have viewport.
+	        bounds.union(place.geometry.viewport);
+	    } else {
+	      	bounds.extend(place.geometry.location);
+	    }
+	    map.fitBounds(bounds);
+  	});
+
+  	searchBox_location_to.addListener('places_changed',function(){
+  		var places = searchBox_location_to.getPlaces();
+
+	    if (places.length == 0 || places.length >1 ) {
+	      return;
+	    }
+
+	    if(marker_to != undefined){
+	    	marker_to = undefined;
+	    }
+
+	    var bounds = new google.maps.LatLngBounds();
+
+	    var place = places[0];
+
+	    var icon = {
+	        url: "./images/pin-red.png",
 	        size: new google.maps.Size(71, 71),
 	        origin: new google.maps.Point(0, 0),
 	        anchor: new google.maps.Point(17, 34),
