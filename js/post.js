@@ -198,7 +198,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 				people_number : people_number,
 				others : others,
 				peroid : peroid,
-				submit_time : now_time.getTime();
+				submit_time : now_time.getTime(),
 				passenger: []
 			}
 		}
