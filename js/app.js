@@ -27,14 +27,18 @@ $( document ).ready(function() {
                         $(".root-background").css('height','0xp');
                         $(".root-background").height(0);
                         $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
+                        util.set_block();
                         module_google_script.get_event_for_month(calendar_controller.year,calendar_controller.month,function(res){
                             calander_add_tag(res);
+                            util.set_unblock();
                         });
                     });
                     console.log("calander");
                     var now_time = new Date();
+                    util.set_block();
                     module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),function(res){
                         calander_add_tag(res);
+                        util.set_unblock();
                     });
 
                     

@@ -39,3 +39,11 @@ Util.prototype.get_template_byID = function(id){
 	}
 	return null;
 }
+
+Util.prototype.set_block = function(){
+	$('.modal').css('display','block')
+}
+
+Util.prototype.set_unblock = function(){
+	$('.modal').css('display','none')
+}
