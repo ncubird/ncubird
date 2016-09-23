@@ -49,7 +49,7 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
 	   		self.markers[cursur]['object'].setMap(null);
 	   	}
 
-	    var bounds = new google.maps.LatLngBounds();
+	    
 
 	    var place = places[0];
 
@@ -68,15 +68,21 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
 	        position: place.geometry.location
 	    })
 
-	    if (place.geometry.viewport) {
-	        // Only geocodes have viewport.
-	        bounds.union(place.geometry.viewport);
-	    } else {
-	      	bounds.extend(place.geometry.location);
-	    }
-	    self.map.fitBounds(bounds);
+	    
   	});
 };
+
+
+Google_map.prototype.reset_bound = function(){
+	var markers = this.markers;
+	var bounds = new google.maps.LatLngBounds();
+
+	for(var i=0;i<markers.length;i++){
+		bounds.extend(markers[i].getPosition());
+	}
+	
+    this.map.fitBounds(bounds);
+}
 
 
 
