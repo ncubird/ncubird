@@ -67,14 +67,33 @@ $( document ).ready(function() {
     	$(".root-background").height(0);   	
     });
 
+    const EVENT_TITLE = { post_have_seat:"我有位子",post_find_seat:"我找司機",post_together_seat:"找人共乘"}
+
     function calander_add_tag(res){
         for(var i=0;i<res.length;i++){
             console.log("====== addtag ======");
             var start_time = new Date(res[i]['start']);
             var end_time = new Date(res[i]['end']);
             var other_message = res[i]['other_message'];
-            console.log((start_time.getYear()+1900)+','+(start_time.getMonth())+','+(start_time.getDate())+','+other_message['facebook_id']+','+res[i]['event_title']);                         
-            calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],res[i]['event_title']);
+            var message = undefined;
+            if(calendar_controller.search_type != 'all'){
+                if(calendar_controller.search_type == res[i]['event_title']){
+                    message = EVENT_TITLE[''+res[i]['event_title']] + '\n';
+                }
+            }else{
+                 message = EVENT_TITLE[''+res[i]['event_title']] + '\n';
+            }
+
+            if(calendar_controller.search_type != 'all'){               
+                message = message + other_message[calendar_controller.search_type] + '\n';                
+            }else{
+                message = message + other_message['gender'] + '\n' + other_message['location_from'] + '\n' + other_message['location_to'] + '\n' + other_message['bonus_response'];     
+            }
+            
+            if(message != undefined){
+                calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],res[i]['event_title']);
+            }                        
+            
         }
     }
 

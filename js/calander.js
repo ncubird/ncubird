@@ -10,6 +10,8 @@ function Calander_controller(calander_class,title_year_class,title_month_class){
 	this.title_year_class = title_year_class;
 	this.title_month_class = title_month_class;
 	this.calander_class = calander_class;
+	this.search_type = "all";
+	this.search_info = "all";;
 }
 
 const MONTH = ['January','February','March','April','May','June','July','August','September','October','November' ,'December'];
@@ -38,6 +40,8 @@ Calander_controller.prototype.generate_offset = function (year,month) {
 
 Calander_controller.prototype.set_calander_template = function (year,month,event_callback) {
 	this.generate_offset(year,month);
+	this.search_type = $("#calander_search_type").val();
+	this.search_info = $("#calander_search_info").val();
 	
 	console.log('---'+year+'==='+month+','+this.offset);
 	if($('.'+this.calander_class) != undefined){
