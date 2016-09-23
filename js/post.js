@@ -178,6 +178,8 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			end_peroid = smonth +' '+ ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[parseInt(split_sdate[1])]) + ', ' +syear + ' ' + shour + ':' + sminute + ':00';
 		}
 
+		var now_time = new Date();
+
 		var data = {
 			function_type : "add_to_calander",
 			event_title : type,
@@ -187,7 +189,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 			end_peroid : end_peroid,
 			other_message :{				
 				gender : gender,
-				facebook_id : "test",
+				facebook_id : $('#facebook_userid').html(),
 				location_from : location_from,
 				location_from_latlng : location_from_latlng,
 				location_to : location_to,
@@ -196,6 +198,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 				people_number : people_number,
 				others : others,
 				peroid : peroid,
+				submit_time : now_time.getTime();
 				passenger: []
 			}
 		}

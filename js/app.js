@@ -27,10 +27,16 @@ $( document ).ready(function() {
                         $(".root-background").css('height','0xp');
                         $(".root-background").height(0);
                         $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
-                        calendar_controller.set_calander_tag(2016,8,20,100000244681661,"test");
+                        module_google_script.get_event_for_month(calendar_controller.year,calendar_controller.month,function(res){
+                            calander_add_tag(res);
+                        });
                     });
                     console.log("calander");
-                    calendar_controller.set_calander_tag(2016,8,20,100000244681661,"test");
+                    var now_time = new Data();
+                    module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),function(res){
+                        calander_add_tag(res);
+                    });
+
                     
                     }
                     break;
@@ -57,7 +63,13 @@ $( document ).ready(function() {
     	$(".root-background").height(0);   	
     });
 
-
-    
-    
 });
+
+function calander_add_tag(res){
+    for(var i;i<res.length;i++){
+        var start_time = new Date(res['start']);
+        var end_time = new Date(res['end']);
+        var other_message = res['other_message'];                            
+        calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth()+1,now_time.getDate()+1,other_message['facebook_id'],res['event_title']);
+    }
+}
