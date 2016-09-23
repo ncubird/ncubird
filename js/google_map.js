@@ -14,7 +14,7 @@ function Google_map(map_id){
 Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
 	var self= this;
 	var marker = {};
-	var marker_obj;
+	var marker_obj = undefined;
 	marker['id'] = marker_id;
 	var input_searchbox = document.getElementById(bind_searchbox_id);
 	var searchbox = new google.maps.places.SearchBox(input_searchbox,{bounds: this.defaultBounds});
@@ -47,7 +47,7 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
 	    };
 
 	    marker_obj = new google.maps.Marker({
-	        map: map,
+	        map: self.map,
 	        icon: icon,
 	        title: place.name,
 	        position: place.geometry.location
