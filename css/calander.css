@@ -24,6 +24,11 @@
 	width: 85% !important;
 }
 
+.calander-menu{
+    margin-top: 20px;
+    margin-bottom: 10px !important;
+}
+
 /* Weekdays (Mon-Sun) */
 .calander-weekdays {
     margin: 0;
