@@ -11,59 +11,59 @@ function Google_map(map_id){
 }
 
 
-// Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
-// 	var self= this;
-// 	var marker = {};
-// 	var marker_obj = undefined;
-// 	marker['id'] = marker_id;
-// 	var input_searchbox = document.getElementById(bind_searchbox_id);
-// 	var searchbox = new google.maps.places.SearchBox(input_searchbox,{bounds: this.defaultBounds});
+Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
+	var self= this;
+	var marker = {};
+	var marker_obj = undefined;
+	marker['id'] = marker_id;
+	var input_searchbox = document.getElementById(bind_searchbox_id);
+	var searchbox = new google.maps.places.SearchBox(input_searchbox,{bounds: this.defaultBounds});
 
-// 	this.map.addListener('bounds_changed', function() {
-//     	searchbox.setBounds(self.map.getBounds());
-//   	});
+	this.map.addListener('bounds_changed', function() {
+    	searchbox.setBounds(self.map.getBounds());
+  	});
 
-//   	searchbox.addListener('places_changed',function(){
-//   		var places = searchbox.getPlaces();
+  	searchbox.addListener('places_changed',function(){
+  		var places = searchbox.getPlaces();
 
-// 	    if (places.length == 0 || places.length >1 ) {
-// 	      return;
-// 	    }
+	    if (places.length == 0 || places.length >1 ) {
+	      return;
+	    }
 
-// 	    if(marker_obj != undefined){
-// 	    	marker_obj = undefined;
-// 	    }
+	    if(marker_obj != undefined){
+	    	marker_obj = undefined;
+	    }
 
-// 	    var bounds = new google.maps.LatLngBounds();
+	    var bounds = new google.maps.LatLngBounds();
 
-// 	    var place = places[0];
+	    var place = places[0];
 
-// 	    var icon = {
-// 	        url: "./images/pin-green.png",
-// 	        size: new google.maps.Size(46, 71),
-// 	        origin: new google.maps.Point(0, 0),
-// 	        anchor: new google.maps.Point(0, 17),
-// 	        scaledSize: new google.maps.Size(23, 35)
-// 	    };
+	    var icon = {
+	        url: "./images/pin-green.png",
+	        size: new google.maps.Size(46, 71),
+	        origin: new google.maps.Point(0, 0),
+	        anchor: new google.maps.Point(0, 17),
+	        scaledSize: new google.maps.Size(23, 35)
+	    };
 
-// 	    marker_obj = new google.maps.Marker({
-// 	        map: self.map,
-// 	        icon: icon,
-// 	        title: place.name,
-// 	        position: place.geometry.location
-// 	    })
+	    marker_obj = new google.maps.Marker({
+	        map: self.map,
+	        icon: icon,
+	        title: place.name,
+	        position: place.geometry.location
+	    })
 
-// 	    if (place.geometry.viewport) {
-// 	        // Only geocodes have viewport.
-// 	        bounds.union(place.geometry.viewport);
-// 	    } else {
-// 	      	bounds.extend(place.geometry.location);
-// 	    }
-// 	    self.map.fitBounds(bounds);
+	    if (place.geometry.viewport) {
+	        // Only geocodes have viewport.
+	        bounds.union(place.geometry.viewport);
+	    } else {
+	      	bounds.extend(place.geometry.location);
+	    }
+	    self.map.fitBounds(bounds);
 
-// 	    markers['object'] = marker_obj;
-//   	});
-// };
+	    markers['object'] = marker_obj;
+  	});
+};
 
 
 

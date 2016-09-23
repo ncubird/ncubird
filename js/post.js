@@ -30,7 +30,7 @@ Post_controller.prototype.init = function(eventcallback){
 	console.log(document.getElementById('post_map'));
 
 	var gmap = new Google_map('post_map');
-	gmap.add_marker('from','input_location_from');
+	gmap.add_marker('from','post_location_from');
 
 	
 	this.event_post_button_onclick(eventcallback)
