@@ -88,7 +88,7 @@ Calander_controller.prototype.set_click_event = function(event_callback){
 		event_callback();
 	})
 
-	("#calander_search_type").off('change')
+	$("#calander_search_type").off('change')
 	$("#calander_search_type").on('change',function(){
 		this.search_type = $("#calander_search_type").val();
 		self.calander_refresh_tag(this.tmp_data);
