@@ -38,14 +38,22 @@
       		<div class="col s12 m1">
       			<span>地點：</span>
       		</div>
-      		<div class="input-field col s12 m5">
-          		<input placeholder="中央大學男生宿舍" id="post_location_from" type="text" class="validate">
-          		<label class="active" >從</label>
+      		<div class="col s12 m6">
+              <div class="row">
+                <div class="input-field col s12 m12">
+                  <input placeholder="中央大學男生宿舍" id="post_location_from" type="text" class="validate">
+                  <label class="active" >從</label>
+                </div>
+                <div class="input-field col s12 m12">
+                  <input placeholder="中央大學女生宿舍" id="post_location_to" type="text" class="validate">
+                  <label class="active" >到</label>
+                </div>
+              </div>         		
         	</div>
-        	<div class="input-field col s12 m5">
-        		<input placeholder="中央大學女生宿舍" id="post_location_to" type="text" class="validate">
-        		<label class="active" >到</label>
-        	</div>
+          <div class="col s12 m5">
+            <div id="post-map"></div>
+          </div>
+        	
       	</div>
 
       	<div class="row">
@@ -136,6 +144,8 @@
           		<label for="post_other_message">其他備註</label>
         	</div>
       	</div>
+
+        
 
       	<div class="row">
       		<div class="col s2 offset-s10">

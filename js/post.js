@@ -27,6 +27,11 @@ Post_controller.prototype.init = function(eventcallback){
 		}
 	})
 
+	var map = new google.maps.Map($('#post-map').attr('id'), {
+	  center: {lat: -34.397, lng: 150.644},
+	  zoom: 8
+	});
+
 	this.event_post_button_onclick(eventcallback)
 }
 
