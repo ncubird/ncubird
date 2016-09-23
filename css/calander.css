@@ -28,7 +28,7 @@
 }
 
 .calander-today{
-    background-color: #AAA;
+    background-color: #AAA !important;
 }
 
 /* Weekdays (Mon-Sun) */
