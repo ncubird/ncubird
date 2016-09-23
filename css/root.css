@@ -17,7 +17,7 @@ body {
     vertical-align: middle;
 }
 
-.modal {
+.blockmodal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -34,7 +34,7 @@ body {
     animation-duration: 0.4s
 }
 
-.modal-header {
+.blockmodal-child {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
