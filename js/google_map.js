@@ -54,7 +54,7 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id,pin_image
 	    var place = places[0];
 
 	    var icon = {
-	        url: "./images/+"+pin_image,
+	        url: "./images/"+pin_image,
 	        size: new google.maps.Size(46, 71),
 	        origin: new google.maps.Point(0, 0),
 	        anchor: new google.maps.Point(0, 17),
