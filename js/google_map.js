@@ -78,7 +78,9 @@ Google_map.prototype.reset_bound = function(){
 	var bounds = new google.maps.LatLngBounds();
 
 	for(var i=0;i<markers.length;i++){
-		bounds.extend(markers[i].getPosition());
+		if(markers[i]['object'] != undefined){
+			bounds.extend(markers[i]['object'].getPosition());
+		}		
 	}
 	
     this.map.fitBounds(bounds);
