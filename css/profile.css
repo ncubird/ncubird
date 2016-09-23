@@ -1,3 +1,23 @@
 .profile-item{
 	vertical-align: middle;
+	display: table;
+	height: 100%;
+}
+
+.profile-date{
+	display: table-cell;
+    vertical-align: middle;
+}
+
+.profile-card{
+	height: 48px;
+}
+
+.profile-photo{
+	width: 80%;
+}
+
+.profile-data{
+	display: table-cell;
+    vertical-align: middle;
 }
