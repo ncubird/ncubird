@@ -69,8 +69,8 @@ $( document ).ready(function() {
             var start_time = new Date(res[i]['start']);
             var end_time = new Date(res[i]['end']);
             var other_message = res[i]['other_message'];
-            console.log((start_time.getYear()+1900)+','+(start_time.getMonth()+1)+','+(start_time.getDate()+1)+','+other_message['facebook_id']+','+res[i]['event_title']);                         
-            calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth()+1,start_time.getDate()+1,other_message['facebook_id'],res[i]['event_title']);
+            console.log((start_time.getYear()+1900)+','+(start_time.getMonth())+','+(start_time.getDate())+','+other_message['facebook_id']+','+res[i]['event_title']);                         
+            calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],res[i]['event_title']);
         }
     }
 
