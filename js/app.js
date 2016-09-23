@@ -29,17 +29,26 @@ $( document ).ready(function() {
                         $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
                         util.set_block();
                         module_google_script.get_event_for_month(calendar_controller.year,calendar_controller.month,function(res){
-                            calendar_controller.calander_refresh_tag(res);
-                            calendar_controller.set_data(res);
+                            if(res != null){
+                                calendar_controller.calander_refresh_tag(res);
+                                calendar_controller.set_data(res);                                
+                            }else{
+                                Materialize.toast('出錯了', 2000);
+                            }
                             util.set_unblock();
+                            
                         });
                     });
                     console.log("calander");
                     var now_time = new Date();
                     util.set_block();
                     module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),function(res){
-                        calendar_controller.calander_refresh_tag(res);
-                        calendar_controller.set_data(res);
+                        if(res != null){
+                            calendar_controller.calander_refresh_tag(res);
+                            calendar_controller.set_data(res);
+                        }else{
+                            Materialize.toast('出錯了', 2000);
+                        }
                         util.set_unblock();
                     });
 
@@ -48,10 +57,16 @@ $( document ).ready(function() {
                     break;
 
                 case 'post':{
-                    post_controller.init(function(send_data){
-                        console.log(JSON.stringify(send_data));
-                        module_google_script.event_add(send_data);
-                    });
+                        post_controller.init(function(send_data){
+                            console.log(JSON.stringify(send_data));
+                            util.set_block();
+                            module_google_script.event_add(send_data,function(res){
+                                 if(res == null){
+                                    Materialize.toast('出錯了', 2000);
+                                 }
+                                 util.set_unblock();
+                            });
+                        });
                     }
                     break;
 

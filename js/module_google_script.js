@@ -7,7 +7,7 @@ function Module_google_script(){
 }
 
 
-Module_google_script.prototype.event_add = function(data) {
+Module_google_script.prototype.event_add = function(data,callback) {
 
 	$.ajax({
 	    url: google_app_url+"?data="+JSON.stringify(data), 
@@ -16,9 +16,13 @@ Module_google_script.prototype.event_add = function(data) {
 	    cache: false,
 	    success: function(response){
 	        console.log("success" + JSON.stringify(response));
+	        if(response['resultcode'] == 200 ){
+	        	callback('200')
+	        }
 	    },
 	    error: function(response){
 	        console.log(response);
+	        callback(null)
 	    }   
 	  });
 	
@@ -46,12 +50,13 @@ Module_google_script.prototype.get_event_for_month = function(year,month,callbac
 	    success: function(response){
 	        console.log("success" + JSON.stringify(response));
 	        if(response['resultcode'] == 200 ){
-	        	 console.log("success" + JSON.stringify(response['data']));
+	        	console.log("success" + JSON.stringify(response['data']));
 	        	callback(response['data']);
 	        }	        
 	    },
 	    error: function(response){
 	        console.log(response);
+	        callback(null);
 	    }   
 	  });
 	
