@@ -1,9 +1,6 @@
 function Google_map(map_id){
-	this.map = google.maps.Map(document.getElementById(map_id), {
-	  center: {lat: 25.02, lng: 121.30},
-	  zoom: 8,
-	  mapTypeId: google.maps.MapTypeId.ROADMAP
-	});
+	this.map;
+	this.map_id = map_id; 
 	this.markers = [];
 	this.defaultBounds = new google.maps.LatLngBounds(
 	  new google.maps.LatLng(25.18, 120.04),
@@ -13,6 +10,11 @@ function Google_map(map_id){
 
 Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
 	var self= this;
+	this.map = google.maps.Map(document.getElementById(this.map_id), {
+	  center: {lat: 25.02, lng: 121.30},
+	  zoom: 8,
+	  mapTypeId: google.maps.MapTypeId.ROADMAP
+	});
 	var marker = {};
 	var marker_obj;
 	marker['id'] = marker_id;
