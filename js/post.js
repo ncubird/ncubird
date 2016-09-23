@@ -83,10 +83,6 @@ Post_controller.prototype.init = function(eventcallback){
 	        position: place.geometry.location
 	    })
 
-	    google.maps.event.addListener(marker_form, 'dragend', function () {
-            geocodePosition(geocoder, marker_form.getPosition(), cityCircle, marker_form);
-        });
-
 	    if (place.geometry.viewport) {
 	        // Only geocodes have viewport.
 	        bounds.union(place.geometry.viewport);
@@ -139,34 +135,6 @@ Post_controller.prototype.init = function(eventcallback){
   	});
 
 	this.event_post_button_onclick(eventcallback)
-}
-
-function geocodePosition(geocoder, pos, cityCircle, marker) {
-    geocoder.geocode({
-        'latLng': pos
-    }, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            marker.setPosition(pos);
-            if (results[0]) {
-                document.getElementById("address").value = results[0].formatted_address;
-                $scope.$apply(function () {
-                    vm.location.address = document.getElementById('post_location_from').value;
-                    vm.location.longitude = pos.lng().toFixed(6);
-                    vm.location.latitude = pos.lng().toFixed(6);
-                });
-                cityCircle.setCenter(pos);
-            } else {
-                alert('此位置無法定址');
-            }
-        }
-        else {
-            marker.setPosition({
-                lat: parseFloat(vm.location.latitude),
-                lng: parseFloat(vm.location.longitude)
-            });
-            alert('此位置無法定址');
-        }
-    });
 }
 
 const POST_MONTH = ['null','January','February','March','April','May','June','July','August','September','October','November' ,'December'];
