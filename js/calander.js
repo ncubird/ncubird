@@ -91,7 +91,7 @@ Calander_controller.prototype.template_calander_classlebox = function(){
 Calander_controller.prototype.template_calander_box = function(year,month,day){
 	return "<li>"
 			  	+"<div class=\"card calander-day-panel\">"
-		  			+"<div class=\"calander-day-panel-text\">"+day+"</div>"
+		  			+"<div class=\"calander-day-panel-text\">"+(day+1)+"</div>"
 		  		+"</div>"
 			  	+"<div class=\"card calander-day-item\" id=\"calender-"+year+'-'+month+'-'+day+"\">"			  		
 			  	+"</div>"
