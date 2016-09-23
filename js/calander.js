@@ -56,6 +56,7 @@ Calander_controller.prototype.set_calander_template = function (year,month,event
 		}
 	}
 
+	this.set_today();
 	this.set_click_event(event_callback)
 
 	
@@ -133,4 +134,11 @@ Calander_controller.prototype.change_month = function(add_or_minutes){
 
 	
 
+}
+
+Calander_controller.prototype.set_today = function(){
+	var now_time = new Date();
+	if($('#'+"calender-"+now_time.getYear()+1900+'-'+now_time.getMonth()+'-'+now_time.getDate()) != undefined){
+		$('#'+"calender-"+now_time.getYear()+1900+'-'+now_time.getMonth()+'-'+now_time.getDate()).addClass('calander-today');
+	}	
 }

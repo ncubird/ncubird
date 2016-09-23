@@ -27,6 +27,10 @@
 .calander-menu{
 }
 
+.calander-today{
+    background-color: #AAA;
+}
+
 /* Weekdays (Mon-Sun) */
 .calander-weekdays {
     margin: 0;
