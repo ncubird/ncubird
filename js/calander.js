@@ -12,6 +12,7 @@ function Calander_controller(calander_class,title_year_class,title_month_class){
 	this.calander_class = calander_class;
 	this.search_type = "all";
 	this.search_info = "all";;
+	this.tmp_data;
 }
 
 const MONTH = ['January','February','March','April','May','June','July','August','September','October','November' ,'December'];
@@ -26,6 +27,10 @@ Calander_controller.prototype.set_today_and_sync = function(){
 	this.hour = now.getHours();
 	this.day = now.getDay();
 	this.date = now.getDate();
+}
+
+Calander_controller.prototype.set_data = function(data){
+	this.tmp_data = data;
 }
 
 Calander_controller.prototype.is_spectial_Feb = function(year){
@@ -83,6 +88,18 @@ Calander_controller.prototype.set_click_event = function(event_callback){
 		event_callback();
 	})
 
+	("#calander_search_type").off('change')
+	$("#calander_search_type").on('change',function(){
+		this.search_type = $("#calander_search_type").val();
+		self.calander_refresh_tag(this.tmp_data);
+	})
+
+	$("#calander_search_info").off('change')
+	$("#calander_search_info").on('change',function(){
+		this.search_info = $("#calander_search_info").val();
+		self.calander_refresh_tag(this.tmp_data);
+	})
+
 	$('.'+this.title_year_class).html(this.year);
 	$('.'+this.title_month_class).html(MONTH[this.month]);
 }
@@ -138,6 +155,42 @@ Calander_controller.prototype.change_month = function(add_or_minutes){
 
 	
 
+}
+
+const EVENT_TITLE = { post_have_seat:"我有位子",post_find_seat:"我找司機",post_together_seat:"找人共乘"}
+const GENDER = { boy:"男", girl:"女"}
+Calander_controller.prototype.calander_refresh_tag = function(res){
+
+	for(var i=1;i<=((this.is_spectial_Feb(this.year) && this.month == 1)? 29 : MONTH_DAYS[this.month]) ;i++){
+		$('#'+"calender-"+this.year+'-'+this.month+'-'+i).html("");
+	}
+
+
+	for(var i=0;i<res.length;i++){
+        console.log("====== addtag ======");
+        var start_time = new Date(res[i]['start']);
+        var end_time = new Date(res[i]['end']);
+        var other_message = res[i]['other_message'];
+        var message = undefined;
+        if(this.search_type != 'all'){               
+            message = other_message[this.search_type] + '\n';                
+        }else{
+            message = '我是' + GENDER[other_message['gender']] + '生，' +  '想從' + other_message['location_from'] + '做到' + other_message['location_to'] + '，坐一次' + other_message['bonus_response'];     
+        }
+
+        if(message != undefined){
+            if(this.search_type != 'all'){
+                if(this.search_type == res[i]['event_title']){
+                    this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],message,other_message['gender']);
+                }
+            }else{
+                this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],EVENT_TITLE[message,res[i]['event_title']]);
+            }
+        }                        
+        
+    }
+    $('.tooltipped').tooltip({delay: 50});
+    $('select').material_select();
 }
 
 Calander_controller.prototype.set_today = function(){
