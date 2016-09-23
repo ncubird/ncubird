@@ -1,35 +1,8 @@
-.profile-item{
-	vertical-align: middle;
-	display: table;
-	height: 100%;
+.profile-join-photo{
+	border-radius: 50%;
+	width: 24px;
 }
 
-.profile-date{
-	display: table-cell;
-    vertical-align: middle;
-}
-
-.profile-time{
-	display: table-cell;
-    vertical-align: middle;
-}
-
-.profile-card{
-	height: 48px;
-}
-
-.profile-photo-myself{
-	height: 80%;
-}
-
-.profile-join-title{
-	width: 25%;
-}
-.profile-photo-join{
-	height: 80%;
-}
-
-.profile-data{
-	display: table-cell;
-    vertical-align: middle;
+.profile-my-photo{
+	height: 64px;
 }
