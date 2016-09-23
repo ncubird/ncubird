@@ -47,12 +47,12 @@ Calander_controller.prototype.set_calander_template = function (year,month,event
 			$('.'+this.calander_class).html($('.'+this.calander_class).html() + this.template_calander_classlebox());
 		}
 
-		for(var i=0;i<MONTH_DAYS[month];i++){
+		for(var i=1;i<=MONTH_DAYS[month];i++){
 			$('.'+this.calander_class).html($('.'+this.calander_class).html() + this.template_calander_box(year,month,i));
 		}
 
 		if(month == 1 && this.is_spectial_Feb(year)){
-			$('.'+this.calander_class).html($('.'+this.calander_class).html() + this.template_calander_box(year,month,28));
+			$('.'+this.calander_class).html($('.'+this.calander_class).html() + this.template_calander_box(year,month,29));
 		}
 	}
 
@@ -91,7 +91,7 @@ Calander_controller.prototype.template_calander_classlebox = function(){
 Calander_controller.prototype.template_calander_box = function(year,month,day){
 	return "<li>"
 			  	+"<div class=\"card calander-day-panel\">"
-		  			+"<div class=\"calander-day-panel-text\">"+(day+1)+"</div>"
+		  			+"<div class=\"calander-day-panel-text\">"+day+"</div>"
 		  		+"</div>"
 			  	+"<div class=\"card calander-day-item\" id=\"calender-"+year+'-'+month+'-'+day+"\">"			  		
 			  	+"</div>"
