@@ -69,7 +69,7 @@ $( document ).ready(function() {
             var start_time = new Date(res['start']);
             var end_time = new Date(res['end']);
             var other_message = res['other_message'];                            
-            calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth()+1,now_time.getDate()+1,other_message['facebook_id'],res['event_title']);
+            calendar_controller.set_calander_tag(start_time.getYear()+1900,start_time.getMonth()+1,start_time.getDate()+1,other_message['facebook_id'],res['event_title']);
         }
     }
 
