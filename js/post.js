@@ -108,18 +108,23 @@ Post_controller.prototype.init = function(eventcallback){
 
 	    var icon = {
 	        url: "./images/pin-red.png",
-	        size: new google.maps.Size(71, 71),
+	        size: new google.maps.Size(46, 71),
 	        origin: new google.maps.Point(0, 0),
-	        anchor: new google.maps.Point(17, 34),
+	        anchor: new google.maps.Point(0, 36),
 	        scaledSize: new google.maps.Size(25, 25)
 	    };
 
-	    marker_form = new google.maps.Marker({
+	    marker_to = new google.maps.Marker({
 	        map: map,
 	        icon: icon,
 	        title: place.name,
+	        dragend: true,
 	        position: place.geometry.location
 	    })
+
+	    google.maps.event.addListener(marker_to, 'dragend', function () {
+            geocodePosition(geocoder, marker_to.getPosition(), cityCircle, marker_to);
+        });
 
 	    if (place.geometry.viewport) {
 	        // Only geocodes have viewport.
@@ -131,6 +136,34 @@ Post_controller.prototype.init = function(eventcallback){
   	});
 
 	this.event_post_button_onclick(eventcallback)
+}
+
+function geocodePosition(geocoder, pos, cityCircle, marker) {
+    geocoder.geocode({
+        'latLng': pos
+    }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            marker.setPosition(pos);
+            if (results[0]) {
+                document.getElementById("address").value = results[0].formatted_address;
+                $scope.$apply(function () {
+                    vm.location.address = document.getElementById('post_location_to').value;
+                    vm.location.longitude = pos.lng().toFixed(6);
+                    vm.location.latitude = pos.lng().toFixed(6);
+                });
+                cityCircle.setCenter(pos);
+            } else {
+                alert('此位置無法定址');
+            }
+        }
+        else {
+            marker.setPosition({
+                lat: parseFloat(vm.location.latitude),
+                lng: parseFloat(vm.location.longitude)
+            });
+            alert('此位置無法定址');
+        }
+    });
 }
 
 const POST_MONTH = ['null','January','February','March','April','May','June','July','August','September','October','November' ,'December'];
