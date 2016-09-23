@@ -4,5 +4,7 @@
 }
 
 .profile-my-photo{
-	height: 64px;
+	height: 64px !important;
+	width: auto;
+	left: 3% !important;
 }
