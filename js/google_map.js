@@ -30,6 +30,7 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
 
     if(cursur < 0){
     	this.markers.push(marker);
+    	cursur = self.markers.length;
     }
 	var input_searchbox = document.getElementById(bind_searchbox_id);
 	var searchbox = new google.maps.places.SearchBox(input_searchbox,{bounds: this.defaultBounds});
