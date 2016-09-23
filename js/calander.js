@@ -100,8 +100,8 @@ Calander_controller.prototype.template_calander_box = function(year,month,day){
 }
 
 Calander_controller.prototype.template_calander_tag = function(facebook_id,message){
-	return "<div class=\"chip calander-day-people-chip\">"
-			  	+"<img class=\"calander-day-people-photo circle\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" />"
+	return "<div class=\"tooltipped chip calander-day-people-chip\">"
+			  	+"<img class=\"calander-day-people-photo circle\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\""+message+"\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" />"
 			  	+message
 			+"</div>"
 }
