@@ -28,9 +28,9 @@ const UTIL_MONTH_DAYS = [31,28,31,30,31,30,31,31,30,31,30,31];
 
 Module_google_script.prototype.get_event_for_month = function(year,month,callback) {
 
-	new start_time = new Date(year,month,1,0,0,0);
+	var start_time = new Date(year,month,1,0,0,0);
 	// ((self.is_spectial_Feb(syear) && smonth == 2)? 29 : POST_MONTH_DAYS[parseInt(split_sdate[1])])
-	new end_time = new Date(year,month,((this.is_spectial_Feb(year) && month == 1)? 29 : UTIL_MONTH_DAYS[parseInt(month)]),23,59,00);
+	var end_time = new Date(year,month,((this.is_spectial_Feb(year) && month == 1)? 29 : UTIL_MONTH_DAYS[parseInt(month)]),23,59,00);
 
 	var data={
 		function_type : 'get_event',
