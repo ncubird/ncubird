@@ -1,5 +1,9 @@
-function Google_map(map){
-	this.map = map;
+function Google_map(map_id){
+	this.map = new google.maps.Map(document.getElementById(map_id), {
+	  center: {lat: 25.02, lng: 121.30},
+	  zoom: 8,
+	  mapTypeId: google.maps.MapTypeId.ROADMAP
+	});
 	this.markers = [];
 	this.defaultBounds = new google.maps.LatLngBounds(
 	  new google.maps.LatLng(25.18, 120.04),
