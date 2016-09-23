@@ -41,7 +41,7 @@ Util.prototype.get_template_byID = function(id){
 }
 
 Util.prototype.set_block = function(){
-	$('.blockmodal').css('display','block')
+	$('.blockmodal').css('display','table')
 }
 
 Util.prototype.set_unblock = function(){

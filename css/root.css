@@ -18,7 +18,7 @@ body {
 }
 
 .blockmodal {
-    display: table; /* Hidden by default */
+    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     padding-top: 100%;
     z-index: 100; /* Sit on top */
