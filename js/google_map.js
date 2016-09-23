@@ -42,14 +42,14 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id,pin_image
   	searchbox.addListener('places_changed',function(){
   		var places = searchbox.getPlaces();
 
-	    if (places.length == 0 || places.length >1 ) {
-	      return;
-	    }
-	   	if(self.markers[cursur]['object'] != undefined){
+  		if(self.markers[cursur]['object'] != undefined){
 	   		self.markers[cursur]['object'].setMap(null);
 	   	}
 
-	    
+	    if (places.length == 0 || places.length >1 ) {
+	      return;
+	    }
+	   
 
 	    var place = places[0];
 
