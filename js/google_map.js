@@ -15,7 +15,22 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
 	var self= this;
 	var marker = {};
 	var marker_obj = undefined;
+	var flag_is_in_array = false;
+	var cursur = -1;
 	marker['id'] = marker_id;
+
+	for(var i=0;i<self.markers.length;i++){
+    	if(self.markers[i]['id'] == marker_id){
+    		if(self.markers[i]['object'] != undefined){
+    			self.markers[i]['object'].setMap(null);
+    		}
+    		cursur = i;
+    	}
+    }
+
+    if(cursur < 0){
+    	this.markers.push(marker);
+    }
 	var input_searchbox = document.getElementById(bind_searchbox_id);
 	var searchbox = new google.maps.places.SearchBox(input_searchbox,{bounds: this.defaultBounds});
 
@@ -30,9 +45,9 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
 	      return;
 	    }
 
-	    if(marker_obj != undefined){
-	    	marker_obj = undefined;
-	    }
+	   	if(self.markers[cursur]['object'] != undefined){
+	   		self.markers[cursur]['object'].setMap(null);
+	   	}
 
 	    var bounds = new google.maps.LatLngBounds();
 
@@ -46,7 +61,7 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
 	        scaledSize: new google.maps.Size(23, 35)
 	    };
 
-	    marker_obj = new google.maps.Marker({
+	    self.markers[cursur]['object'] = new google.maps.Marker({
 	        map: self.map,
 	        icon: icon,
 	        title: place.name,
@@ -60,8 +75,6 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
 	      	bounds.extend(place.geometry.location);
 	    }
 	    self.map.fitBounds(bounds);
-
-	    markers['object'] = marker_obj;
   	});
 };
 
