@@ -11,7 +11,7 @@ function Google_map(map_id){
 }
 
 
-Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
+Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id,pin_image) {
 	var self= this;
 	var marker = {};
 	var marker_obj = undefined;
@@ -54,7 +54,7 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
 	    var place = places[0];
 
 	    var icon = {
-	        url: "./images/pin-green.png",
+	        url: "./images/+"+pin_image,
 	        size: new google.maps.Size(46, 71),
 	        origin: new google.maps.Point(0, 0),
 	        anchor: new google.maps.Point(0, 17),
@@ -68,7 +68,7 @@ Google_map.prototype.add_marker = function(marker_id,bind_searchbox_id) {
 	        position: place.geometry.location
 	    })
 
-	    
+	    self.reset_bound();
   	});
 };
 
