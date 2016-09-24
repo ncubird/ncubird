@@ -79,7 +79,6 @@ $( document ).ready(function() {
                         $('.tag-enableclick').unbind("click");
                         $('.tag-enableclick').click({ parmas1 :res },function(event){
                             console.log('======= click =======');
-                            console.log(event['data']);
                             var information_block = new Information_block();
                             information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                 util.set_block();
