@@ -53,7 +53,7 @@ $( document ).ready(function() {
                                             Materialize.toast('出錯了', 2000);
                                         }
                                         util.set_unblock();
-                                        set_calander_template_function();
+                                        calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,set_calander_template_function);
                                     });
                                 });
 
@@ -86,7 +86,7 @@ $( document ).ready(function() {
                                         Materialize.toast('出錯了', 2000);
                                     }
                                     util.set_unblock();
-                                    set_calander_template_function();
+                                    calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,set_calander_template_function);
                                 });
                             });
                             
