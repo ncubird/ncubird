@@ -97,7 +97,8 @@ body {
 }
 
 .blockmodal-infomation-titleimg{
-	width: 40%;
+	width: 20%;
+	max-width: 64px;
 	height: auto;
 	border-radius: 50%;
 	text-align: center;
