@@ -1,6 +1,7 @@
 function Util(){
 	this.OTHER_MESSAGE_KEY = OTHER_MESSAGE_KEY;
 	this.ROOT_DATA_KEY = ROOT_DATA_KEY;
+	this.FUNCTION_TYPE_KEY = FUNCTION_TYPE_KEY;
 }
 
 var TEMPLATE = [
@@ -54,6 +55,10 @@ var ROOT_DATA_KEY = {
 	PEROID : 'peroid',
 	END_PEROID : 'end_peroid',
 	OTHER_MESSAGE : 'other_message'
+}
+
+var FUNCTION_TYPE_KEY = {
+	ADD_TO_CALANDER : 'add_to_calander'
 }
 
 
