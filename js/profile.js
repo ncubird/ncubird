@@ -51,10 +51,7 @@ Profile_controller.prototype.set_template_month_item = function(data,select_call
 	$('#profile_month_select').off('change');
 	$('#profile_month_select').on('change',function(){
 		$('#profile_month_select').off('change');
-		alert("onchange");
-		var tmp_value = $('#profile_month_select').val();
 		this.month_value = tmp_value;
-		console.log("test"+$('#profile_month_select').val() + ' ' +$('#profile_month_select'));
 		select_callback(tmp_value);
 	})
 

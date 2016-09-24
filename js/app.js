@@ -177,7 +177,7 @@ $( document ).ready(function() {
                     }
 
                     function month_select_event_callback(tmp_value){
-                        console.log("test2"+tmp_value);
+                        util.set_block();
                         module_google_script.get_event_for_during(new Date(profile_controller.long_time),tmp_value,get_event_for_during_callback);
                     }
 
