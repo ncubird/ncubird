@@ -26,7 +26,7 @@ $( document ).ready(function() {
                     calendar_controller.set_today_and_sync();
                     calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,set_calander_template_function)
 
-                    function set_calander_template_function(){
+                    var set_calander_template_function =function (){
                         
                         $(".root-background").css('height','0xp');
                         $(".root-background").height(0);
