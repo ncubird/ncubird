@@ -48,9 +48,9 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 				var send_starttime = new Date(time.getYear(),time.getMonth(),1,0,0,0);
 				var send_endtime = new Data(time.getYear(),time.getMonth(),((self.is_spectial_Feb(time.getYear()) && time.getMonth() == 1)? 29 : INFO_MONTH_DAYS[time.getMonth()]),23,59,00);
 
-				send_data[INFO_UTIL.ROOT_DATA_KEY.START] = send_starttime;
-				send_data[INFO_UTIL.ROOT_DATA_KEY.END] = send_endtime;
-				send_data[INFO_UTIL.ROOT_DATA_KEY.POST_TIME] = other_message[INFO_UTIL.OTHER_MESSAGE_KEY.POST_TIME]);
+				send_data[INFO_UTIL.ROOT_DATA_KEY.START] = send_starttime.getTime();
+				send_data[INFO_UTIL.ROOT_DATA_KEY.END] = send_endtime.getTime();
+				send_data[INFO_UTIL.ROOT_DATA_KEY.POST_TIME] = other_message[INFO_UTIL.OTHER_MESSAGE_KEY.POST_TIME];
 				callback(send_data);
 			});
 
