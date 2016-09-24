@@ -170,7 +170,7 @@ body {
 	right: 0px;
 }
 
-@media screen and (min-width: 700px) and (max-width: 960px) {
+@media screen and (min-width: 700px) and (max-width: 1000px) {
 	.menu-card{
 		width: 100px !important;
 		height: 100px !important;
@@ -204,11 +204,15 @@ body {
 	}
 }
 
-@media screen and (max-width: 700px){
-
+@media screen and (max-width: 1000px){
 	.rwd-margin{
 		margin-top: 14px;
 	}
+}
+
+@media screen and (max-width: 700px){
+
+	
 
 	.menu-card{
 		display: none !important;
