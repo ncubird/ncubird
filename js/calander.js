@@ -176,7 +176,7 @@ Calander_controller.prototype.calander_refresh_tag = function(res){
         if(this.search_info != 'all'){               
             message = other_message[this.search_info] + '\n';                
         }else{
-            message = '我是' + GENDER[other_message[TAG_UTIL.POST_UTIL.OTHER_MESSAGE_KEY.GENDER]] + '生，' +  '想從 ' + other_message[TAG_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM] + ' 坐到 ' + other_message[TAG_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO] + '，坐一次 ' + other_message[TAG_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE];     
+            message = '我是' + GENDER[other_message[TAG_UTIL.OTHER_MESSAGE_KEY.GENDER]] + '生，' +  '想從 ' + other_message[TAG_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM] + ' 坐到 ' + other_message[TAG_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO] + '，坐一次 ' + other_message[TAG_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE];     
         }
 
         if(message != undefined){
