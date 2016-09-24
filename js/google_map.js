@@ -96,6 +96,7 @@ Google_map.prototype.reset_bound = function(){
 
 Google_map.prototype.get_location = function(marker_id){
 	var markers = this.markers;
+	var cursur = -1;
 	var bounds = new google.maps.LatLngBounds();
 
 	for(var i=0;i<markers.length;i++){
@@ -109,8 +110,25 @@ Google_map.prototype.get_location = function(marker_id){
 	return null;
 }
 
-Google_map.prototype.set_marker = function(pin_image,position){
+Google_map.prototype.set_marker = function(marker_id,pin_image,position){
 	var self = this;
+	var marker = {};
+	marker['id'] = marker_id;
+
+	for(var i=0;i<self.markers.length;i++){
+    	if(self.markers[i]['id'] == marker_id){
+    		if(self.markers[i]['object'] != undefined){
+    			self.markers[i]['object'].setMap(null);
+    		}
+    		cursur = i;
+    	}
+    }
+
+    if(cursur < 0){
+    	this.markers.push(marker);
+    	cursur = self.markers.length-1;
+    }
+
 	var icon = {
         url: "./images/"+pin_image,
         size: new google.maps.Size(46, 71),
@@ -119,13 +137,12 @@ Google_map.prototype.set_marker = function(pin_image,position){
         scaledSize: new google.maps.Size(23, 35)
     };
 
-	var marker = new google.maps.Marker({
+	self.markers[cursur]['object'] = new google.maps.Marker({
 	    position: position,
 	    icon: icon,
 	    map: self.map
 	});
 
-	this.markers.push(marker);
 }
 
 
