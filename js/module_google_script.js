@@ -68,7 +68,7 @@ Module_google_script.prototype.get_event_for_month = function(year,month,callbac
 
 Module_google_script.prototype.get_event_for_during = function(date,offset,callback) {
 
-	var reference_date = new Date(data);
+	var reference_date = new Date(date);
 	var start_time = new Date(reference_date.getTime());
 	var end_time = new Date(reference_date.getTime()+((1000 * 60 * 60 * 24 *30)*offset));
 
