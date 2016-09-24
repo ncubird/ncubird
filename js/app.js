@@ -36,6 +36,7 @@ $( document ).ready(function() {
 
                         util.set_block();
                         module_google_script.get_event_for_month(calendar_controller.year,calendar_controller.month,function(res){
+                            console.log("2")
                             if(res != null){
                                 calendar_controller.calander_refresh_tag(res);
                                 calendar_controller.set_data(res);                                
@@ -67,6 +68,7 @@ $( document ).ready(function() {
                     var now_time = new Date();
                     util.set_block();
                     module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),function(res){
+                        console.log("1")
                         if(res != null){
                             calendar_controller.calander_refresh_tag(res);
                             calendar_controller.set_data(res);
