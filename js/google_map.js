@@ -126,17 +126,12 @@ Google_map.prototype.set_marker = function(marker_id,pin_image,position){
     	}
     }
 
-    console.log(" =========== curser ==============" + self.markers.length);
+    console.log(" =========== curser ==============" + curser);
 
     if(cursur < 0){
     	this.markers.push(marker);
     	cursur = self.markers.length-1;
     }
-
-    if(self.markers[cursur]['object'] != undefined){
-   		self.markers[cursur]['object'].setMap(null);
-   		console.log(" =========== reset ==============" + self.markers.length);
-   	}
 
 	var icon = {
         url: "./images/"+pin_image,
