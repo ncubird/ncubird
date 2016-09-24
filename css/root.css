@@ -122,14 +122,14 @@ body {
 }
 
 .blockmodal-infomation-unjoinbtn{
-	display: none;
+	display: none !important;;
 	float: right;
 	margin-right: 14px;
 	padding: 0 10px !important;
 }
 
 .blockmodal-infomation-deletebtn{
-	display: none;
+	display: none !important;;
 	float: right;
 	margin-right: 14px;
 	padding: 0 10px !important;
