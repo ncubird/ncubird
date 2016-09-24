@@ -42,7 +42,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 				console.log(tmp);
 				var send_data = {};
 				send_data[INFO_UTIL.ROOT_DATA_KEY.FUNCTION_TYPE] = INFO_UTIL.FUNCTION_TYPE_KEY.JOIN_EVENT;
-				send_data[INFO_UTIL.ROOT_DATA_KEY.POST_FACEBOOK_ID] = tmp['data']['parmas3'];
+				send_data[INFO_UTIL.ROOT_DATA_KEY.POST_FACEBOOK_ID] = tmp['data']['parmas1'];
 				send_data[INFO_UTIL.ROOT_DATA_KEY.JOIN_FACEBOOK_ID] = $('#facebook_userid').html();
 
 				var time = new Date(tmp['data']['parmas2'][INFO_UTIL.ROOT_DATA_KEY.START]);
