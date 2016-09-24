@@ -16,8 +16,8 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-type').html(INFO_EVENT_TITLE[data[i][INFO_UTIL.ROOT_DATA_KEY.EVENT_TITLE]]);
 			$('.blockmodal-infomation-name').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_NAME]);
 
-			if(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_NAME] == $('#facebook_userid').html()){
-				$('.blockmodal-infomation-deletebtn').css('display','inline-block');
+			if(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] == $('#facebook_userid').html()){
+				$('.blockmodal-infomation-deletebtn').css('display','inline-block !important');
 			}
 
 			$('.blockmodal-infomation-major').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.MAJOR]);
