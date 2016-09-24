@@ -66,7 +66,7 @@ $( document ).ready(function() {
                         $('.tag-enableclick').click(function(){
                             console.log('======= click =======');
                             var information_block = new Information_block();
-                            information_block.show_block(res,$(this).data('facebook_id'),$(this).data('posttime'));
+                            information_block.show_block(res,$(this).data('facebookid'),$(this).data('posttime'));
                             
                         })
                         util.set_unblock();
