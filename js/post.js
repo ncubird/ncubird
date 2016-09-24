@@ -194,7 +194,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		other_message[POST_UTIL.OTHER_MESSAGE_KEY.PEOPLE_NUMBER] = people_number;
 		other_message[POST_UTIL.OTHER_MESSAGE_KEY.OTHERS] = others;
 		other_message[POST_UTIL.OTHER_MESSAGE_KEY.PEROID] = peroid;
-		other_message[POST_UTIL.OTHER_MESSAGE_KEY.SUBMIT_TIME] = now_time.getTime();
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.POST_TIME] = now_time.getTime();
 		other_message[POST_UTIL.OTHER_MESSAGE_KEY.PASSENGER] = [];
 
 		data[POST_UTIL.ROOT_DATA_KEY.FUNCTION_TYPE] = POST_UTIL.FUNCTION_TYPE_KEY.ADD_TO_CALANDER;

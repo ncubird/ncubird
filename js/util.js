@@ -43,7 +43,7 @@ var OTHER_MESSAGE_KEY = {
 	PEOPLE_NUMBER : 'people_number',
 	OTHERS : 'others',
 	PEROID : 'peroid',
-	SUBMIT_TIME : 'submit_time',
+	POST_TIME : 'post_time',
 	PASSENGER : 'passenger'
 }
 
