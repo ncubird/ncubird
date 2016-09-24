@@ -16,7 +16,7 @@ Module_google_script.prototype.event_send = function(data,callback) {
 	    cache: false,
 	    success: function(response){
 	        console.log("success" + JSON.stringify(response));
-	        if(response['resultcode'] == 200 ){
+	        if(response['resultcode'] == 200 || response['resultcode'] == 2001 || response['resultcode'] == 2002){
 	        	callback('200')
 	        }else{
 	        	callback(response['resultcode'])
