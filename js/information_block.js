@@ -68,6 +68,6 @@ Information_block.prototype.template_passenger_item = function(facebook_id){
 	return "<img class=\"blockmodal-infomation-passenger-item\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\"></img>";
 }
 
-Module_google_script.prototype.is_spectial_Feb = function(year){
+Information_block.prototype.is_spectial_Feb = function(year){
 	return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
 }
