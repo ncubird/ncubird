@@ -18,7 +18,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time) {
 			$('.blockmodal-infomation-location-from').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM]);
 			$('.blockmodal-infomation-location-to').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO]);
 			var time = new Date(data[i][INFO_UTIL.ROOT_DATA_KEY.START]);
-			$('.blockmodal-infomation-time').html(time.getYear() + '/' + (time.getMonth()+1) + '/' + time.getDate() + ' ' + time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds());
+			$('.blockmodal-infomation-time').html((time.getYear()+1990) + '/' + (time.getMonth()+1) + '/' + time.getDate() + ' ' + time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds());
 			$('.blockmodal-infomation-vehical').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.VEHICAL]);			
 			$('.blockmodal-infomation-people-number').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.PEOPLE_NUMBER]);
 			$('.blockmodal-infomation-bouns-response').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE]);
@@ -37,6 +37,12 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time) {
 			$('.blockmodal-infomation-joinbtn').click(function(){
 				$('.blockmodal-infomation').css('display','none');
 			});
+
+			window.onclick = function(event) {
+			    if (event.target == document.getElementsByClassName("blockmodal-infomation")[0]) {
+			        $('.blockmodal-infomation').css('display','none');
+			    }
+			}
 			return ;
 		}
 	}
