@@ -40,12 +40,11 @@ $( document ).ready(function() {
 
                     var get_event_for_month = function(res){
                             console.log("2")
-                            if(res != undefined){
+                            if(res != null){
                                 calendar_controller.calander_refresh_tag(res);
                                 calendar_controller.set_data(res);                                
                             }else{
                                 Materialize.toast('出錯了', 2000);
-                                return;
                             }
 
                             $('.tag-enableclick').unbind("click");
