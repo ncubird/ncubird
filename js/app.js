@@ -24,7 +24,9 @@ $( document ).ready(function() {
             switch($(self).attr('id')){
                 case 'calander':{                    
                     calendar_controller.set_today_and_sync();
-                    calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,function set_calander_template_function(){
+                    calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,set_calander_template_function)
+
+                    function set_calander_template_function(){
                         
                         $(".root-background").css('height','0xp');
                         $(".root-background").height(0);
@@ -60,7 +62,7 @@ $( document ).ready(function() {
                             util.set_unblock();
                             
                         });
-                    });
+                    };
                     console.log("calander");
                     var now_time = new Date();
                     util.set_block();
