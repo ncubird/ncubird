@@ -11,6 +11,7 @@ $( document ).ready(function() {
     var post_controller = new Post_controller('post_button');
     var about_controller = new About_controller('post_button');
     var module_google_script = new Module_google_script();
+
     $('.menu-card').click(function(){
     	var template = util.get_template_byID($(this).attr('id'));
     	console.log($(this).attr('id')+','+template);
@@ -27,6 +28,9 @@ $( document ).ready(function() {
                         $(".root-background").css('height','0xp');
                         $(".root-background").height(0);
                         $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
+
+
+
                         util.set_block();
                         module_google_script.get_event_for_month(calendar_controller.year,calendar_controller.month,function(res){
                             if(res != null){
@@ -35,6 +39,14 @@ $( document ).ready(function() {
                             }else{
                                 Materialize.toast('出錯了', 2000);
                             }
+
+                            $('.tag-enableclick').unbind("click");
+                            $('.tag-enableclick').click(function(){
+                                var information_block = new Information_block();
+                                information_block.show_block(res,$(this).data('facebook_id'),$(this).data('posttime'));
+                                
+                            })
+
                             util.set_unblock();
                             
                         });

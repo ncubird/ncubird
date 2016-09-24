@@ -186,6 +186,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 
 		other_message[POST_UTIL.OTHER_MESSAGE_KEY.GENDER] = gender;
 		other_message[POST_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] = $('#facebook_userid').html();
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_NAME] = $('#facebook_name').html();
 		other_message[POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM] = location_from;
 		other_message[POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG] = location_from_latlng;
 		other_message[POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO] = location_to;
@@ -196,6 +197,8 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		other_message[POST_UTIL.OTHER_MESSAGE_KEY.PEROID] = peroid;
 		other_message[POST_UTIL.OTHER_MESSAGE_KEY.POST_TIME] = now_time.getTime();
 		other_message[POST_UTIL.OTHER_MESSAGE_KEY.PASSENGER] = [];
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.MAJOR] = major;
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.VEHICAL] = vehicle;
 
 		data[POST_UTIL.ROOT_DATA_KEY.FUNCTION_TYPE] = POST_UTIL.FUNCTION_TYPE_KEY.ADD_TO_CALANDER;
 		data[POST_UTIL.ROOT_DATA_KEY.EVENT_TITLE] =  type;

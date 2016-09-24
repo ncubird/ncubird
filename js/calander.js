@@ -100,6 +100,8 @@ Calander_controller.prototype.set_click_event = function(event_callback){
 		self.calander_refresh_tag(self.tmp_data);
 	})
 
+	
+
 	$('.'+this.title_year_class).html(this.year);
 	$('.'+this.title_month_class).html(MONTH[this.month]);
 }
@@ -121,7 +123,7 @@ Calander_controller.prototype.template_calander_box = function(year,month,day){
 }
 
 Calander_controller.prototype.template_calander_tag = function(facebook_id,post_time,toast_message,message){
-	return "<div class=\"tooltipped chip calander-day-people-chip\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\""+toast_message+"\" data-posttime=\""+post_time+"\" data-facebookid=\""+facebook_id+"\">"
+	return "<div class=\"tooltipped chip calander-day-people-chip tag-enableclick\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\""+toast_message+"\" data-posttime=\""+post_time+"\" data-facebookid=\""+facebook_id+"\">"
 			  	+"<img class=\"calander-day-people-photo circle\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" />"
 			  	+message
 			+"</div>"
