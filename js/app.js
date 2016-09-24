@@ -45,9 +45,9 @@ $( document ).ready(function() {
                             }
 
                             $('.tag-enableclick').unbind("click");
-                            $('.tag-enableclick').click(function(){
+                            $('.tag-enableclick').click({ parmas1 :res },function(){
                                 var information_block = new Information_block();
-                                information_block.show_block(res,$(this).data('facebookid'),$(this).data('posttime'),function(data){
+                                information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                     util.set_block();
                                     module_google_script.event_send(data,function(res){
                                         if(res == null){
@@ -77,10 +77,10 @@ $( document ).ready(function() {
                         }
 
                         $('.tag-enableclick').unbind("click");
-                        $('.tag-enableclick').click(function(){
+                        $('.tag-enableclick').click({ parmas1 :res },function(event){
                             console.log('======= click =======');
                             var information_block = new Information_block();
-                            information_block.show_block(res,$(this).data('facebookid'),$(this).data('posttime'),function(data){
+                            information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                 util.set_block();
                                 console.log(data);
                                 module_google_script.event_send(data,function(res){
