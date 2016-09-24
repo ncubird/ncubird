@@ -42,7 +42,7 @@ body {
     color: white;
 }
 
-.block-infomation{
+.blockmodal-infomation{
 	display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     padding-top: 4%;
@@ -60,7 +60,7 @@ body {
     animation-duration: 0.4s;
 }
 
-.block-infomation-child {
+.blockmodal-infomation-child {
 	display: table-cell;
     padding: 2px 16px;
     background-color: #FFF;
