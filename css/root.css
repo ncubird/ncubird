@@ -309,6 +309,22 @@ body {
 	.menu-strong{
 		font-size: 40px !important;
 	}
+
+	.blockmodal-infomation-cancelbtn{
+		
+	}
+
+	.blockmodal-infomation-joinbtn{
+		padding: 0 10px;
+	}
+
+	.blockmodal-infomation-unjoinbtn{
+		padding: 0 10px;
+	}
+
+	.blockmodal-infomation-deletebtn{
+		padding: 0 10px;
+	}
 	
 }
 
