@@ -28,10 +28,11 @@ Profile_controller.prototype.set_template_today_item = function(data,event_callb
 		$('.'+this.profile_class_today).html($('.'+this.profile_class_today).html()+this.template_item('profile-today-item',data[i]));
 	}
 
-	$('.profile-today-item').unbind('click');
-	$('.profile-today-item').click(function(){
-		event_callback(data);
-	})
+	event_callback(data);
+	// $('.profile-today-item').unbind('click');
+	// $('.profile-today-item').click(function(){
+		
+	// })
 	// body...
 };
 
@@ -55,11 +56,12 @@ Profile_controller.prototype.set_template_month_item = function(data,select_call
 		this.month_value = tmp_value;
 		select_callback(tmp_value);
 	})
-
-	$('.profile-month-item').unbind('click');
-	$('.profile-month-item').click(function(){
-		event_callback(data);
-	})
+	
+	event_callback(data);
+	// $('.profile-month-item').unbind('click');
+	// $('.profile-month-item').click(function(){
+	// 	event_callback(data);
+	// })
 
 	
 }
