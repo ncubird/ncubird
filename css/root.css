@@ -60,6 +60,14 @@ body {
     animation-duration: 0.4s;
 }
 
+@media screen and (min-width: 1000px){
+	.blockmodal-infomation{{
+		padding-left: 20%;
+		padding-right: 20%;
+	}
+}
+
+
 .blockmodal-infomation-child {
 	display: table-cell;
     padding: 2px 16px;
@@ -81,6 +89,7 @@ body {
 .blockmodal-information-subtext{
 	display: inline-block;
 	vertical-align:top;
+	width: 100%;
 	white-space : nowrap;
 	border-bottom: 1px #000 solid;
 }
@@ -203,6 +212,7 @@ body {
 		margin-right: 1% !important;
 	}
 }
+
 
 @media screen and (max-width: 1000px){
 	.rwd-margin{
