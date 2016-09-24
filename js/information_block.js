@@ -35,6 +35,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			for(var j=0;j<passenger.length;j++){
 				$('.blockmodal-infomation-bouns-joinpeople').html($('.blockmodal-infomation-bouns-joinpeople').html()+ this.template_passenger_item(passenger[j]));
 				if(passenger[j] == $('#facebook_userid').html()){
+					console.log("@@@@@@@@@@test@@@@@@@@@@");
 					$('.blockmodal-infomation-unjoinbtn').css('display','inline-block');
 				}
 			}
