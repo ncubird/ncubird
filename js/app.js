@@ -106,11 +106,16 @@ $( document ).ready(function() {
                     module_google_script.get_event_for_during(new Date(profile_controller.long_time),1,get_event_for_during_callback);
 
                     function get_event_for_day_callback(res){
+                        util.set_unblock();
+                        if(res == null){
+                            Materialize.toast('出錯了', 2000); 
+                            return;                              
+                        }
+
                         profile_controller.set_template_today_item(res,set_template_today_item_callback);
                         $(".root-background").css('height','0xp');
                         $(".root-background").height(0);
                         $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
-                        util.set_unblock();
                     }
 
                     function set_template_today_item_callback(res){
@@ -137,11 +142,16 @@ $( document ).ready(function() {
 
                     function get_event_for_during_callback(res){
                         console.log('========== callback ==============');
+                        util.set_unblock();
+                        if(res == null){
+                            Materialize.toast('出錯了', 2000); 
+                            return;                              
+                        }
                         profile_controller.set_template_month_item(res,month_select_event_callback,set_template_month_item_callback);
                         $(".root-background").css('height','0xp');
                         $(".root-background").height(0);
                         $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
-                        util.set_unblock();
+                       
                     }
 
                     function set_template_month_item_callback(res){
