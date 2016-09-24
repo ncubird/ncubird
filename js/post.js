@@ -179,27 +179,28 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		}
 
 		var now_time = new Date();
+		var POST_UTIL = new UTIL();
 
 		var data = {
-			function_type : "add_to_calander",
-			event_title : type,
-			start : sdate,
-			end : edate,
-			peroid : peroid,
-			end_peroid : end_peroid,
-			other_message :{				
-				gender : gender,
-				facebook_id : $('#facebook_userid').html(),
-				location_from : location_from,
-				location_from_latlng : location_from_latlng,
-				location_to : location_to,
-				location_to_latlng : location_to_latlng,
-				bonus_response : bonus_response,
-				people_number : people_number,
-				others : others,
-				peroid : peroid,
-				submit_time : now_time.getTime(),
-				passenger: []
+			( POST_UTIL.ROOT_DATA_KEY.FUNCTION_TYPE ) : "add_to_calander",
+			( POST_UTIL.ROOT_DATA_KEY.EVENT_TITLE ) : type,
+			( POST_UTIL.ROOT_DATA_KEY.START ) : sdate,
+			( POST_UTIL.ROOT_DATA_KEY.END ) : edate,
+			( POST_UTIL.ROOT_DATA_KEY.PEROID ) : peroid,
+			( POST_UTIL.ROOT_DATA_KEY.END_PEROID ) : end_peroid,
+			( POST_UTIL.ROOT_DATA_KEY.OTHER_MESSAGEe ) :{				
+				( POST_UTIL.OTHER_MESSAGE_KEY.GENDER : gender,
+				( POST_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID ) : $('#facebook_userid').html(),
+				( POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM ) : location_from,
+				( POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG ) : location_from_latlng,
+				( POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO ) : location_to,
+				( POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO_LATLNG ) : location_to_latlng,
+				( POST_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE ) : bonus_response,
+				( POST_UTIL.OTHER_MESSAGE_KEY.PEOPLE_NUMBER ) : people_number,
+				( POST_UTIL.OTHER_MESSAGE_KEY.OTHERS ) : others,
+				( POST_UTIL.OTHER_MESSAGE_KEY.PEROID ) : peroid,
+				( POST_UTIL.OTHER_MESSAGE_KEY.SUBMIT_TIME ) : now_time.getTime(),
+				( POST_UTIL.OTHER_MESSAGE_KEY.PASSENGER ): []
 			}
 		}
 

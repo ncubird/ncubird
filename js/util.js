@@ -1,5 +1,6 @@
 function Util(){
-
+	this.OTHER_MESSAGE_KEY = OTHER_MESSAGE_KEY;
+	this.ROOT_DATA_KEY = ROOT_DATA_KEY;
 }
 
 var TEMPLATE = [
@@ -29,6 +30,31 @@ var TEMPLATE = [
 	}
 
 ]
+
+var OTHER_MESSAGE_KEY = {
+	FACEBOOK_ID : 'facebook_id',
+	GENDER : 'gender',
+	LCOATION_FROM : 'location_from',
+	LOCATION_FROM_LATLNG : 'location_from_latlng',
+	LOCATION_TO : 'location_to',
+	LOCATION_TO_LATLNG : 'location_to_latlng',
+	BONUS_RESPONSE : 'bonus_response',
+	PEOPLE_NUMBER : 'people_number',
+	OTHERS : 'others',
+	PEROID : 'peroid',
+	SUBMIT_TIME : 'submit_time',
+	PASSENGER : 'passenger'
+}
+
+var ROOT_DATA_KEY = {
+	FUNCTION_TYPE : 'function_type',
+	EVENT_TITLE : 'event_title',
+	START : 'start',
+	END : 'end',
+	PEROID : 'peroid',
+	END_PEROID : 'end_peroid',
+	OTHER_MESSAGE : 'other_message'
+}
 
 
 Util.prototype.get_template_byID = function(id){
