@@ -129,6 +129,10 @@ Google_map.prototype.set_marker = function(marker_id,pin_image,position){
     	cursur = self.markers.length-1;
     }
 
+    if(self.markers[cursur]['object'] != undefined){
+   		self.markers[cursur]['object'].setMap(null);
+   	}
+
 	var icon = {
         url: "./images/"+pin_image,
         size: new google.maps.Size(46, 71),
