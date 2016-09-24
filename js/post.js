@@ -43,6 +43,21 @@ Post_controller.prototype.init = function(eventcallback){
 	this.event_post_button_onclick(eventcallback)
 }
 
+Post_controller.prototype.reset_value = function(){
+	$('#post_name').val("");
+	$("#post_major").val("");
+	$("#post_gender").val("");
+	$('#post_location_to').val();
+	$('#post_location_from').val("");
+	$('#post_time_from_date').val("");
+	$('#post_time_from_hour').val("");
+	$('#post_time_from_minute').val("");
+	$('#post_vehicle').val("");
+	$('#post_people_number').val("");
+	$('#post_bonus_response').val("");
+	$('#post_other_message').val("");
+}
+
 const POST_MONTH = ['null','January','February','March','April','May','June','July','August','September','October','November' ,'December'];
 const POST_MONTH_DAYS = [0,31,28,31,30,31,30,31,31,30,31,30,31];
 

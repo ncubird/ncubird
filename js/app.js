@@ -94,7 +94,7 @@ $( document ).ready(function() {
                                 Materialize.toast('設定成功', 2000);
                              }
                              util.set_unblock();
-                             post_controller.init(init_callback);
+                             post_controller.reset_value();
                         });
                     }
                     }
