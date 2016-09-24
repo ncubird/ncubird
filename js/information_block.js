@@ -1,5 +1,5 @@
 function Information_block(){
-	var gmap = new Google_map('block_map');
+	this.gmap = new Google_map('block_map');
 }
 
 
