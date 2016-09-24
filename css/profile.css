@@ -10,9 +10,9 @@
 }
 
 .profile-today-item:hover{
-	background-color: #EEE;
-};
+	background-color: #EEE !important;
+}
 
-.profile-today-item:hover{
-	background-color: rgb(129,146,214);
-};
+.profile-today-item:active{
+	background-color: rgb(129,146,214) !important;
+}
