@@ -36,7 +36,7 @@ var OTHER_MESSAGE_KEY = {
 	FACEBOOK_ID : 'facebook_id',
 	FACEBOOK_NAME : 'facebook_name',
 	GENDER : 'gender',
-	LCOATION_FROM : 'location_from',
+	LOCATION_FROM : 'location_from',
 	LOCATION_FROM_LATLNG : 'location_from_latlng',
 	LOCATION_TO : 'location_to',
 	LOCATION_TO_LATLNG : 'location_to_latlng',
