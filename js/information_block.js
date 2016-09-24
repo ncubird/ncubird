@@ -43,5 +43,5 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time) {
 };
 
 Information_block.prototype.template_passenger_item = function(facebook_id){
-	return "<img class=\"blockmodal-infomation-passenger-item\" src=\"https://graph.facebook.com/"+facebook_id+"/picture"></img>"
+	return "<img class=\"blockmodal-infomation-passenger-item\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\"></img>";
 }
