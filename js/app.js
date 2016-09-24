@@ -24,9 +24,9 @@ $( document ).ready(function() {
             switch($(self).attr('id')){
                 case 'calander':{                    
                     calendar_controller.set_today_and_sync();
-                    calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,set_calander_template_function)
+                    calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,set_calander_template_callback)
 
-                    var set_calander_template_function =function (){
+                    var set_calander_template_callback =function (){
                         
                         $(".root-background").css('height','0xp');
                         $(".root-background").height(0);
@@ -35,7 +35,10 @@ $( document ).ready(function() {
 
 
                         util.set_block();
-                        module_google_script.get_event_for_month(calendar_controller.year,calendar_controller.month,function(res){
+                        module_google_script.get_event_for_month(calendar_controller.year,calendar_controller.month,get_event_for_month);
+                    };
+
+                    var get_event_for_month = function(res){
                             console.log("2")
                             if(res != null){
                                 calendar_controller.calander_refresh_tag(res);
@@ -54,7 +57,7 @@ $( document ).ready(function() {
                                             Materialize.toast('出錯了', 2000);
                                         }
                                         util.set_unblock();
-                                        calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,set_calander_template_function);
+                                        calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,set_calander_template_callback);
                                     });
                                 });
 
@@ -62,39 +65,11 @@ $( document ).ready(function() {
 
                             util.set_unblock();
                             
-                        });
-                    };
+                        }
                     console.log("calander");
                     var now_time = new Date();
                     util.set_block();
-                    module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),function(res){
-                        console.log("1")
-                        if(res != null){
-                            calendar_controller.calander_refresh_tag(res);
-                            calendar_controller.set_data(res);
-                        }else{
-                            Materialize.toast('出錯了', 2000);
-                        }
-
-                        $('.tag-enableclick').unbind("click");
-                        $('.tag-enableclick').click({ parmas1 :res },function(event){
-                            console.log('======= click =======');
-                            var information_block = new Information_block();
-                            information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
-                                util.set_block();
-                                console.log(data);
-                                module_google_script.event_send(data,function(res){
-                                    if(res == null){
-                                        Materialize.toast('出錯了', 2000);
-                                    }
-                                    util.set_unblock();
-                                    calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,set_calander_template_function);
-                                });
-                            });
-                            
-                        })
-                        util.set_unblock();
-                    });
+                    module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),get_event_for_month);
 
                     
                     }
