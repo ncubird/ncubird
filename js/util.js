@@ -57,11 +57,15 @@ var ROOT_DATA_KEY = {
 	END : 'end',
 	PEROID : 'peroid',
 	END_PEROID : 'end_peroid',
-	OTHER_MESSAGE : 'other_message'
+	OTHER_MESSAGE : 'other_message',
+	POST_FACEBOOK_ID : 'post_facebook_id',
+	JOIN_FACEBOOK_ID : 'join_facebook_id',
+	POST_TIME : 'post_time'
 }
 
 var FUNCTION_TYPE_KEY = {
-	ADD_TO_CALANDER : 'add_to_calander'
+	ADD_TO_CALANDER : 'add_to_calander',
+	JOIN_EVENT : 'join_event'
 }
 
 

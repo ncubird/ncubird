@@ -43,7 +43,7 @@ $( document ).ready(function() {
                             $('.tag-enableclick').unbind("click");
                             $('.tag-enableclick').click(function(){
                                 var information_block = new Information_block();
-                                information_block.show_block(res,$(this).data('facebook_id'),$(this).data('posttime'));
+                                information_block.show_block(res,$(this).data('facebookid'),$(this).data('posttime'));
 
                             })
 
@@ -80,7 +80,7 @@ $( document ).ready(function() {
                         post_controller.init(function(send_data){
                             console.log(JSON.stringify(send_data));
                             util.set_block();
-                            module_google_script.event_add(send_data,function(res){
+                            module_google_script.event_send(send_data,function(res){
                                  if(res == null){
                                     Materialize.toast('出錯了', 2000);
                                  }

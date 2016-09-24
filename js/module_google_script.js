@@ -7,7 +7,7 @@ function Module_google_script(){
 }
 
 
-Module_google_script.prototype.event_add = function(data,callback) {
+Module_google_script.prototype.event_send = function(data,callback) {
 
 	$.ajax({
 	    url: google_app_url+"?data="+JSON.stringify(data), 

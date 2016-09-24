@@ -94,6 +94,13 @@ body {
 	border-bottom: 1px #000 solid;
 }
 
+.blockmodal-information-subbtn{
+	display: inline-block;
+	vertical-align:top;
+	white-space : nowrap;
+	border-bottom: 1px #000 solid;
+}
+
 .blockmodal-infomation-titleimg{
 	width: 40%;
 	height: auto;
