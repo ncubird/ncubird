@@ -9,5 +9,7 @@
 
 .home-itemcontext{
 	display: inline-block;
-	vertical-align:top
+	vertical-align:top;
+	white-space : nowrap;
+
 }
