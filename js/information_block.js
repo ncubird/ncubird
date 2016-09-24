@@ -20,14 +20,14 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time) {
 			$('.blockmodal-infomation-time').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.PEOPLE_NUMBER]);
 			$('.blockmodal-infomation-vehical').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.VEHICAL]);			
 			$('.blockmodal-infomation-people-number').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.PEOPLE_NUMBER]);
-			$('.block-infomation').css('display','table');
+			$('.blockmodal-infomation').css('display','table');
 
 			$('.blockmodal-infomation-cancelbtn').click(function(){
-				$('.block-infomation').css('display','none');
+				$('.blockmodal-infomation').css('display','none');
 			});
 
 			$('.blockmodal-infomation-joinbtn').click(function(){
-				$('.block-infomation').css('display','none');
+				$('.blockmodal-infomation').css('display','none');
 			});
 			return ;
 		}
