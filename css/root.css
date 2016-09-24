@@ -70,7 +70,7 @@ body {
 .fluid{
 	width: 100% !important;
 }
-.
+
 
 .blockmodal-infomation-subtitle{
 	display: inline-block;
@@ -204,6 +204,10 @@ body {
 }
 
 @media screen and (max-width: 700px){
+
+	.rwd-margin{
+		margin-top: 14px;
+	}
 
 	.menu-card{
 		display: none !important;
