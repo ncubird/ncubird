@@ -165,7 +165,7 @@ Calander_controller.prototype.calander_refresh_tag = function(res){
 		$('#'+"calender-"+this.year+'-'+this.month+'-'+i).html("");
 	}
 
-	var TAG_UTIL = new UTIL();
+	var TAG_UTIL = new Util();
 
 	for(var i=0;i<res.length;i++){
         console.log("====== addtag ======");

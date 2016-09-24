@@ -179,7 +179,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		}
 
 		var now_time = new Date();
-		var POST_UTIL = new UTIL();
+		var POST_UTIL = new Util();
 
 		var data = {};
 		var other_message = {};
