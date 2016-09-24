@@ -119,8 +119,8 @@ $( document ).ready(function() {
                     }
 
                     function set_template_today_item_callback(res){
-                        $('.tag-enableclick').unbind("click");
-                        $('.tag-enableclick').click({ parmas1 :res },function(event){
+                        $('.profile-today-item').unbind("click");
+                        $('.profile-today-item').click({ parmas1 :res },function(event){
                             var information_block = new Information_block();                               
                             information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                 if(data != undefined){
@@ -155,8 +155,8 @@ $( document ).ready(function() {
                     }
 
                     function set_template_month_item_callback(res){
-                        $('.tag-enableclick').unbind("click");
-                        $('.tag-enableclick').click({ parmas1 :res },function(event){
+                        $('.profile-month-item').unbind("click");
+                        $('.profile-month-item').click({ parmas1 :res },function(event){
                             var information_block = new Information_block();                               
                             information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                 if(data != undefined){
