@@ -95,8 +95,7 @@ Google_map.prototype.reset_bound = function(){
 }
 
 Google_map.prototype.get_location = function(marker_id){
-	var markers = this.markers;
-	var cursur = -1;
+	var markers = this.markers;	
 	var bounds = new google.maps.LatLngBounds();
 
 	for(var i=0;i<markers.length;i++){
@@ -113,6 +112,7 @@ Google_map.prototype.get_location = function(marker_id){
 Google_map.prototype.set_marker = function(marker_id,pin_image,position){
 	var self = this;
 	var marker = {};
+	var cursur = -1;
 	marker['id'] = marker_id;
 
 	for(var i=0;i<self.markers.length;i++){
