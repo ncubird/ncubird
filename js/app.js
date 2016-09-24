@@ -51,17 +51,19 @@ $( document ).ready(function() {
                             $('.tag-enableclick').click({ parmas1 :res },function(event){
                                 var information_block = new Information_block();
                                 information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
-                                    util.set_block();
-                                    module_google_script.event_send(data,function(res){
-                                        if(res == '200'){
-                                            Materialize.toast('出錯了', 2000);
-                                        }
-                                        util.set_unblock();
-                                        calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,set_calander_template_callback);
-                                        var now_time = new Date();
+                                    if(data != undefined){
                                         util.set_block();
-                                        module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),get_event_for_month);
-                                    });
+                                        module_google_script.event_send(data,function(res){
+                                            if(res == '200'){
+                                                Materialize.toast('出錯了', 2000);
+                                            }
+                                            util.set_unblock();
+                                            calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,set_calander_template_callback);
+                                            var now_time = new Date();
+                                            util.set_block();
+                                            module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),get_event_for_month);
+                                        });
+                                    }                                    
                                 });
 
                             })

@@ -64,6 +64,67 @@ Module_google_script.prototype.get_event_for_month = function(year,month,callbac
 	
 };
 
+Module_google_script.prototype.get_event_for_duringformonth = function(date,callback) {
+
+	var reference_date = new Date(data);
+	var start_time = new Date(reference_date.getTime()-(1000 * 60 * 24 *30));
+	var end_time = new Date(reference_date.getTime()+(1000 * 60 * 24 *30));
+
+	var data={
+		function_type : 'get_event',
+		start : start_time.getTime(),
+		end : end_time.getTime()
+	}
+
+	$.ajax({
+	    url: google_app_url+"?data="+JSON.stringify(data), 
+	    type: "GET",   
+	    dataType: 'jsonp',
+	    cache: false,
+	    success: function(response){
+	        //console.log("success" + JSON.stringify(response));
+	        if(response['resultcode'] == 200 ){
+	        	//console.log("success" + JSON.stringify(response['data']));
+	        	callback(response['data']);
+	        }	        
+	    },
+	    error: function(response){
+	        console.log(response);
+	        callback(null);
+	    }   
+	  });
+	
+};
+
+Module_google_script.prototype.get_event_for_day = function(date,callback) {
+
+	var reference_date = new Date(date);
+
+	var data={
+		function_type : 'get_event_forday',
+		date : reference_date.getTime()
+	}
+
+	$.ajax({
+	    url: google_app_url+"?data="+JSON.stringify(data), 
+	    type: "GET",   
+	    dataType: 'jsonp',
+	    cache: false,
+	    success: function(response){
+	        //console.log("success" + JSON.stringify(response));
+	        if(response['resultcode'] == 200 ){
+	        	//console.log("success" + JSON.stringify(response['data']));
+	        	callback(response['data']);
+	        }	        
+	    },
+	    error: function(response){
+	        console.log(response);
+	        callback(null);
+	    }   
+	  });
+	
+};
+
 Module_google_script.prototype.is_spectial_Feb = function(year){
 	return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
 }

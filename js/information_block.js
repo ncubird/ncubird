@@ -15,6 +15,11 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-titleimg').attr("src","https://graph.facebook.com/"+facebook_id+"/picture?type=large");
 			$('.blockmodal-infomation-type').html(INFO_EVENT_TITLE[data[i][INFO_UTIL.ROOT_DATA_KEY.EVENT_TITLE]]);
 			$('.blockmodal-infomation-name').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_NAME]);
+
+			if(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_NAME] == $('#facebook_userid').html()){
+				$('.blockmodal-infomation-deletebtn').css('display','inline-block');
+			}
+
 			$('.blockmodal-infomation-major').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.MAJOR]);
 			$('.blockmodal-infomation-gender').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.GENDER]);
 			$('.blockmodal-infomation-location-from').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM]);
@@ -29,6 +34,9 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			var passenger = other_message[INFO_UTIL.OTHER_MESSAGE_KEY.PASSENGER];
 			for(var j=0;j<passenger.length;j++){
 				$('.blockmodal-infomation-bouns-joinpeople').html($('.blockmodal-infomation-bouns-joinpeople').html()+ this.template_passenger_item(passenger[j]));
+				if(passenger[j] == $('#facebook_userid').html()){
+					$('.blockmodal-infomation-joinbtn').css('display','inline-block');
+				}
 			}
 			
 			$('.blockmodal-infomation-cancelbtn').unbind('click');
@@ -41,6 +49,10 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-joinbtn').unbind('click');
 			$('.blockmodal-infomation-joinbtn').click({ parmas1 : facebook_id , parmas2 : data[i] , parmas3 : other_message },function(tmp){
 				$('.blockmodal-infomation').css('display','none');
+				// if(facebook_id  == $('#facebook_userid').html()){
+				// 	Materialize.toast('出錯了', 2000);
+				// 	callback(undefined);
+				// }
 				console.log(tmp['data']['parmas2']);
 				var send_data = {};
 				send_data[INFO_UTIL.ROOT_DATA_KEY.FUNCTION_TYPE] = INFO_UTIL.FUNCTION_TYPE_KEY.JOIN_EVENT;

@@ -119,6 +119,18 @@ body {
 	margin-right: 14px;
 }
 
+.blockmodal-infomation-unjoinbtn{
+	display: none;
+	float: right;
+	margin-right: 14px;
+}
+
+.blockmodal-infomation-deletebtn{
+	display: none;
+	float: right;
+	margin-right: 14px;
+}
+
 .blockmodal-infomation-bouns-joinpeople{
 	white-space : normal;
 }
