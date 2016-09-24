@@ -99,6 +99,7 @@ body {
 
 .blockmodal-infomation-cancelbtn{
 	float: right;
+	margin-right: 14px;
 }
 
 .blockmodal-infomation-joinbtn{
