@@ -81,7 +81,15 @@ body {
 	display: inline-block;
 	vertical-align:top;
 	white-space : nowrap;
-	border-bottom: 2px #000 solid;
+	border-bottom: 1px #000 solid;
+}
+
+.blockmodal-infomation-cancelbtn{
+	float: right;
+}
+
+.blockmodal-infomation-joinbtn{
+	float: right;
 }
 
 
