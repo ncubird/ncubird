@@ -136,6 +136,7 @@ $( document ).ready(function() {
                     }
 
                     function get_event_for_during_callback(res){
+                        console.log('========== callback ==============');
                         profile_controller.set_template_month_item(res,month_select_event_callback,set_template_month_item_callback);
                         $(".root-background").css('height','0xp');
                         $(".root-background").height(0);
