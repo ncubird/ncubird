@@ -82,7 +82,7 @@ Module_google_script.prototype.get_event_for_during = function(date,offset,callb
 	    dataType: 'jsonp',
 	    cache: false,
 	    success: function(response){
-	        //console.log("success" + JSON.stringify(response));
+	        console.log("success" + JSON.stringify(response));
 	        if(response['resultcode'] == 200 ){
 	        	//console.log("success" + JSON.stringify(response['data']));
 	        	callback(response['data']);
