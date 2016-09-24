@@ -50,10 +50,10 @@ Profile_controller.prototype.set_template_month_item = function(data,select_call
 
 	$('.profile-month-select').off('change');
 	$('.profile-month-select').on('change',function(){
-		var value = $('.profile-month-select').val();
-		this.month_value = value;
-		console.log("test"+value);
-		select_callback(value);
+		var tmp_value = $('.profile-month-select').val();
+		this.month_value = tmp_value;
+		console.log("test"+tmp_value);
+		select_callback(tmp_value);
 	})
 
 	$('.profile-month-item').unbind('click');
