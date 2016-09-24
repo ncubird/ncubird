@@ -1,4 +1,4 @@
-function Profile_controller(profile_class_today){
+function Profile_controller(profile_class_today,profile_class_month){
 	this.now;
 	this.year;
 	this.month;
