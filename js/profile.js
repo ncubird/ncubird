@@ -23,7 +23,7 @@ Profile_controller.prototype.set_today_and_sync = function(){
 Profile_controller.prototype.set_template_today_item = function(data,event_callback) {
 	$('.'+profile_class_day).html();
 	for(var i=0;i<data.length;i++){
-		$('.'+profile_class_day).html($('.'+profile_class_day).html()+template_item(data[i]);
+		$('.'+profile_class_day).html($('.'+profile_class_day).html()+template_item(data[i]));
 	}
 
 	$('.profile-today-item').unbind('click');
