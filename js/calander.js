@@ -190,7 +190,7 @@ Calander_controller.prototype.calander_refresh_tag = function(res){
                     
                 }
             }else{
-                this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],message,EVENT_TITLE[res[i][TAG_UTIL.ROOT_DATA_KEY.EVENT_TITLE]]);
+                this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.POST_TIME],message,EVENT_TITLE[res[i][TAG_UTIL.ROOT_DATA_KEY.EVENT_TITLE]]);
             }
         }                        
         
