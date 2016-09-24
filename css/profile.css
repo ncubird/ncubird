@@ -8,3 +8,11 @@
 	width: auto !important;
 	left: 3% !important;
 }
+
+.profile-today-item:hover{
+	background-color: #EEE;
+};
+
+.profile-today-item:hover{
+	background-color: rgb(129,146,214);
+};
