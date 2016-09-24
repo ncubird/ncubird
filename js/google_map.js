@@ -144,6 +144,7 @@ Google_map.prototype.set_marker = function(marker_id,pin_image,position){
 	self.markers[cursur]['object'] = new google.maps.Marker({
 	    position: position,
 	    icon: icon,
+	    title: marker_id,
 	    map: self.map
 	});
 
