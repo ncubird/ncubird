@@ -40,7 +40,7 @@ $( document ).ready(function() {
 
                     var get_event_for_month = function(res){
                             console.log("2")
-                            if(res != null){
+                            if(res == '200'){
                                 calendar_controller.calander_refresh_tag(res);
                                 calendar_controller.set_data(res);                                
                             }else{
@@ -53,7 +53,7 @@ $( document ).ready(function() {
                                 information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                     util.set_block();
                                     module_google_script.event_send(data,function(res){
-                                        if(res == null){
+                                        if(res == '200'){
                                             Materialize.toast('出錯了', 2000);
                                         }
                                         util.set_unblock();
