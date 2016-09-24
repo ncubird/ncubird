@@ -58,6 +58,9 @@ $( document ).ready(function() {
                                         }
                                         util.set_unblock();
                                         calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,set_calander_template_callback);
+                                        var now_time = new Date();
+                                        util.set_block();
+                                        module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),get_event_for_month);
                                     });
                                 });
 
