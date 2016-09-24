@@ -17,6 +17,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-name').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_NAME]);
 
 			if(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] == $('#facebook_userid').html()){
+				console.log("@@@@@@@@@@test@@@@@@@@@@");
 				$('.blockmodal-infomation-deletebtn').css('display','inline-block !important');
 			}
 
