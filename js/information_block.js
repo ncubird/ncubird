@@ -37,6 +37,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation').css('display','table');
 
 			var gmap = new Google_map('block_map');
+			console.log(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG]);
 			if(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG] != "" || other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG] != undefined || other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG] != null){
 				gmap.set_marker('from','pin-green.png',other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG]);
 			}
