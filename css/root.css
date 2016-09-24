@@ -45,7 +45,6 @@ body {
 .blockmodal-infomation{
 	display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    padding-top: 10% ;
     padding-bottom: 10px;
     padding-right: 20%;
     padding-left: 20%;
