@@ -39,7 +39,10 @@ Profile_controller.prototype.set_template_month_item = function(data,select_call
 	Materialize.updateTextFields();
 	$('select').material_select();
 	var self = this;
+
+	$('.'+this.profile_month_today).html("");
 	for(var i=0;i<data.length;i++){
+		console.log("test");
 		$('.'+this.profile_class_month).html($('.'+this.profile_class_month).html()+this.template_item('profile-month-item',data[i]));
 	}
 
