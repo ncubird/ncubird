@@ -54,7 +54,9 @@ Module_google_script.prototype.get_event_for_month = function(year,month,callbac
 	        if(response['resultcode'] == 200 ){
 	        	//console.log("success" + JSON.stringify(response['data']));
 	        	callback(response['data']);
-	        }	        
+	        }else{
+	        	callback(null)
+	        }      
 	    },
 	    error: function(response){
 	        console.log(response);
@@ -76,6 +78,8 @@ Module_google_script.prototype.get_event_for_during = function(date,offset,callb
 		end : end_time.getTime()
 	}
 
+	console.log(data);
+
 	$.ajax({
 	    url: google_app_url+"?data="+JSON.stringify(data), 
 	    type: "GET",   
@@ -86,7 +90,9 @@ Module_google_script.prototype.get_event_for_during = function(date,offset,callb
 	        if(response['resultcode'] == 200 ){
 	        	//console.log("success" + JSON.stringify(response['data']));
 	        	callback(response['data']);
-	        }	        
+	        }else{
+	        	callback(null)
+	        }        
 	    },
 	    error: function(response){
 	        console.log(response);
