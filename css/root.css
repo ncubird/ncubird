@@ -145,6 +145,10 @@ body {
 	display: none !important
 }
 
+#block_map { 
+	height: 180px; 
+}
+
 .rwd-margin{
 	margin-top: 14px;
 }
