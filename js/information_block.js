@@ -24,10 +24,10 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time) {
 			$('.blockmodal-infomation-bouns-response').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE]);
 			$('.blockmodal-infomation').css('display','table');
 			$('.blockmodal-infomation-bouns-joinpeople').html("");
-			// var passenger = other_message[INFO_UTIL.OTHER_MESSAGE_KEY.PASSENGER];
-			// for(var i=0;i<passenger.length;i++){
-			// 	$('.blockmodal-infomation-bouns-joinpeople').html($('.blockmodal-infomation-bouns-joinpeople').html()+ this.template_passenger_item(passenger[i]));
-			// }
+			var passenger = other_message[INFO_UTIL.OTHER_MESSAGE_KEY.PASSENGER];
+			for(var i=0;i<passenger.length;i++){
+				$('.blockmodal-infomation-bouns-joinpeople').html($('.blockmodal-infomation-bouns-joinpeople').html()+ this.template_passenger_item(passenger[i]));
+			}
 			
 
 			$('.blockmodal-infomation-cancelbtn').click(function(){
