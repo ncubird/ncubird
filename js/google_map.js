@@ -133,22 +133,22 @@ Google_map.prototype.set_marker = function(marker_id,pin_image,position){
     	cursur = self.markers.length-1;
     }
 
-	var icon = {
-        url: "./images/"+pin_image,
-        size: new google.maps.Size(46, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(0, 17),
-        scaledSize: new google.maps.Size(23, 35)
-    };
+	// var icon = {
+ //        url: "./images/"+pin_image,
+ //        size: new google.maps.Size(46, 71),
+ //        origin: new google.maps.Point(0, 0),
+ //        anchor: new google.maps.Point(0, 17),
+ //        scaledSize: new google.maps.Size(23, 35)
+ //    };
 
-	self.markers[cursur]['object'] = new google.maps.Marker({
-	    position: position,
-	    icon: icon,
-	    title: marker_id,
-	    map: self.map
-	});
+	// self.markers[cursur]['object'] = new google.maps.Marker({
+	//     position: position,
+	//     icon: icon,
+	//     title: marker_id,
+	//     map: self.map
+	// });
 
-	self.reset_bound();
+	// self.reset_bound();
 
 }
 
