@@ -149,7 +149,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 
 		var people_number = $('#post_people_number').val();
 
-		if(people_number == "" || people_number == null || people_number == undefined || people_number < 2){
+		if(people_number == "" || people_number == null || people_number == undefined || people_number < 1){
 			Materialize.toast('請輸入人數', 2000);
 			return;
 		}
