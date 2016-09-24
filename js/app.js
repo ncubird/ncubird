@@ -11,6 +11,7 @@ $( document ).ready(function() {
     var post_controller = new Post_controller('post_button');
     var about_controller = new About_controller('post_button');
     var module_google_script = new Module_google_script();
+    var information_block = new Information_block();
 
     $('.menu-card').click(function(){
     	var template = util.get_template_byID($(this).attr('id'));
@@ -48,8 +49,7 @@ $( document ).ready(function() {
                             }
 
                             $('.tag-enableclick').unbind("click");
-                            $('.tag-enableclick').click({ parmas1 :res },function(event){
-                                var information_block = new Information_block();
+                            $('.tag-enableclick').click({ parmas1 :res },function(event){                                
                                 information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                     if(data != undefined){
                                         util.set_block();

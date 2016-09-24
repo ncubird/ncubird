@@ -1,7 +1,7 @@
 function Information_block(){
+	var gmap = new Google_map('block_map');
 }
 
-var gmap = new Google_map('block_map');
 
 Information_block.prototype.show_block = function(data,facebook_id,post_time,callback) {
 	// body...
