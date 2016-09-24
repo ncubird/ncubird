@@ -165,31 +165,32 @@ Calander_controller.prototype.calander_refresh_tag = function(res){
 		$('#'+"calender-"+this.year+'-'+this.month+'-'+i).html("");
 	}
 
+	var TAG_UTIL = new UTIL();
 
 	for(var i=0;i<res.length;i++){
         console.log("====== addtag ======");
-        var start_time = new Date(res[i]['start']);
-        var end_time = new Date(res[i]['end']);
-        var other_message = res[i]['other_message'];
+        var start_time = new Date(res[i][TAG_UTIL.ROOT_DATA_KEY.START]);
+        var end_time = new Date(res[i][TAG_UTIL.ROOT_DATA_KEY.END]);
+        var other_message = res[i][TAG_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE];
         var message = undefined;
         if(this.search_info != 'all'){               
             message = other_message[this.search_info] + '\n';                
         }else{
-            message = '我是' + GENDER[other_message['gender']] + '生，' +  '想從 ' + other_message['location_from'] + ' 坐到 ' + other_message['location_to'] + '，坐一次 ' + other_message['bonus_response'];     
+            message = '我是' + GENDER[other_message[TAG_UTIL.POST_UTIL.OTHER_MESSAGE_KEY.GENDER]] + '生，' +  '想從 ' + other_message[TAG_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM] + ' 坐到 ' + other_message[TAG_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO] + '，坐一次 ' + other_message[TAG_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE];     
         }
 
         if(message != undefined){
             if(this.search_type != 'all'){
-                if(this.search_type == res[i]['event_title']){
+                if(this.search_type == res[i][TAG_UTIL.ROOT_DATA_KEY.EVENT_TITLE]){
                 	if(this.search_info == 'gender' || this.search_info == 'all'){
-                		this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],message,GENDER[other_message['gender']]);
+                		this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.SUBMIT_TIME],message,GENDER[TAG_UTIL.POST_UTIL.OTHER_MESSAGE_KEY.GENDER]]);
                 	}else{
-                		this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],message,other_message[this.search_info]);
+                		this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.SUBMIT_TIME],message,other_message[this.search_info]);
                 	}
                     
                 }
             }else{
-                this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message['facebook_id'],message,EVENT_TITLE[res[i]['event_title']]);
+                this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],message,EVENT_TITLE[res[i][TAG_UTIL.ROOT_DATA_KEY.EVENT_TITLE]]);
             }
         }                        
         
