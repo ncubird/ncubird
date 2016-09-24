@@ -120,6 +120,10 @@ body {
 	margin-right: 14px;
 }
 
+.blockmodal-infomation-bouns-joinpeople{
+	white-space : none;
+}
+
 
 /* Add Animation */
 @-webkit-keyframes slideIn {
