@@ -10,7 +10,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time) {
 		var other_message = data[i][INFO_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE];
 		console.log(JSON.stringify(data[i][INFO_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE]) + '\n' +facebook_id + '\n' + post_time);
 		if(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] == facebook_id && other_message[INFO_UTIL.OTHER_MESSAGE_KEY.POST_TIME] == post_time){
-			$('.blockmodal-infomation-titleimg').attr("src","https://graph.facebook.com/"+facebook_id+"/picture");
+			$('.blockmodal-infomation-titleimg').attr("src","https://graph.facebook.com/"+facebook_id+"/picture?type=large");
 			$('.blockmodal-infomation-type').html(INFO_EVENT_TITLE[data[i][INFO_UTIL.ROOT_DATA_KEY.EVENT_TITLE]]);
 			$('.blockmodal-infomation-name').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_NAME]);
 			$('.blockmodal-infomation-major').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.MAJOR]);
@@ -26,19 +26,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time) {
 			$('.blockmodal-infomation-bouns-joinpeople').html("");
 			var passenger = other_message[INFO_UTIL.OTHER_MESSAGE_KEY.PASSENGER];
 			for(var i=0;i<passenger.length;i++){
-				var mUrl = 'https://graph.facebook.com/'+passenger[i]+'/picture?type=large';
-				   $.ajax({
-				        url: mUrl,
-				        dataType: 'jsonp',
-				       	success: function(data, status) {
-				          	$('.blockmodal-infomation-bouns-joinpeople').html($('.blockmodal-infomation-bouns-joinpeople').html()+ this.template_passenger_item(data));
-
-				        },
-				        error: function(data, e1, e2) {
-				        	console.log('error'); 
-				        }
-				   });
-				
+				$('.blockmodal-infomation-bouns-joinpeople').html($('.blockmodal-infomation-bouns-joinpeople').html()+ this.template_passenger_item(passenger[i]));
 			}
 			
 
@@ -55,5 +43,5 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time) {
 };
 
 Information_block.prototype.template_passenger_item = function(facebook_id){
-	return "<img class=\"blockmodal-infomation-passenger-item\" src=\""+data+"\"></img>";
+	return "<img class=\"blockmodal-infomation-passenger-item\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\"></img>";
 }
