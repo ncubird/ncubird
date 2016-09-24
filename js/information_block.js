@@ -51,6 +51,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 				send_data[INFO_UTIL.ROOT_DATA_KEY.START] = send_starttime.getTime();
 				send_data[INFO_UTIL.ROOT_DATA_KEY.END] = send_endtime.getTime();
 				send_data[INFO_UTIL.ROOT_DATA_KEY.POST_TIME] = other_message[INFO_UTIL.OTHER_MESSAGE_KEY.POST_TIME];
+				console.log(JSON.stringify(send_data));
 				callback(send_data);
 			});
 
