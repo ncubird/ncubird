@@ -181,28 +181,31 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		var now_time = new Date();
 		var POST_UTIL = new UTIL();
 
-		var data = {
-			POST_UTIL.ROOT_DATA_KEY.FUNCTION_TYPE : "add_to_calander",
-			POST_UTIL.ROOT_DATA_KEY.EVENT_TITLE : type,
-			POST_UTIL.ROOT_DATA_KEY.START : sdate,
-			POST_UTIL.ROOT_DATA_KEY.END : edate,
-			POST_UTIL.ROOT_DATA_KEY.PEROID : peroid,
-			POST_UTIL.ROOT_DATA_KEY.END_PEROID : end_peroid,
-			POST_UTIL.ROOT_DATA_KEY.OTHER_MESSAGEe :{				
-				POST_UTIL.OTHER_MESSAGE_KEY.GENDER : gender,
-				POST_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID : $('#facebook_userid').html(),
-				POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM : location_from,
-				POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG : location_from_latlng,
-				POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO : location_to,
-				POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO_LATLNG : location_to_latlng,
-				POST_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE : bonus_response,
-				POST_UTIL.OTHER_MESSAGE_KEY.PEOPLE_NUMBER : people_number,
-				POST_UTIL.OTHER_MESSAGE_KEY.OTHERS : others,
-				POST_UTIL.OTHER_MESSAGE_KEY.PEROID : peroid,
-				POST_UTIL.OTHER_MESSAGE_KEY.SUBMIT_TIME : now_time.getTime(),
-				POST_UTIL.OTHER_MESSAGE_KEY.PASSENGER : []
-			}
-		}
+		var data = {};
+		var other_message = {};
+
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.GENDER] = gender;
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] = $('#facebook_userid').html();
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM] = location_from;
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG] = location_from_latlng;
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO] = location_to;
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO_LATLNG] = location_to_latlng;
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE] = bonus_response ;
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.PEOPLE_NUMBER] = people_number;
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.OTHERS] = others;
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.PEROID] = peroid;
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.SUBMIT_TIME] = now_time.getTime();
+		other_message[POST_UTIL.OTHER_MESSAGE_KEY.PASSENGER] = [];
+
+		data[POST_UTIL.ROOT_DATA_KEY.FUNCTION_TYPE] = POST_UTIL.FUNCTION_TYPE_KEY.ADD_TO_CALANDER;
+		data[POST_UTIL.ROOT_DATA_KEY.EVENT_TITLE] =  type;
+		data[POST_UTIL.ROOT_DATA_KEY.START] = sdate;
+		data[POST_UTIL.ROOT_DATA_KEY.END] = edate;
+		data[POST_UTIL.ROOT_DATA_KEY.PEROID] = peroid;
+		data[POST_UTIL.ROOT_DATA_KEY.END_PEROID] = end_peroid;
+		data[POST_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE] = other_message;
+
+		
 
 		// var data = {
 		// 	function_type : "get_event_forday",
