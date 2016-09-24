@@ -25,6 +25,7 @@ $( document ).ready(function() {
                 case 'calander':{                    
                     calendar_controller.set_today_and_sync();
                     calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,function(){
+                        var self = this;
                         $(".root-background").css('height','0xp');
                         $(".root-background").height(0);
                         $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
@@ -44,7 +45,14 @@ $( document ).ready(function() {
                             $('.tag-enableclick').click(function(){
                                 var information_block = new Information_block();
                                 information_block.show_block(res,$(this).data('facebookid'),$(this).data('posttime'),function(data){
-                                    module_google_script.event_send(data);
+                                    util.set_block();
+                                    module_google_script.event_send(data,function(res){
+                                        if(res == null){
+                                            Materialize.toast('出錯了', 2000);
+                                        }
+                                        util.set_unblock();
+                                        self();
+                                    });
                                 });
 
                             })
@@ -69,7 +77,14 @@ $( document ).ready(function() {
                             console.log('======= click =======');
                             var information_block = new Information_block();
                             information_block.show_block(res,$(this).data('facebookid'),$(this).data('posttime'),function(data){
-                                module_google_script.event_send(data);
+                                util.set_block();
+                                module_google_script.event_send(data,function(res){
+                                    if(res == null){
+                                        Materialize.toast('出錯了', 2000);
+                                    }
+                                    util.set_unblock();
+                                    self();
+                                });
                             });
                             
                         })
