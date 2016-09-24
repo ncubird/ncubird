@@ -74,11 +74,13 @@ body {
 .blockmodal-infomation-subtitle{
 	display: inline-block;
 	vertical-align:top;
+	white-space : nowrap
 }
 
 .blockmodal-information-subtext{
 	display: inline-block;
 	vertical-align:top;
+	white-space : nowrap
 }
 
 
