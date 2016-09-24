@@ -16,3 +16,11 @@
 .profile-today-item:active{
 	background-color: rgb(129,146,214) !important;
 }
+
+.profile-month-item:hover{
+	background-color: #EEE !important;
+}
+
+.profile-month-item:active{
+	background-color: rgb(129,146,214) !important;
+}
