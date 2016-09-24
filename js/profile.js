@@ -52,7 +52,7 @@ Profile_controller.prototype.set_template_month_item = function(data,select_call
 	$('.profile-month-select').on('change',function(){
 		var value = $('.profile-month-select').val();
 		this.month_value = value;
-		console.log(value);
+		console.log("test"+value);
 		select_callback(value);
 	})
 
