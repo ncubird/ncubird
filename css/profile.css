@@ -9,6 +9,13 @@
 	left: 3% !important;
 }
 
+@media screen and (max-width: 700px){
+	.profile-my-photo{
+		height: 32px !important;
+		width: 32px !important;
+	}
+}
+
 .profile-today-item:hover{
 	background-color: #EEE !important;
 }
