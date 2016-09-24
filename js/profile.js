@@ -48,8 +48,9 @@ Profile_controller.prototype.set_template_month_item = function(data,select_call
 		$('.'+this.profile_class_month).html($('.'+this.profile_class_month).html()+this.template_item('profile-month-item',data[i]));
 	}
 
-	$('.profile-month-select').off('change');
-	$('.profile-month-select').on('change',function(){
+	$('#profile_month_select').off('change');
+	$('#profile_month_select').on('change',function(){
+		$('#profile_month_select').off('change');
 		alert("onchange");
 		var tmp_value = $('#profile_month_select').val();
 		this.month_value = tmp_value;
