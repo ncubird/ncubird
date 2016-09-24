@@ -6,6 +6,7 @@ function Profile_controller(profile_class_today){
 	this.date;
 	this.hour;
 	this.long_time;
+	this.month_value;
 	this.profile_class_today = profile_class_today;
 }
 
@@ -23,7 +24,7 @@ Profile_controller.prototype.set_today_and_sync = function(){
 Profile_controller.prototype.set_template_today_item = function(data,event_callback) {
 	$('.'+this.profile_class_today).html("");
 	for(var i=0;i<data.length;i++){
-		$('.'+this.profile_class_today).html($('.'+this.profile_class_today).html()+this.template_item(data[i]));
+		$('.'+this.profile_class_today).html($('.'+this.profile_class_today).html()+this.template_item('profile-today-item',data[i]));
 	}
 
 	$('.profile-today-item').unbind('click');
@@ -33,8 +34,35 @@ Profile_controller.prototype.set_template_today_item = function(data,event_callb
 	// body...
 };
 
+Profile_controller.prototype.set_template_month_item = function(data,select_callback,event_callback){
+	Materialize.updateTextFields();
+	$('select').material_select();
+	var self = this;
+	for(var i=0;i<data.length;i++){
+		$('.'+this.profile_class_today).html($('.'+this.profile_class_today).html()+this.template_item('profile-month-item',data[i]));
+	}
 
-Profile_controller.prototype.template_item = function(item_data) {
+	$('.profile-month-select').off('change');
+	$('.profile-month-select').on('change',function(){
+		var value = $('.profile-month-select').val();
+		this.month_value = value;
+		select_callback(value);
+	})
+
+	$('.profile-month-item').unbind('click');
+	$('.profile-month-item').click(function(){
+		event_callback(data);
+	})
+
+	
+}
+
+Profile_controller.prototype.set_onclick_event = function(event_callback){
+	
+}
+
+
+Profile_controller.prototype.template_item = function(profile_item_class,item_data) {
 
 	var template = "";
 
@@ -47,7 +75,7 @@ Profile_controller.prototype.template_item = function(item_data) {
 	var location_to  = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO];
 	var post_time  = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.POST_TIME];
 	// body...
-	template ="<li class=\"collection-item avatar profile-today-item tag-enableclick\" style=\"padding-left:15%;\" data-facebookid=\""+facebook_id+"\" data-posttime=\""+post_time+"\">"
+	template ="<li class=\"collection-item avatar "+profile_item_class+" tag-enableclick\" style=\"padding-left:15%;\" data-facebookid=\""+facebook_id+"\" data-posttime=\""+post_time+"\">"
 			    +"<img class=\"profile-my-photo circle\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" />"
 			    +"<span class=\"title\">"
 			    	+"<span >"+date+"</span>"
@@ -63,11 +91,11 @@ Profile_controller.prototype.template_item = function(item_data) {
 	template = template 
 					+"</div>"
 			    +"</p>"
-			    +"<div class=\"secondary-content\">"
-			    	+"<div class=\"btn-floating red\">"
-			    		+"<i class=\"waves-effect waves-light material-icons\" data-facebookid=\""+facebook_id+"\" data-posttime=\""+post_time+"\">delete</i>"
-			    	+"</div>"
-			    +"</div>"
+			    // +"<div class=\"secondary-content\">"
+			    // 	+"<div class=\"btn-floating red\">"
+			    // 		+"<i class=\"waves-effect waves-light material-icons\" data-facebookid=\""+facebook_id+"\" data-posttime=\""+post_time+"\">delete</i>"
+			    // 	+"</div>"
+			    // +"</div>"
 		    +"</li>"
 	return template;
 };

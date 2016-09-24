@@ -103,6 +103,7 @@ $( document ).ready(function() {
                     profile_controller.set_today_and_sync();
                     util.set_block();
                     module_google_script.get_event_for_day(new Date(profile_controller.long_time),get_event_for_day_callback);
+                    module_google_script.get_event_for_during(new Date(profile_controller.long_time),1,get_event_for_during_callback);
 
                     function get_event_for_day_callback(res){
                         profile_controller.set_template_today_item(res,set_template_today_item_callback);
@@ -133,6 +134,43 @@ $( document ).ready(function() {
 
                         })
                     }
+
+                    function get_event_for_during_callback(res){
+                        profile_controller.set_template_month_item(res,month_select_event_callback,set_template_month_item_callback);
+                        $(".root-background").css('height','0xp');
+                        $(".root-background").height(0);
+                        $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
+                        util.set_unblock();
+                    }
+
+                    function set_template_month_item_callback(res){
+                        $('.tag-enableclick').unbind("click");
+                        $('.tag-enableclick').click({ parmas1 :res },function(event){
+                            var information_block = new Information_block();                               
+                            information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
+                                if(data != undefined){
+                                    util.set_block();
+                                    module_google_script.event_send(data,function(res){
+                                        if(res != '200'){
+                                            Materialize.toast('出錯了', 2000);
+                                        }
+                                        util.set_unblock();
+                                        var now_time = new Date();
+                                        util.set_block();
+                                        module_google_script.get_event_for_during(new Date(profile_controller.long_time),profile_controller.month_value,get_event_for_during_callback);
+                                    });
+                                }                                    
+                            });
+
+                        })
+                    }
+
+                    function month_select_event_callback(value){
+                        module_google_script.get_event_for_during(new Date(profile_controller.long_time),value,get_event_for_during_callback);
+                    }
+
+
+
                     
                 }
 
@@ -182,4 +220,7 @@ $( document ).ready(function() {
     // }
 
 });
+
+
+
 
