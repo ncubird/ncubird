@@ -11,7 +11,7 @@ $( document ).ready(function() {
     var post_controller = new Post_controller('post_button');
     var about_controller = new About_controller();
     var module_google_script = new Module_google_script();
-    var profile_controller = new Profile_controller('profile-today')
+    var profile_controller = new Profile_controller('profile-today','profile-month')
     
 
     $('.menu-card').click(function(){

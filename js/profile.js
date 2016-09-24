@@ -8,6 +8,7 @@ function Profile_controller(profile_class_today){
 	this.long_time;
 	this.month_value;
 	this.profile_class_today = profile_class_today;
+	this.profile_class_month = profile_class_month;
 }
 
 Profile_controller.prototype.set_today_and_sync = function(){
@@ -39,7 +40,7 @@ Profile_controller.prototype.set_template_month_item = function(data,select_call
 	$('select').material_select();
 	var self = this;
 	for(var i=0;i<data.length;i++){
-		$('.'+this.profile_class_today).html($('.'+this.profile_class_today).html()+this.template_item('profile-month-item',data[i]));
+		$('.'+this.profile_class_month).html($('.'+this.profile_class_month).html()+this.template_item('profile-month-item',data[i]));
 	}
 
 	$('.profile-month-select').off('change');
