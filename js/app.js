@@ -24,8 +24,8 @@ $( document ).ready(function() {
             switch($(self).attr('id')){
                 case 'calander':{                    
                     calendar_controller.set_today_and_sync();
-                    calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,function(){
-                        var self = this;
+                    calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,function set_calander_template_function(){
+                        
                         $(".root-background").css('height','0xp');
                         $(".root-background").height(0);
                         $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
@@ -51,7 +51,7 @@ $( document ).ready(function() {
                                             Materialize.toast('出錯了', 2000);
                                         }
                                         util.set_unblock();
-                                        self();
+                                        set_calander_template_function();
                                     });
                                 });
 
@@ -83,7 +83,7 @@ $( document ).ready(function() {
                                         Materialize.toast('出錯了', 2000);
                                     }
                                     util.set_unblock();
-                                    self();
+                                    set_calander_template_function();
                                 });
                             });
                             
