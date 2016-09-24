@@ -17,6 +17,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-type').html(INFO_EVENT_TITLE[data[i][INFO_UTIL.ROOT_DATA_KEY.EVENT_TITLE]]);
 			$('.blockmodal-infomation-name').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_NAME]);
 
+			$('.blockmodal-infomation-deletebtn').addClass('btn-disable');
 			if(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] == $('#facebook_userid').html()){
 				console.log("@@@@@@@@@@test@@@@@@@@@@");
 				$('.blockmodal-infomation-deletebtn').removeClass('btn-disable');
@@ -48,6 +49,8 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 
 			$('.blockmodal-infomation-bouns-joinpeople').html("");
 			var passenger = other_message[INFO_UTIL.OTHER_MESSAGE_KEY.PASSENGER];
+			$('.blockmodal-infomation-unjoinbtn').addClass('btn-disable');
+			$('.blockmodal-infomation-unjoinbtn').addClass('btn-disable');
 			for(var j=0;j<passenger.length;j++){
 				$('.blockmodal-infomation-bouns-joinpeople').html($('.blockmodal-infomation-bouns-joinpeople').html()+ this.template_passenger_item(passenger[j]));
 				if(passenger[j] == $('#facebook_userid').html()){
