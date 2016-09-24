@@ -1,5 +1,5 @@
 function Information_block(){
-	this.gmap = new Google_map('block_map');
+	
 }
 
 
@@ -28,8 +28,6 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-location-to').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO]);
 
 			
-			this.gmap.set_marker('from','pin-green.png',other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG]);
-			this.gmap.set_marker('to','pin-red.png',other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO_LATLNG]);
 
 			var time = new Date(data[i][INFO_UTIL.ROOT_DATA_KEY.START]);
 			$('.blockmodal-infomation-time').html((time.getYear()+1900) + '/' + (time.getMonth()+1) + '/' + time.getDate() + ' ' + time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds());
@@ -37,6 +35,11 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-people-number').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.PEOPLE_NUMBER]);
 			$('.blockmodal-infomation-bouns-response').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE]);
 			$('.blockmodal-infomation').css('display','table');
+
+			var gmap = new Google_map('block_map');
+			gmap.set_marker('from','pin-green.png',other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG]);
+			gmap.set_marker('to','pin-red.png',other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO_LATLNG]);
+
 			$('.blockmodal-infomation-bouns-joinpeople').html("");
 			var passenger = other_message[INFO_UTIL.OTHER_MESSAGE_KEY.PASSENGER];
 			for(var j=0;j<passenger.length;j++){
