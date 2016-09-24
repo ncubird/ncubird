@@ -102,7 +102,7 @@ $( document ).ready(function() {
                 case 'profile':{
                     profile_controller.set_today_and_sync();
                     util.set_block();
-                    module_google_script.get_event_for_day(new Date(profile_controller.long_time),get_event_for_day_callback);
+                    //module_google_script.get_event_for_day(new Date(profile_controller.long_time),get_event_for_day_callback);
                     module_google_script.get_event_for_during(new Date(profile_controller.long_time),1,get_event_for_during_callback);
 
                     function get_event_for_day_callback(res){
