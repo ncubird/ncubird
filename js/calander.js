@@ -121,7 +121,7 @@ Calander_controller.prototype.template_calander_box = function(year,month,day){
 }
 
 Calander_controller.prototype.template_calander_tag = function(facebook_id,post_time,toast_message,message){
-	return "<div class=\"tooltipped chip calander-day-people-chip\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\""+toast_message+"\" data-posttime=\""+post_time"\" data-facebookid=\""+facebook_id+"\">"
+	return "<div class=\"tooltipped chip calander-day-people-chip\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\""+toast_message+"\" data-posttime=\""+post_time+"\" data-facebookid=\""+facebook_id+"\">"
 			  	+"<img class=\"calander-day-people-photo circle\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" />"
 			  	+message
 			+"</div>"
