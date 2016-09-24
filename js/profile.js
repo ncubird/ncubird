@@ -40,7 +40,7 @@ Profile_controller.prototype.template_item = function(item_data) {
 
 	var PROFILE_UTIL = new Util();
 	var other_message = item_data[PROFILE_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE];
-	new time = new Date(item_data[PROFILE_UTIL.ROOT_DATA_KEY.START])
+	var time = new Date(item_data[PROFILE_UTIL.ROOT_DATA_KEY.START])
 	var date = (time.getYear()+1900) + '/' + (time.getMonth()+1) + '/' + time.getDate() + ' ' + time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds()
 	var facebook_id = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID];
 	var location_from = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM];
