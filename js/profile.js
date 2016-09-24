@@ -47,7 +47,7 @@ Profile_controller.prototype.template_item = function(item_data) {
 	var location_to  = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO];
 	var post_time  = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.POST_TIME];
 	// body...
-	template ="<li class=\"collection-item avatar profile-today-item\" style=\"padding-left:15%;\" data-facebookid=\""+facebook_id+"\" data-posttime=\""+post_time+"\">"
+	template ="<li class=\"collection-item avatar profile-today-item tag-enableclick\" style=\"padding-left:15%;\" data-facebookid=\""+facebook_id+"\" data-posttime=\""+post_time+"\">"
 			    +"<img class=\"profile-my-photo circle\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" />"
 			    +"<span class=\"title\">"
 			    	+"<span >"+date+"</span>"
