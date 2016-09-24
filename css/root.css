@@ -70,6 +70,7 @@ body {
 .fluid{
 	width: 100% !important;
 }
+.
 
 .blockmodal-infomation-subtitle{
 	display: inline-block;
@@ -82,6 +83,17 @@ body {
 	vertical-align:top;
 	white-space : nowrap;
 	border-bottom: 1px #000 solid;
+}
+
+.blockmodal-infomation-titleimg{
+	width: 60%;
+	height: auto;
+	border-radius: 50%;
+}
+
+.blockmodal-infomation-type{
+	text-align: center;
+	font-size: 16px;
 }
 
 .blockmodal-infomation-cancelbtn{
