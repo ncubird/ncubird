@@ -78,6 +78,7 @@ $( document ).ready(function() {
                             var information_block = new Information_block();
                             information_block.show_block(res,$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                 util.set_block();
+                                console.log(data);
                                 module_google_script.event_send(data,function(res){
                                     if(res == null){
                                         Materialize.toast('出錯了', 2000);

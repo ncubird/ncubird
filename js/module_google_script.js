@@ -18,6 +18,8 @@ Module_google_script.prototype.event_send = function(data,callback) {
 	        console.log("success" + JSON.stringify(response));
 	        if(response['resultcode'] == 200 ){
 	        	callback('200')
+	        }else{
+	        	callback(response['resultcode'])
 	        }
 	    },
 	    error: function(response){
