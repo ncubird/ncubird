@@ -54,7 +54,7 @@ $( document ).ready(function() {
                                     if(data != undefined){
                                         util.set_block();
                                         module_google_script.event_send(data,function(res){
-                                            if(res == '200'){
+                                            if(res != '200'){
                                                 Materialize.toast('出錯了', 2000);
                                             }
                                             util.set_unblock();
