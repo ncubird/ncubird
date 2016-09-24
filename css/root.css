@@ -220,12 +220,11 @@ body {
 	}
 }
 
-
-@media screen and (max-width: 1000px){
-	.rwd-margin{
-		margin-top: 14px;
-	}
+.rwd-margin{
+	margin-top: 14px;
 }
+
+	
 
 @media screen and (max-width: 700px){
 
