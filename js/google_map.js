@@ -126,6 +126,8 @@ Google_map.prototype.set_marker = function(marker_id,pin_image,position){
     	}
     }
 
+    console.log(" =========== curser ==============" + self.markers.length);
+
     if(cursur < 0){
     	this.markers.push(marker);
     	cursur = self.markers.length-1;
