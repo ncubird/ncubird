@@ -122,6 +122,7 @@ Google_map.prototype.set_marker = function(marker_id,pin_image,position){
     			console.log(" =========== reset ==============");
     		}
     		cursur = i;
+    		console.log(" =========== curser ==============" + self.markers.length);
     	}
     }
 
