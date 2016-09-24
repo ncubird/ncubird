@@ -60,6 +60,7 @@ var ROOT_DATA_KEY = {
 	OTHER_MESSAGE : 'other_message',
 	POST_FACEBOOK_ID : 'post_facebook_id',
 	JOIN_FACEBOOK_ID : 'join_facebook_id',
+	FACEBOOK_ID : 'facebook_id',
 	POST_TIME : 'post_time',
 	PEROID : 'peroid',
 }
