@@ -28,7 +28,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 
 			var gmap = new Google_map('block_map');
 			gmap.set_marker('pin-green.png',other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG]);
-			gmap.add_marker('pin-red.png',other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO_LATLNG]);
+			gmap.set_marker('pin-red.png',other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO_LATLNG]);
 			gmap.reset_bound();
 
 			var time = new Date(data[i][INFO_UTIL.ROOT_DATA_KEY.START]);
