@@ -81,7 +81,8 @@ $( document ).ready(function() {
                     break;
 
                 case 'post':{
-                        post_controller.init(function(send_data){
+                        post_controller.init(init_callback);
+                        function init_callback(){
                             console.log(JSON.stringify(send_data));
                             util.set_block();
                             module_google_script.event_send(send_data,function(res){
@@ -89,8 +90,9 @@ $( document ).ready(function() {
                                     Materialize.toast('出錯了', 2000);
                                  }
                                  util.set_unblock();
+                                 post_controller.init(init_callback);
                             });
-                        });
+                        }
                     }
                     break;
 

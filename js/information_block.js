@@ -108,7 +108,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 				var peroid = [];
 				if(tmp['data']['parmas3']['peroid'].length > 0){
 					if (confirm("要刪除整個週期嗎？") == true) {
-				        peroid = ['data']['parmas3']['peroid'];
+				        peroid = tmp['data']['parmas3']['peroid'];
 				    }
 				}
 				//console.log(tmp['data']['parmas2']);
