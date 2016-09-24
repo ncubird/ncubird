@@ -26,7 +26,19 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time) {
 			$('.blockmodal-infomation-bouns-joinpeople').html("");
 			var passenger = other_message[INFO_UTIL.OTHER_MESSAGE_KEY.PASSENGER];
 			for(var i=0;i<passenger.length;i++){
-				$('.blockmodal-infomation-bouns-joinpeople').html($('.blockmodal-infomation-bouns-joinpeople').html()+ this.template_passenger_item(passenger[i]));
+				var mUrl = 'https://graph.facebook.com/'+passenger[i]+'/picture?redirect=false&height=200&width=200';
+				   $.ajax({
+				        url: mUrl,
+				        dataType: 'jsonp',
+				       	success: function(data, status) {
+				          	$('.blockmodal-infomation-bouns-joinpeople').html($('.blockmodal-infomation-bouns-joinpeople').html()+ this.template_passenger_item(data));
+
+				        },
+				        error: function(data, e1, e2) {
+				        	console.log('error'); 
+				        }
+				   });
+				
 			}
 			
 
@@ -43,5 +55,5 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time) {
 };
 
 Information_block.prototype.template_passenger_item = function(facebook_id){
-	return "<img class=\"blockmodal-infomation-passenger-item\" src=\"https://graph.facebook.com/"+facebook_id+"/picture?redirect=false&height=200&width=200\"></img>";
+	return "<img class=\"blockmodal-infomation-passenger-item\" src=\""+data+"\"></img>";
 }
