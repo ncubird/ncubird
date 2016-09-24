@@ -124,6 +124,9 @@ body {
 	white-space : normal;
 }
 
+.blockmodal-infomation-passenger-item{
+	border-radius: 50%;
+}
 
 /* Add Animation */
 @-webkit-keyframes slideIn {
