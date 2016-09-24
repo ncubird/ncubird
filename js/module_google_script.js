@@ -50,9 +50,9 @@ Module_google_script.prototype.get_event_for_month = function(year,month,callbac
 	    dataType: 'jsonp',
 	    cache: false,
 	    success: function(response){
-	        console.log("success" + JSON.stringify(response));
+	        //console.log("success" + JSON.stringify(response));
 	        if(response['resultcode'] == 200 ){
-	        	console.log("success" + JSON.stringify(response['data']));
+	        	//console.log("success" + JSON.stringify(response['data']));
 	        	callback(response['data']);
 	        }	        
 	    },
