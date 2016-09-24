@@ -82,7 +82,7 @@ $( document ).ready(function() {
 
                 case 'post':{
                         post_controller.init(init_callback);
-                        function init_callback(){
+                        function init_callback(send_data){
                             console.log(JSON.stringify(send_data));
                             util.set_block();
                             module_google_script.event_send(send_data,function(res){
