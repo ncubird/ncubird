@@ -38,7 +38,7 @@ $( document ).ready(function() {
                         module_google_script.get_event_for_month(calendar_controller.year,calendar_controller.month,get_event_for_month);
                     };
 
-                    var get_event_for_month = function(res){
+                    function get_event_for_month(res){
                             console.log("2")
                             if(res != null){
                                 calendar_controller.calander_refresh_tag(res);
