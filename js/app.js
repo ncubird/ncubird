@@ -44,7 +44,7 @@ $( document ).ready(function() {
                             $('.tag-enableclick').click(function(){
                                 var information_block = new Information_block();
                                 information_block.show_block(res,$(this).data('facebook_id'),$(this).data('posttime'));
-                                
+
                             })
 
                             util.set_unblock();
@@ -61,6 +61,13 @@ $( document ).ready(function() {
                         }else{
                             Materialize.toast('出錯了', 2000);
                         }
+
+                        $('.tag-enableclick').unbind("click");
+                        $('.tag-enableclick').click(function(){
+                            var information_block = new Information_block();
+                            information_block.show_block(res,$(this).data('facebook_id'),$(this).data('posttime'));
+                            
+                        })
                         util.set_unblock();
                     });
 
