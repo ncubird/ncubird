@@ -76,7 +76,7 @@ $( document ).ready(function() {
                     console.log("calander");
                     var now_time = new Date();
                     util.set_block();
-                    module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),get_event_for_month);
+                    module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),get_event_for_month_callback);
 
                     
                     }
