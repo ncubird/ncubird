@@ -112,23 +112,27 @@ body {
 .blockmodal-infomation-cancelbtn{
 	float: right;
 	margin-right: 14px;
+	padding: 0 13px;
 }
 
 .blockmodal-infomation-joinbtn{
 	float: right;
 	margin-right: 14px;
+	padding: 0 13px;
 }
 
 .blockmodal-infomation-unjoinbtn{
 	display: none;
 	float: right;
 	margin-right: 14px;
+	padding: 0 13px;
 }
 
 .blockmodal-infomation-deletebtn{
 	display: none;
 	float: right;
 	margin-right: 14px;
+	padding: 0 13px;
 }
 
 .blockmodal-infomation-bouns-joinpeople{
