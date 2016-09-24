@@ -25,6 +25,12 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-gender').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.GENDER]);
 			$('.blockmodal-infomation-location-from').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM]);
 			$('.blockmodal-infomation-location-to').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO]);
+
+			var gmap = new Google_map('block_map');
+			this.gmap.set_marker('pin-green.png',other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG]);
+			this.gmap.add_marker('pin-red.png',other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO_LATLNG]);
+			this.reset_bound();
+
 			var time = new Date(data[i][INFO_UTIL.ROOT_DATA_KEY.START]);
 			$('.blockmodal-infomation-time').html((time.getYear()+1900) + '/' + (time.getMonth()+1) + '/' + time.getDate() + ' ' + time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds());
 			$('.blockmodal-infomation-vehical').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.VEHICAL]);			

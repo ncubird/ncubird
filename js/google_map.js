@@ -109,5 +109,24 @@ Google_map.prototype.get_location = function(marker_id){
 	return null;
 }
 
+Google_map.prototype.set_marker = function(pin_image,position){
+	var self = this;
+	var icon = {
+        url: "./images/"+pin_image,
+        size: new google.maps.Size(46, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(0, 17),
+        scaledSize: new google.maps.Size(23, 35)
+    };
+
+	var marker = new google.maps.Marker({
+	    position: position,
+	    icon: icon,
+	    map: self.map
+	});
+
+	this.markers.push(marker);
+}
+
 
 
