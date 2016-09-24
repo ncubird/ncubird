@@ -45,7 +45,10 @@ body {
 .blockmodal-infomation{
 	display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    padding: 10% !important;
+    padding-top: 10% !important;
+    padding-bottom: 10% !important;
+    padding-right: 20% !important;
+    padding-left: 20% !important;
     z-index: 100; /* Sit on top */
     left: 0;
     bottom: 0;
@@ -58,13 +61,6 @@ body {
     -webkit-animation-duration: 0.4s;
     animation-name: fadeIn;
     animation-duration: 0.4s;
-}
-
-@media screen and (max-width: 1000px){
-	.blockmodal-infomation{{
-		padding-left: 20%;
-		padding-right: 20%;
-	}
 }
 
 
