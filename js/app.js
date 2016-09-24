@@ -88,6 +88,8 @@ $( document ).ready(function() {
                             module_google_script.event_send(send_data,function(res){
                                  if(res == null){
                                     Materialize.toast('出錯了', 2000);
+                                 }else{
+                                    Materialize.toast('設定成功', 2000);
                                  }
                                  util.set_unblock();
                                  post_controller.init(init_callback);
