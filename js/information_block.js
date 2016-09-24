@@ -26,7 +26,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time) {
 			$('.blockmodal-infomation-bouns-joinpeople').html("");
 			var passenger = other_message[INFO_UTIL.OTHER_MESSAGE_KEY.PASSENGER];
 			for(var i=0;i<passenger.length;i++){
-				var mUrl = 'https://graph.facebook.com/'+passenger[i]+'/picture?redirect=false&height=200&width=200';
+				var mUrl = 'https://graph.facebook.com/'+passenger[i]+'/picture?type=large';
 				   $.ajax({
 				        url: mUrl,
 				        dataType: 'jsonp',
