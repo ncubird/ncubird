@@ -18,7 +18,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 
 			if(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] == $('#facebook_userid').html()){
 				console.log("@@@@@@@@@@test@@@@@@@@@@");
-				$('.blockmodal-infomation-deletebtn').css('display','inline-block !important');
+				$('.blockmodal-infomation-deletebtn').removeClass('btn-disable');
 			}
 
 			$('.blockmodal-infomation-major').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.MAJOR]);
@@ -37,7 +37,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 				$('.blockmodal-infomation-bouns-joinpeople').html($('.blockmodal-infomation-bouns-joinpeople').html()+ this.template_passenger_item(passenger[j]));
 				if(passenger[j] == $('#facebook_userid').html()){
 					console.log("@@@@@@@@@@test@@@@@@@@@@");
-					$('.blockmodal-infomation-unjoinbtn').css('display','inline-block');
+					$('.blockmodal-infomation-unjoinbtn').removeClass('btn-disable');
 				}
 			}
 			

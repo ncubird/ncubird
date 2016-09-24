@@ -112,24 +112,22 @@ body {
 .blockmodal-infomation-cancelbtn{
 	float: right;
 	margin-right: 14px;
-	padding: 0 13px;
+	padding: 0 10px !important;
 }
 
 .blockmodal-infomation-joinbtn{
 	float: right;
 	margin-right: 14px;
-	padding: 0 13px;
+	padding: 0 10px !important;
 }
 
 .blockmodal-infomation-unjoinbtn{
-	display: none !important;;
 	float: right;
 	margin-right: 14px;
 	padding: 0 10px !important;
 }
 
 .blockmodal-infomation-deletebtn{
-	display: none !important;;
 	float: right;
 	margin-right: 14px;
 	padding: 0 10px !important;
@@ -143,6 +141,9 @@ body {
 	border-radius: 50%;
 }
 
+.btn-disable{
+	display: none !important
+}
 
 .rwd-margin{
 	margin-top: 14px;
