@@ -39,6 +39,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 
 			$('.blockmodal-infomation-joinbtn').click({ data : data[i] },function(tmp){
 				$('.blockmodal-infomation').css('display','none');
+				console.log(tmp);
 				var send_data = {};
 				send_data[INFO_UTIL.ROOT_DATA_KEY.FUNCTION_TYPE] = INFO_UTIL.FUNCTION_TYPE_KEY.JOIN_EVENT;
 				send_data[INFO_UTIL.ROOT_DATA_KEY.POST_FACEBOOK_ID] = facebook_id;
