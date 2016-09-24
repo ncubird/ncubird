@@ -119,6 +119,7 @@ Google_map.prototype.set_marker = function(marker_id,pin_image,position){
     	if(self.markers[i]['id'] == marker_id){
     		if(self.markers[i]['object'] != undefined){
     			self.markers[i]['object'].setMap(null);
+    			console.log(" =========== reset ==============");
     		}
     		cursur = i;
     	}
