@@ -43,7 +43,9 @@ $( document ).ready(function() {
                             $('.tag-enableclick').unbind("click");
                             $('.tag-enableclick').click(function(){
                                 var information_block = new Information_block();
-                                information_block.show_block(res,$(this).data('facebookid'),$(this).data('posttime'));
+                                information_block.show_block(res,$(this).data('facebookid'),$(this).data('posttime'),function(data){
+                                    module_google_script.event_send(data);
+                                });
 
                             })
 
@@ -66,7 +68,9 @@ $( document ).ready(function() {
                         $('.tag-enableclick').click(function(){
                             console.log('======= click =======');
                             var information_block = new Information_block();
-                            information_block.show_block(res,$(this).data('facebookid'),$(this).data('posttime'));
+                            information_block.show_block(res,$(this).data('facebookid'),$(this).data('posttime'),function(data){
+                                module_google_script.event_send(data);
+                            });
                             
                         })
                         util.set_unblock();
