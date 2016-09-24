@@ -147,6 +147,8 @@ Google_map.prototype.set_marker = function(marker_id,pin_image,position){
 	    map: self.map
 	});
 
+	self.reset_bound();
+
 }
 
 
