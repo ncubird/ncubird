@@ -132,7 +132,7 @@ Google_map.prototype.set_marker = function(marker_id,pin_image,position){
 
     if(self.markers[cursur]['object'] != undefined){
    		self.markers[cursur]['object'].setMap(null);
-   		console.log(" =========== reset ==============");
+   		console.log(" =========== reset ==============" + self.markers.length);
    	}
 
 	var icon = {
