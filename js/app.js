@@ -9,8 +9,9 @@ $( document ).ready(function() {
 	var util = new Util();
     var calendar_controller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
     var post_controller = new Post_controller('post_button');
-    var about_controller = new About_controller('post_button');
+    var about_controller = new About_controller();
     var module_google_script = new Module_google_script();
+    var profile_controller = new Profile_controller('profile-today')
     
 
     $('.menu-card').click(function(){
@@ -36,10 +37,10 @@ $( document ).ready(function() {
 
 
                         util.set_block();
-                        module_google_script.get_event_for_month(calendar_controller.year,calendar_controller.month,get_event_for_month);
+                        module_google_script.get_event_for_month(calendar_controller.year,calendar_controller.month,get_event_for_month_callback);
                     };
 
-                    function get_event_for_month(res){
+                    function get_event_for_month_callback(res){
                             console.log("2")
                             if(res != null){
                                 calendar_controller.calander_refresh_tag(res);
@@ -62,7 +63,7 @@ $( document ).ready(function() {
                                             calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,set_calander_template_callback);
                                             var now_time = new Date();
                                             util.set_block();
-                                            module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),get_event_for_month);
+                                            module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),get_event_for_month_callback);
                                         });
                                     }                                    
                                 });
@@ -82,22 +83,58 @@ $( document ).ready(function() {
                     break;
 
                 case 'post':{
-                        post_controller.init(init_callback);
-                        function init_callback(send_data){
-                            console.log(JSON.stringify(send_data));
-                            util.set_block();
-                            module_google_script.event_send(send_data,function(res){
-                                 if(res == null){
-                                    Materialize.toast('出錯了', 2000);
-                                 }else{
-                                    Materialize.toast('設定成功', 2000);
-                                 }
-                                 util.set_unblock();
-                                 post_controller.init(init_callback);
-                            });
-                        }
+                    post_controller.init(init_callback);
+                    function init_callback(send_data){
+                        console.log(JSON.stringify(send_data));
+                        util.set_block();
+                        module_google_script.event_send(send_data,function(res){
+                             if(res == null){
+                                Materialize.toast('出錯了', 2000);
+                             }else{
+                                Materialize.toast('設定成功', 2000);
+                             }
+                             util.set_unblock();
+                             post_controller.init(init_callback);
+                        });
+                    }
                     }
                     break;
+                case 'profile':{
+                    profile_controller.set_today_and_sync();
+                    util.set_block();
+                    module_google_script.get_event_for_day(new Date(profile_controller.long_time),get_event_for_day_callback);
+
+                    function get_event_for_day_callback(res){
+                        profile_controller.set_template_today_item(res,set_template_today_item_callback);
+                        $(".root-background").css('height','0xp');
+                        $(".root-background").height(0);
+                        $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
+                        util.set_unblock();
+                    }
+
+                    function set_template_today_item_callback(res){
+                        $('.tag-enableclick').unbind("click");
+                        $('.tag-enableclick').click({ parmas1 :res },function(event){
+                            var information_block = new Information_block();                               
+                            information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
+                                if(data != undefined){
+                                    util.set_block();
+                                    module_google_script.event_send(data,function(res){
+                                        if(res != '200'){
+                                            Materialize.toast('出錯了', 2000);
+                                        }
+                                        util.set_unblock();
+                                        var now_time = new Date();
+                                        util.set_block();
+                                        module_google_script.get_event_for_day(new Date(profile_controller.long_time),get_event_for_day_callback);
+                                    });
+                                }                                    
+                            });
+
+                        })
+                    }
+                    
+                }
 
                 case 'about':{
                         about_controller.test(function(){

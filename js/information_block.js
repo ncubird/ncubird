@@ -45,7 +45,6 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			for(var j=0;j<passenger.length;j++){
 				$('.blockmodal-infomation-bouns-joinpeople').html($('.blockmodal-infomation-bouns-joinpeople').html()+ this.template_passenger_item(passenger[j]));
 				if(passenger[j] == $('#facebook_userid').html()){
-					console.log("@@@@@@@@@@test@@@@@@@@@@");
 					$('.blockmodal-infomation-unjoinbtn').removeClass('btn-disable');
 				}
 			}
@@ -149,7 +148,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 };
 
 Information_block.prototype.template_passenger_item = function(facebook_id){
-	return "<img class=\"blockmodal-infomation-passenger-item\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\"></img>";
+	return "<img class=\"blockmodal-infomation-passenger-item\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" data-facebookid=\""+facebook_id+"\"></img>";
 }
 
 Information_block.prototype.is_spectial_Feb = function(year){
