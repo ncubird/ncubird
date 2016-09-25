@@ -113,7 +113,7 @@ Profile_controller.prototype.template_item = function(profile_item_class,item_da
 	var location_from = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM];
 	var location_to  = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO];
 	var post_time  = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.POST_TIME];
-	var bonus_response = new Date(item_data[TIMELINE_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE]);
+	var bonus_response = other_message[TIMELINE_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE];
 	var type = item_data[TIMELINE_UTIL.ROOT_DATA_KEY.EVENT_TITLE];
 	// body...
 	template ="<li class=\"collection-item avatar "+profile_item_class+" \" style=\"padding-left:15%;\" data-facebookid=\""+facebook_id+"\" data-posttime=\""+post_time+"\">"
