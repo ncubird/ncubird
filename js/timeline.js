@@ -7,8 +7,8 @@ function Timeline_controller(timeline_class_month){
 	this.hour;
 	this.long_time;
 	this.timeline_class_month = timeline_class_month;
-	this.timeline_search;
-	this.timeline_search_value;
+	this.timeline_search = 'time';
+	this.timeline_search_value = "";
 	this.month_value;
 	this.raw_data;
 }
