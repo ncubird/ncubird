@@ -18,7 +18,7 @@ Fb_sdk.prototype.send_message = function(facebook_id){
                               "app_id=177786062658873" + 
                               "&link=https://ncubird.github.io/ncubird/" + 
                               "&redirect_uri=https://ncubird.github.io/ncubird/"+
-                              "&to="+JSON.stringify(facebook_id);
+                              "&to="+JSON.stringify(facebook_id));
       );
   }
 }
