@@ -66,6 +66,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 					$('.blockmodal-infomation-contectpassenger').unbind('click');
 					$('.blockmodal-infomation-contectpassenger').click(function(){
 						var fb_sdk = new Fb_sdk();
+						console.log("test");
 						fb_sdk.send_message(passenger);
 					})
 				}
