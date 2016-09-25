@@ -134,6 +134,18 @@ body {
 	padding: 0 10px !important;
 }
 
+.blockmodal-infomation-contectpassenger{
+	float: right;
+	margin-right: 14px;
+	padding: 0 10px !important;
+}
+
+.blockmodal-infomation-contectposter{
+	float: right;
+	margin-right: 14px;
+	padding: 0 10px !important;
+}
+
 .blockmodal-infomation-bouns-joinpeople{
 	white-space : normal;
 }
