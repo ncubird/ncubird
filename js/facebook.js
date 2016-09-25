@@ -15,7 +15,7 @@ Fb_sdk.prototype.send_message = function(facebook_id){
       window.location.assign("#page-2");
   } else {
       window.location.replace("https://www.facebook.com/dialog/send?" + 
-                              "app_id=123050457758183" + 
+                              "app_id=177786062658873" + 
                               "&link=https://ncubird.github.io/ncubird/" + 
                               "&redirect_uri=https://ncubird.github.io/ncubird/"+
                               "&to="+JSON.stringify(facebook_id);
