@@ -138,7 +138,9 @@ $( document ).ready(function() {
                                         util.set_block();
                                         module_google_script.get_event_for_during(new Date(timeline_controller.long_time),timeline_controller.month_value,timeline_get_event_for_during_callback);
                                     });
-                                }                                    
+                                }else{
+                                    Materialize.toast('出錯了', 2000);
+                                }                                  
                             });
 
                         })
@@ -165,6 +167,8 @@ $( document ).ready(function() {
                                         util.set_block();
                                         module_google_script.get_event_for_during(new Date(timeline_controller.long_time),timeline_controller.month_value,timeline_get_event_for_during_callback);
                                     });
+                                }else{
+                                    Materialize.toast('出錯了', 2000);
                                 }                                    
                             });
 
@@ -225,7 +229,9 @@ $( document ).ready(function() {
                                         util.set_block();
                                         module_google_script.get_event_for_day(new Date(profile_controller.long_time),profile_get_event_for_day_callback);
                                     });
-                                }                                    
+                                }else{
+                                    Materialize.toast('出錯了', 2000);
+                                }                                     
                             });
 
                         })
@@ -261,7 +267,9 @@ $( document ).ready(function() {
                                         util.set_block();
                                         module_google_script.get_event_for_during(new Date(profile_controller.long_time),profile_controller.month_value,profile_get_event_for_during_callback);
                                     });
-                                }                                    
+                                }else{
+                                    Materialize.toast('出錯了', 2000);
+                                }                                     
                             });
 
                         })
