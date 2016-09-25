@@ -17,7 +17,7 @@ $( document ).ready(function() {
 
    
 
-    $(window).resize(resize_event;
+    $(window).resize(resize_event);
 
     function resize_event() {
         if($( window ).width() > 700){
