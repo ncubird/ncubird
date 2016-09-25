@@ -101,14 +101,14 @@ Timeline_controller.prototype.set_search_change = function(search_callback){
 
 				switch(self.timeline_search){
 					case '#timeline_search_time' :
-						compare_message = self.raw_data[i][TIMELINE_UTIL.ROOT_DATA_KEY.START];
+						compare_message = self.raw_data[i][TIMELINE_UTIL.ROOT_DATA_KEY.START] + '';
 						break;
 					case '#timeline_search_location' :
-						compare_message = other_message[TIMELINE_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM];
-						compare_message = compare_message + other_message[TIMELINE_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO];
+						compare_message = other_message[TIMELINE_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM] + '';
+						compare_message = compare_message + other_message[TIMELINE_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO] + '';
 						break;
 					case '#timeline_search_type' :
-						compare_message = self.raw_data[i][TIMELINE_UTIL.ROOT_DATA_KEY.EVENT_TITLE];
+						compare_message = self.raw_data[i][TIMELINE_UTIL.ROOT_DATA_KEY.EVENT_TITLE] + '';
 						break;
 				}
 				
