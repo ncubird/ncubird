@@ -67,7 +67,7 @@ Profile_controller.prototype.set_template_month_item = function(data,select_call
 		var other_message = data[i][PROFILE_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE];
 		var passenger = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.PASSENGER];
 		for(var j=0;j<passenger.length;j++){
-			if(passenger[j == $('#facebook_userid').html()){
+			if(passenger[j] == $('#facebook_userid').html()){
 				flag_show = true;
 			}
 		}
