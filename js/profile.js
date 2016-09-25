@@ -24,12 +24,15 @@ Profile_controller.prototype.set_today_and_sync = function(){
 
 Profile_controller.prototype.set_template_today_item = function(data,event_callback) {
 	$('.'+this.profile_class_today).html("");
+
+	var PROFILE_UTIL = new Util();
+
 	for(var i=0;i<data.length;i++){
 		var flag_show = false;
 		var other_message = data[i][PROFILE_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE];
 		var passenger = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.PASSENGER];
 		for(var j=0;j<passenger.length;j++){
-			if(passenger[i] == $('#facebook_userid').html()){
+			if(passenger[j] == $('#facebook_userid').html()){
 				flag_show = true;
 			}
 		}
@@ -56,6 +59,7 @@ Profile_controller.prototype.set_template_month_item = function(data,select_call
 	var self = this;
 
 	console.log(data);
+	var PROFILE_UTIL = new Util();
 
 	$('.'+this.profile_class_month).html("");
 	for(var i=0;i<data.length;i++){
@@ -63,7 +67,7 @@ Profile_controller.prototype.set_template_month_item = function(data,select_call
 		var other_message = data[i][PROFILE_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE];
 		var passenger = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.PASSENGER];
 		for(var j=0;j<passenger.length;j++){
-			if(passenger[i] == $('#facebook_userid').html()){
+			if(passenger[j == $('#facebook_userid').html()){
 				flag_show = true;
 			}
 		}
