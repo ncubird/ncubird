@@ -73,7 +73,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			}
 
 			$('.blockmodal-infomation-contectposter').unbind('click');
-			$('.blockmodal-infomation-contectpassenger').click(function(){
+			$('.blockmodal-infomation-contectposter').click(function(){
 				var fb_sdk = new Fb_sdk();
 				fb_sdk.send_message([facebook_id]);
 			})
