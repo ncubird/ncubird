@@ -452,4 +452,8 @@ body {
 	text-align: right;
 }
 
+.fixed-action-btn{
+	padding: 0 1rem !important;
+}
+
 
