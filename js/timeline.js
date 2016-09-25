@@ -112,7 +112,7 @@ Timeline_controller.prototype.set_search_change = function(search_callback){
 						break;
 				}
 				
-				if(compare_message.indexOf(tmp_value) !== -1 || compare_message="" ){
+				if(compare_message.indexOf(tmp_value) !== -1 || compare_message == "" ){
 					$('.'+this.timeline_class_month).html($('.'+this.timeline_class_month).html()+this.template_item('timeline-month-item',self.raw_data[i]));
 				}
 			}
