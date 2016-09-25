@@ -83,7 +83,7 @@ Profile_controller.prototype.set_template_month_item = function(data,select_call
 	$('#profile_month_select').on('change',function(){
 		$('#profile_month_select').off('change');
 		var tmp_value = $('#profile_month_select').val();
-		this.month_value = tmp_value;
+		self.month_value = tmp_value;
 		select_callback(tmp_value);
 	})
 	
@@ -104,7 +104,7 @@ Profile_controller.prototype.set_onclick_event = function(event_callback){
 Profile_controller.prototype.template_item = function(profile_item_class,item_data) {
 
 	var template = "";
-
+	const PROFILE_EVENT_TITLE = { post_have_seat:"我有位子",post_find_seat:"我找司機",post_together_seat:"找人共乘"};
 	var PROFILE_UTIL = new Util();
 	var other_message = item_data[PROFILE_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE];
 	var time = new Date(item_data[PROFILE_UTIL.ROOT_DATA_KEY.START])
@@ -113,13 +113,15 @@ Profile_controller.prototype.template_item = function(profile_item_class,item_da
 	var location_from = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM];
 	var location_to  = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO];
 	var post_time  = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.POST_TIME];
+	var bonus_response = new Date(item_data[TIMELINE_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE]);
+	var type = item_data[TIMELINE_UTIL.ROOT_DATA_KEY.EVENT_TITLE];
 	// body...
-	template ="<li class=\"collection-item avatar "+profile_item_class+" tag-enableclick\" style=\"padding-left:15%;\" data-facebookid=\""+facebook_id+"\" data-posttime=\""+post_time+"\">"
+	template ="<li class=\"collection-item avatar "+profile_item_class+" \" style=\"padding-left:15%;\" data-facebookid=\""+facebook_id+"\" data-posttime=\""+post_time+"\">"
 			    +"<img class=\"profile-my-photo circle\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" />"
 			    +"<span class=\"title\">"
-			    	+"<span >"+date+"</span>"
+			    	+"<span >"+date+' '+  PROFILE_EVENT_TITLE[type] +"</span>"
 				+"</span>"
-			    +"<p><span >從 "+location_from+"<span> <span >到 "+location_to+"</span>"
+			    +"<p><span >從 "+location_from+"<span> <span >到 "+location_to+" 回饋方式 :"+bonus_response+"</span>"
 			    	+"<div>"
 
 	var passenger = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.PASSENGER];

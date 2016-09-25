@@ -46,7 +46,7 @@
 
 	    FB.login(function(response) {
 	        if (response.authResponse) {         
-	          FB.api('/me', function(response) {
+	          FB.api('/me',{name_format : "Chinese"}, function(response) {
 	             console.log('Good to see you, ' + response.name + '.');
 	             $('#menu').css("display","block");
 	             $('#facebook_userid').text(response.id);
