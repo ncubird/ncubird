@@ -59,8 +59,20 @@ Profile_controller.prototype.set_template_month_item = function(data,select_call
 
 	$('.'+this.profile_class_month).html("");
 	for(var i=0;i<data.length;i++){
-
-		$('.'+this.profile_class_month).html($('.'+this.profile_class_month).html()+this.template_item('profile-month-item',data[i]));
+		var flag_show = false;
+		var other_message = data[i][PROFILE_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE];
+		var passenger = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.PASSENGER];
+		for(var j=0;j<passenger.length;j++){
+			if(passenger[i] == $('#facebook_userid').html()){
+				flag_show = true;
+			}
+		}
+		if(other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] == $('#facebook_userid').html()){
+			flag_show = true;
+		}
+		if(flag_show == true){
+			$('.'+this.profile_class_month).html($('.'+this.profile_class_month).html()+this.template_item('profile-month-item',data[i]));
+		}
 	}
 
 	$('#profile_month_select').off('change');
