@@ -447,3 +447,9 @@ body {
 	display: none !important;
 }
 
+.fixed-action-btn{
+	width: 80px;
+	text-align: right;
+}
+
+
