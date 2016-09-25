@@ -87,7 +87,7 @@ $( document ).ready(function() {
                     util.set_block();
                     module_google_script.get_event_for_during(new Date(timeline_controller.long_time),1,timeline_get_event_for_during_callback);
 
-                    function timeline_get_event_for_during_callback(){
+                    function timeline_get_event_for_during_callback(res){
                         console.log('========== callback ==============');
                         util.set_unblock();
                         if(res == null){
