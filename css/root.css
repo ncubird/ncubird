@@ -447,13 +447,14 @@ body {
 	display: none !important;
 }
 
-.fixed-action-btn{
-	width: 80px;
-	text-align: right;
+.mobile-nemu-item{
+	padding: 0 10px !important;
 }
 
 .fixed-action-btn{
-	padding: 0 1rem !important;
+	width: 80px;
+	text-align: right;	
 }
+
 
 
