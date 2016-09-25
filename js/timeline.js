@@ -57,7 +57,7 @@ Timeline_controller.prototype.set_template_month_item = function(data,search_cal
 		var tmp_value = ('#timeline_type_select').val();		
 		switch(tmp_value){
 			case 'all':
-				self.timeline_search = ''
+				self.timeline_search = 'all'
 				break;
 			case 'time':
 				$('#timeline_search_time').removeClass('timeline-search-disable');
