@@ -38,6 +38,10 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 
 			$('.blockmodal-infomation').css('display','table');
 
+			$(".blockmodal-infomation").css('height','0xp');
+            $(".blockmodal-infomation").height(0);
+            $(".blockmodal-infomation").css('height',($( document ).height());
+
 			var gmap = new Google_map('block_map');
 			console.log(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG]);
 			if(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG] != "" && other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG] != undefined && other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG] != null){
