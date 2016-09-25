@@ -13,9 +13,8 @@ Fb_sdk.prototype.send_message = function(facebook_id){
 
   if (navigator.userAgent.indexOf("Mobi") > -1){
       window.location.assign("#page-2");
-      window.location.replace("https://www.facebook.com/dialog/send?" + 
-                              "app_id=177786062658873" + 
-                              "&link=https://ncubird.github.io/ncubird/" + 
+      window.location.replace("https://www.facebook.com/dialog/feed?" + 
+                              "client_id=177786062658873" +
                               "&redirect_uri=https://ncubird.github.io/ncubird/"+
                               "&to="+JSON.stringify(facebook_id));
   } else {
