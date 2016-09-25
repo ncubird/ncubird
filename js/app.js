@@ -222,7 +222,7 @@ $( document ).ready(function() {
                                     util.set_block();
                                     module_google_script.event_send(data,function(res){
                                         if(res != '200'){
-                                            Materialize.toast('出錯了', 2000);
+                                            Materialize.toast('出錯了2', 2000);
                                         }
                                         util.set_unblock();
                                         var now_time = new Date();
@@ -230,7 +230,7 @@ $( document ).ready(function() {
                                         module_google_script.get_event_for_day(new Date(profile_controller.long_time),profile_get_event_for_day_callback);
                                     });
                                 }else{
-                                    Materialize.toast('出錯了', 2000);
+                                    Materialize.toast('出錯了3', 2000);
                                 }                                     
                             });
 
