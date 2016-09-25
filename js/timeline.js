@@ -32,10 +32,10 @@ Timeline_controller.prototype.set_template_month_item = function(data,search_cal
 	console.log(data);
 	
 
-	$('.'+this.timeline_class_month).html("");
-	for(var i=0;i<data.length;i++){
-		$('.'+this.timeline_class_month).html($('.'+this.timeline_class_month).html()+this.template_item('timeline-month-item',data[i]));		
-	}
+	// $('.'+this.timeline_class_month).html("");
+	// for(var i=0;i<data.length;i++){
+	// 	$('.'+this.timeline_class_month).html($('.'+this.timeline_class_month).html()+this.template_item('timeline-month-item',data[i]));		
+	// }
 
 	this.raw_data = data;
 
