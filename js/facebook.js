@@ -19,7 +19,7 @@ Fb_sdk.prototype.send_message = function(facebook_id){
                               "&link=https://ncubird.github.io/ncubird/" + 
                               "&redirect_uri=https://ncubird.github.io/ncubird/"+
                               "&to="+JSON.stringify(facebook_id));
-      );
+      
   }
 }
 
