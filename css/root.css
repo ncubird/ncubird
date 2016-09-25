@@ -44,7 +44,7 @@ body {
 
 .blockmodal-infomation{
 	display: none; /* Hidden by default */
-    /*position: fixed;  Stay in place */
+    position: absolute;
     padding-bottom: 10px;
     padding-right: 20%;
     padding-left: 20%;
@@ -374,13 +374,13 @@ body {
 }
 
 .root-header{
-	position: relative;
+	position: absolute;
+	top: 0px;
 	width: auto;
 	height: 235px;
 	margin-top: 0px;
 	margin-left: 50%;
 	margin-right: 5%;
-
 	-moz-transform:scaleX(-1);
     -webkit-transform:scaleX(-1);
     -o-transform:scaleX(-1);
