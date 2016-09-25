@@ -15,14 +15,29 @@ $( document ).ready(function() {
     var profile_controller = new Profile_controller('profile-today','profile-month')
     
 
-    $('.menu-card').click(function(){
-    	var template = './templates/'+$(this).attr('id')+'.html';
-    	console.log($(this).attr('id')+','+template);
+   
+
+    $(window).resize(function() {
+        if($( window ).width() > 700){
+            $('.mobile-menu-time').addClass('disable-mobile-menu')
+            $('.menu-card').unbind('click');
+            $('.menu-card').click(menu_card_clickevent);
+        }else{
+            $('.mobile-menu-time').removeClass('disable-mobile-menu')
+            $('.mobile-menu-time').unbind('click');
+            $('.mobile-menu-time').click(menu_card_clickevent);
+        }
+            
+    });
+
+    function menu_clickevent(){
+        var template = './templates/'+$(this).attr('id')+'.html';
+        console.log($(this).attr('id')+','+template);
 
         var self = this;
 
-    	$('.context').load(template,function(){
-    		
+        $('.context').load(template,function(){
+            
 
             switch($(self).attr('id')){
                 case 'calander':{                    
@@ -254,19 +269,19 @@ $( document ).ready(function() {
                     break;
 
                 case 'about':{
-                        about_controller.test(function(){
-                            var fb_sdk = new Fb_sdk();
-                            fb_sdk.send_message($('#facebook_userid').text());
-                        })                        
+                        // about_controller.test(function(){
+                        //     var fb_sdk = new Fb_sdk();
+                        //     fb_sdk.send_message($('#facebook_userid').text());
+                        // })                        
                     }
                     break;
             }
 
             $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
-    	});
-    	$(".root-background").css('height','0xp');
-    	$(".root-background").height(0);   	
-    });
+        });
+        $(".root-background").css('height','0xp');
+        $(".root-background").height(0);    
+    }
 
     const EVENT_TITLE = { post_have_seat:"我有位子",post_find_seat:"我找司機",post_together_seat:"找人共乘"}
     const GENDER = { boy:"男", girl:"女"}
