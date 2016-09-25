@@ -27,7 +27,7 @@ $( document ).ready(function() {
             console.log("menu-card");
         }else{
             $('.mobile-menu').removeClass('disable-mobile-menu');
-            $(".button-mobile-collapse").sideNav();
+            // $(".button-mobile-collapse").sideNav();
             $('.mobile-menu-item').unbind('click');
             $('.mobile-menu-item').click(menu_clickevent);
             console.log("mobile-menu-item");
