@@ -309,14 +309,16 @@ body {
 		padding-right: 2px !important;
 	}
 
+	.logo-ncu{
+		display: none !important;
+	}
+
 }
 
 
 @media screen and (max-width: 480px){
 
-	.logo-ncu{
-		display: none !important;
-	}
+	
 
 	.logo-text{
 		font-size: 38px;
