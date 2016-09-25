@@ -4,7 +4,7 @@
 $( document ).ready(function() {
 
     console.log("ready");
-    var fb_sdk = new Fb_sdk();
+    
 
 	var util = new Util();
     var calendar_controller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
@@ -255,6 +255,7 @@ $( document ).ready(function() {
 
                 case 'about':{
                         about_controller.test(function(){
+                            var fb_sdk = new Fb_sdk();
                             fb_sdk.send_message($('#facebook_userid').text());
                         })                        
                     }
@@ -300,31 +301,31 @@ $( document ).ready(function() {
 
 });
 
-var observeDOM = (function(){
-    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver,
-        eventListenerSupported = window.addEventListener;
+// var observeDOM = (function(){
+//     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver,
+//         eventListenerSupported = window.addEventListener;
 
-    return function(obj, callback){
-        if( MutationObserver ){
-            // define a new observer
-            var obs = new MutationObserver(function(mutations, observer){
-                if( mutations[0].addedNodes.length || mutations[0].removedNodes.length )
-                    callback();
-            });
-            // have the observer observe foo for changes in children
-            obs.observe( obj, { childList:true, subtree:true });
-        }
-        else if( eventListenerSupported ){
-            obj.addEventListener('DOMNodeInserted', callback, false);
-            obj.addEventListener('DOMNodeRemoved', callback, false);
-        }
-    }
-})();
+//     return function(obj, callback){
+//         if( MutationObserver ){
+//             // define a new observer
+//             var obs = new MutationObserver(function(mutations, observer){
+//                 if( mutations[0].addedNodes.length || mutations[0].removedNodes.length )
+//                     callback();
+//             });
+//             // have the observer observe foo for changes in children
+//             obs.observe( obj, { childList:true, subtree:true });
+//         }
+//         else if( eventListenerSupported ){
+//             obj.addEventListener('DOMNodeInserted', callback, false);
+//             obj.addEventListener('DOMNodeRemoved', callback, false);
+//         }
+//     }
+// })();
 
-// Observe a specific DOM element:
-observeDOM( document.getElementById('context') ,function(){ 
-    console.log('dom changed');
-});
+// // Observe a specific DOM element:
+// observeDOM( document.getElementById('context') ,function(){ 
+//     console.log('dom changed');
+// });
 
 
 

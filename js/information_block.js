@@ -50,13 +50,31 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-bouns-joinpeople').html("");
 			var passenger = other_message[INFO_UTIL.OTHER_MESSAGE_KEY.PASSENGER];
 			$('.blockmodal-infomation-unjoinbtn').addClass('btn-disable');
-			$('.blockmodal-infomation-unjoinbtn').addClass('btn-disable');
 			for(var j=0;j<passenger.length;j++){
 				$('.blockmodal-infomation-bouns-joinpeople').html($('.blockmodal-infomation-bouns-joinpeople').html()+ this.template_passenger_item(passenger[j]));
 				if(passenger[j] == $('#facebook_userid').html()){
 					$('.blockmodal-infomation-unjoinbtn').removeClass('btn-disable');
 				}
 			}
+
+
+			$('.blockmodal-infomation-contectpassenger').addClass('btn-disable');
+			if(passenger.length > 0 ){
+				if(facebook_id == $('#facebook_userid').html()){
+					$('.blockmodal-infomation-contectpassenger').removeClass('btn-disable');
+					$('.blockmodal-infomation-contectpassenger').unbind('click');
+					$('.blockmodal-infomation-contectpassenger').click(function(){
+						var fb_sdk = new Fb_sdk();
+						fb_sdk.send_message(passenger);
+					})
+				}
+			}
+
+			$('.blockmodal-infomation-contectposter').unbind('click');
+			$('.blockmodal-infomation-contectpassenger').click(function(){
+				var fb_sdk = new Fb_sdk();
+				fb_sdk.send_message([facebook_id]);
+			})
 			
 			$('.blockmodal-infomation-cancelbtn').unbind('click');
 			$('.blockmodal-infomation-cancelbtn').click(function(){
