@@ -241,7 +241,7 @@ $( document ).ready(function() {
                         console.log('========== callback ==============');
                         util.set_unblock();
                         if(res == null){
-                            Materialize.toast('出錯了', 2000); 
+                            Materialize.toast('出錯了4', 2000); 
                             return;                              
                         }
                         profile_controller.set_template_month_item(res,profile_month_select_event_callback,profile_set_template_month_item_callback);
@@ -260,7 +260,7 @@ $( document ).ready(function() {
                                     util.set_block();
                                     module_google_script.event_send(data,function(res){
                                         if(res != '200'){
-                                            Materialize.toast('出錯了', 2000);
+                                            Materialize.toast('出錯了5', 2000);
                                         }
                                         util.set_unblock();
                                         var now_time = new Date();
@@ -268,7 +268,7 @@ $( document ).ready(function() {
                                         module_google_script.get_event_for_during(new Date(profile_controller.long_time),profile_controller.month_value,profile_get_event_for_during_callback);
                                     });
                                 }else{
-                                    Materialize.toast('出錯了', 2000);
+                                    Materialize.toast('出錯了6', 2000);
                                 }                                     
                             });
 
