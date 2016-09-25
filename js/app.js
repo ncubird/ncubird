@@ -10,7 +10,7 @@ $( document ).ready(function() {
     var calendar_controller = new Calander_controller('calander-days','calander-slider-month','calander-slider-year');
     var post_controller = new Post_controller('post_button');
     var about_controller = new About_controller();
-    var timeline_controller = new Timeline_controller();
+    var timeline_controller = new Timeline_controller('timeline-class-month');
     var module_google_script = new Module_google_script();
     var profile_controller = new Profile_controller('profile-today','profile-month')
     
