@@ -84,7 +84,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			}
 
 			
-			if (navigator.userAgent.indexOf("Mobi") < 0){
+			if (navigator.userAgent.indexOf("Mobi") > -1){
 				$('.blockmodal-infomation-contectposter').addClass('btn-disable');
 			}
 
