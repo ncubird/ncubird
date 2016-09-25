@@ -70,22 +70,28 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-contectpassenger').addClass('btn-disable');
 			if(passenger.length > 0 ){
 				if(facebook_id == $('#facebook_userid').html()){
-					$('.blockmodal-infomation-contectpassenger').removeClass('btn-disable');
-					$('.blockmodal-infomation-contectpassenger').unbind('click');
-					$('.blockmodal-infomation-contectpassenger').click(function(){
-						var fb_sdk = new Fb_sdk();
-						console.log("test");
-						if (navigator.userAgent.indexOf("Mobi") < 0){
+					if (navigator.userAgent.indexOf("Mobi") < 0){
+						$('.blockmodal-infomation-contectpassenger').removeClass('btn-disable');
+						$('.blockmodal-infomation-contectpassenger').unbind('click');
+						$('.blockmodal-infomation-contectpassenger').click(function(){
+							var fb_sdk = new Fb_sdk();
+							console.log("test");						
 							fb_sdk.send_message(passenger);
-						}
-					})
+							
+						})
+					}
 				}
+			}
+
+			
+			if (navigator.userAgent.indexOf("Mobi") < 0){
+				$('.blockmodal-infomation-contectposter').addClass('btn-disable');
 			}
 
 			$('.blockmodal-infomation-contectposter').unbind('click');
 			$('.blockmodal-infomation-contectposter').click(function(){
-				var fb_sdk = new Fb_sdk();
 				if (navigator.userAgent.indexOf("Mobi") < 0){
+					var fb_sdk = new Fb_sdk();				
 					fb_sdk.send_message([facebook_id]);
 				}
 			})
