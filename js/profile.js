@@ -6,7 +6,7 @@ function Profile_controller(profile_class_today,profile_class_month){
 	this.date;
 	this.hour;
 	this.long_time;
-	this.month_value;
+	this.month_value = 1;
 	this.profile_class_today = profile_class_today;
 	this.profile_class_month = profile_class_month;
 }
@@ -83,7 +83,6 @@ Profile_controller.prototype.set_template_month_item = function(data,select_call
 	$('#profile_month_select').on('change',function(){
 		$('#profile_month_select').off('change');
 		var tmp_value = $('#profile_month_select').val();
-		self.month_value = tmp_value;
 		select_callback(tmp_value);
 	})
 	

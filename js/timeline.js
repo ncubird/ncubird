@@ -9,7 +9,7 @@ function Timeline_controller(timeline_class_month){
 	this.timeline_class_month = timeline_class_month;
 	this.timeline_search = 'all';
 	this.timeline_search_value = "";
-	this.month_value;
+	this.month_value = 1;
 	this.raw_data;
 }
 
