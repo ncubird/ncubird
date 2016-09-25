@@ -16,7 +16,7 @@ $( document ).ready(function() {
     
 
     $('.menu-card').click(function(){
-    	var template = util.get_template_byID($(this).attr('id'));
+    	var template = './templates/'+$(this).attr('id')+'.html';
     	console.log($(this).attr('id')+','+template);
 
         var self = this;
