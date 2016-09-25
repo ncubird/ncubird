@@ -90,7 +90,7 @@ Timeline_controller.prototype.set_search_change = function(search_callback){
 	if(self.timeline_search != 'all'){
 		$(self.timeline_search).off('input propertychange paste');
 		$(self.timeline_search).on('input propertychange paste',function(){
-			var tmp_value = $(self.timeline_search).val();
+			var tmp_value = $(self.timeline_search).val() + '';
 			self.timeline_search_value = tmp_value;
 
 			$('.'+self.timeline_class_month).html("");
