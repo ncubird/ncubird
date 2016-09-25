@@ -128,7 +128,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 
 		if(shour == "" || shour == null || shour == undefined
 			|| sminute == "" || sminute == null || sminute == undefined 
-			|| parseInt(shour) < 0 || parseInt(sminute) >= 24 
+			|| parseInt(shour) < 0 || parseInt(shour) >= 24 
 			|| parseInt(sminute) < 0 || parseInt(sminute) >=60 ){
 			Materialize.toast('請輸入時間', 2000);
 			return;

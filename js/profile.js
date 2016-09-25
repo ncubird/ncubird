@@ -25,7 +25,21 @@ Profile_controller.prototype.set_today_and_sync = function(){
 Profile_controller.prototype.set_template_today_item = function(data,event_callback) {
 	$('.'+this.profile_class_today).html("");
 	for(var i=0;i<data.length;i++){
-		$('.'+this.profile_class_today).html($('.'+this.profile_class_today).html()+this.template_item('profile-today-item',data[i]));
+		var flag_show = false;
+		var other_message = data[i][PROFILE_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE];
+		var passenger = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.PASSENGER];
+		for(var j=0;j<passenger.length;j++){
+			if(passenger[i] == $('#facebook_userid').html()){
+				flag_show = true;
+			}
+		}
+		if(other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] == $('#facebook_userid').html()){
+			flag_show = true;
+		}
+		if(flag_show == true){
+			$('.'+this.profile_class_today).html($('.'+this.profile_class_today).html()+this.template_item('profile-today-item',data[i]));
+		}
+				
 	}
 
 	event_callback(data);
