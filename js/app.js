@@ -17,18 +17,22 @@ $( document ).ready(function() {
 
    
 
-    $(window).resize(function() {
+    $(window).resize(resize_event;
+
+    function resize_event() {
         if($( window ).width() > 700){
             $('.mobile-menu-time').addClass('disable-mobile-menu')
             $('.menu-card').unbind('click');
-            $('.menu-card').click(menu_card_clickevent);
+            $('.menu-card').click(menu_clickevent);
         }else{
             $('.mobile-menu-time').removeClass('disable-mobile-menu')
             $('.mobile-menu-time').unbind('click');
-            $('.mobile-menu-time').click(menu_card_clickevent);
-        }
-            
-    });
+            $('.mobile-menu-time').click(menu_clickevent);
+        }            
+    }
+
+    resize_event();
+
 
     function menu_clickevent(){
         var template = './templates/'+$(this).attr('id')+'.html';
