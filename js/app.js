@@ -21,12 +21,12 @@ $( document ).ready(function() {
 
     function resize_event() {
         if($( window ).width() > 700){
-            $('.mobile-menu-item').addClass('disable-mobile-menu')
+            $('.mobile-menu').addClass('disable-mobile-menu')
             $('.menu-card').unbind('click');
             $('.menu-card').click(menu_clickevent);
             console.log("menu-card");
         }else{
-            $('.mobile-menu-item').removeClass('disable-mobile-menu')
+            $('.mobile-menu').removeClass('disable-mobile-menu')
             $('.mobile-menu-item').unbind('click');
             $('.mobile-menu-item').click(menu_clickevent);
             console.log("mobile-menu-item");
