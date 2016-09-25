@@ -19,8 +19,7 @@ body {
 
 .blockmodal {
     display: none; /* Hidden by default */
-    /*position: fixed;  Stay in place */
-    top: 0px;
+    position: fixed; /* Stay in place */
     padding-top: 100%;
     z-index: 100; /* Sit on top */
     left: 0;
@@ -45,12 +44,13 @@ body {
 
 .blockmodal-infomation{
 	display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
+    /*position: fixed;  Stay in place */
     padding-bottom: 10px;
     padding-right: 20%;
     padding-left: 20%;
     z-index: 100; /* Sit on top */
     left: 0;
+    top: 0;
     bottom: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
