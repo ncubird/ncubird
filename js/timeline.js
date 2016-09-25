@@ -7,7 +7,7 @@ function Timeline_controller(timeline_class_month){
 	this.hour;
 	this.long_time;
 	this.timeline_class_month = timeline_class_month;
-	this.timeline_search = 'time';
+	this.timeline_search = 'all';
 	this.timeline_search_value = "";
 	this.month_value;
 	this.raw_data;
@@ -56,6 +56,9 @@ Timeline_controller.prototype.set_template_month_item = function(data,search_cal
 		$('#timeline_search_type').addClass('timeline-search-disable')
 		var tmp_value = ('#timeline_type_select').val();		
 		switch(tmp_value){
+			case 'all':
+				self.timeline_search = ''
+				break;
 			case 'time':
 				$('#timeline_search_time').removeClass('timeline-search-disable');
 				self.timeline_search = '#timeline_search_time'
@@ -84,37 +87,45 @@ Timeline_controller.prototype.set_template_month_item = function(data,search_cal
 Timeline_controller.prototype.set_search_change = function(search_callback){
 	var self = this;
 	var TIMELINE_UTIL = new Util();
-	$(self.timeline_search).off('input propertychange paste');
-	$(self.timeline_search).on('input propertychange paste',function(){
-		var tmp_value = $(self.timeline_search).val();
-		self.timeline_search_value = tmp_value;
+	if(self.timeline_search != 'all'){
+		$(self.timeline_search).off('input propertychange paste');
+		$(self.timeline_search).on('input propertychange paste',function(){
+			var tmp_value = $(self.timeline_search).val();
+			self.timeline_search_value = tmp_value;
 
-		$('.'+self.timeline_class_month).html("");
-		for(var i=0;i<self.raw_data.length;i++){
-			var flag_show = false;
-			var other_message = self.raw_data[i][TIMELINE_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE];
-			var compare_message = "";
+			$('.'+self.timeline_class_month).html("");
+			for(var i=0;i<self.raw_data.length;i++){
+				var flag_show = false;
+				var other_message = self.raw_data[i][TIMELINE_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE];
+				var compare_message = "";
 
-			switch(self.timeline_search){
-				case '#timeline_search_time' :
-					compare_message = self.raw_data[i][TIMELINE_UTIL.ROOT_DATA_KEY.START];
-					break;
-				case '#timeline_search_location' :
-					compare_message = other_message[TIMELINE_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM];
-					compare_message = compare_message + other_message[TIMELINE_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO];
-					break;
-				case '#timeline_search_type' :
-					compare_message = self.raw_data[i][TIMELINE_UTIL.ROOT_DATA_KEY.EVENT_TITLE];
-					break;
+				switch(self.timeline_search){
+					case '#timeline_search_time' :
+						compare_message = self.raw_data[i][TIMELINE_UTIL.ROOT_DATA_KEY.START];
+						break;
+					case '#timeline_search_location' :
+						compare_message = other_message[TIMELINE_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM];
+						compare_message = compare_message + other_message[TIMELINE_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO];
+						break;
+					case '#timeline_search_type' :
+						compare_message = self.raw_data[i][TIMELINE_UTIL.ROOT_DATA_KEY.EVENT_TITLE];
+						break;
+				}
+				
+				if(compare_message.indexOf(compare_message) !== -1 || compare_message="" ){
+					$('.'+this.timeline_class_month).html($('.'+this.timeline_class_month).html()+this.template_item('timeline-month-item',self.raw_data[i]));
+				}
 			}
+			search_callback(self.raw_data);
 			
-			if(compare_message.indexOf(compare_message) !== -1){
-				$('.'+this.timeline_class_month).html($('.'+this.timeline_class_month).html()+this.template_item('timeline-month-item',self.raw_data[i]));
-			}
+		})
+	}else{
+		for(var i=0;i<self.raw_data.length;i++){
+			$('.'+this.timeline_class_month).html($('.'+this.timeline_class_month).html()+this.template_item('timeline-month-item',self.raw_data[i]));
 		}
 		search_callback(self.raw_data);
-		
-	})
+	}
+	
 	
 }
 
