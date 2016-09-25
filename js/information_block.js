@@ -35,6 +35,8 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-vehical').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.VEHICAL]);			
 			$('.blockmodal-infomation-people-number').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.PEOPLE_NUMBER]);
 			$('.blockmodal-infomation-bouns-response').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE]);
+
+			$('.blockmodal-infomation').focus();
 			$('.blockmodal-infomation').css('display','table');
 
 			var gmap = new Google_map('block_map');
