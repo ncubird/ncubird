@@ -21,13 +21,15 @@ $( document ).ready(function() {
 
     function resize_event() {
         if($( window ).width() > 700){
-            $('.mobile-menu-time').addClass('disable-mobile-menu')
+            $('.mobile-menu-item').addClass('disable-mobile-menu')
             $('.menu-card').unbind('click');
             $('.menu-card').click(menu_clickevent);
+            console.log("menu-card");
         }else{
-            $('.mobile-menu-time').removeClass('disable-mobile-menu')
-            $('.mobile-menu-time').unbind('click');
-            $('.mobile-menu-time').click(menu_clickevent);
+            $('.mobile-menu-item').removeClass('disable-mobile-menu')
+            $('.mobile-menu-item').unbind('click');
+            $('.mobile-menu-item').click(menu_clickevent);
+            console.log("mobile-menu-item");
         }            
     }
 
