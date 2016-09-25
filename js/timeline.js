@@ -100,8 +100,8 @@ Timeline_controller.prototype.set_search_change = function(search_callback){
 
 				switch(self.timeline_search){
 					case '#timeline_search_time' :
-					    var time = self.raw_data[i][TIMELINE_UTIL.ROOT_DATA_KEY.START]
-						compare_message = (time.getYear+1900) +'-' + (time.getMonth()+1) + '-' + time.getDate() + '';
+					    var time = new Date(self.raw_data[i][TIMELINE_UTIL.ROOT_DATA_KEY.START])
+						compare_message = (time.getYear()+1900) +'-' + (((time.getMonth()+1) > 9)?(time.getMonth()+1):('0'+ (time.getMonth()+1))) + '-' + (((time.getDate()) > 9)?(time.getDate()):('0'+ (time.getDate()))) + '';
 						break;
 					case '#timeline_search_location' :
 						compare_message = other_message[TIMELINE_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM] + '';
