@@ -322,7 +322,7 @@ var observeDOM = (function(){
 })();
 
 // Observe a specific DOM element:
-observeDOM( document.getElementById('dom_element') ,function(){ 
+observeDOM( document.getElementById('context') ,function(){ 
     console.log('dom changed');
 });
 
