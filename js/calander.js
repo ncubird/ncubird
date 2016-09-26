@@ -71,7 +71,7 @@ Calander_controller.prototype.set_calander_template = function (year,month,event
 	
 }
 
-Calander_controller.prototype.set_click_event = function(event_callback){
+Calander_controller.prototype.set_click_event = function(event_callback,search_callback){
 	var self = this;
 	$('.calander-slider-right').unbind("click");
 	$('.calander-slider-right').click(function(){
@@ -92,12 +92,14 @@ Calander_controller.prototype.set_click_event = function(event_callback){
 	$("#calander_search_type").on('change',function(){
 		self.search_type = $("#calander_search_type").val();
 		self.calander_refresh_tag(self.tmp_data);
+		search_callback();
 	})
 
 	$("#calander_search_info").off('change')
 	$("#calander_search_info").on('change',function(){
 		self.search_info = $("#calander_search_info").val();
 		self.calander_refresh_tag(self.tmp_data);
+		search_callback();
 	})
 
 	
@@ -161,7 +163,7 @@ Calander_controller.prototype.change_month = function(add_or_minutes){
 
 const EVENT_TITLE = { post_have_seat:"我有位子",post_find_seat:"我找司機",post_together_seat:"找人共乘"}
 const GENDER = { boy:"男", girl:"女"}
-Calander_controller.prototype.calander_refresh_tag = function(res){
+Calander_controller.prototype.calander_refresh_tag = function(res,callback){
 
 	for(var i=1;i<=((this.is_spectial_Feb(this.year) && this.month == 1)? 29 : MONTH_DAYS[this.month]) ;i++){
 		$('#'+"calender-"+this.year+'-'+this.month+'-'+i).html("");
@@ -197,6 +199,8 @@ Calander_controller.prototype.calander_refresh_tag = function(res){
         }                        
         
     }
+
+    callback(res);
     $('.tooltipped').tooltip({delay: 50});
     $('select').material_select();
 }

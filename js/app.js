@@ -35,7 +35,7 @@ $( document ).ready(function() {
     }
 
     resize_event();
-   
+
 
 
     function menu_clickevent(){
@@ -67,36 +67,40 @@ $( document ).ready(function() {
                     function calander_get_event_for_month_callback(res){
                             console.log("2")
                             if(res != null){
-                                calendar_controller.calander_refresh_tag(res);
+                                calendar_controller.calander_refresh_tag(res,calander_search_event_callback);
                                 calendar_controller.set_data(res);                                
                             }else{
                                 Materialize.toast('出錯了', 2000);
                             }
 
-                            $('.tag-enableclick').unbind("click");
-                            $('.tag-enableclick').click({ parmas1 :res },function(event){
-                                var information_block = new Information_block();                               
-                                information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
-                                    if(data != undefined){
-                                        util.set_block();
-                                        module_google_script.event_send(data,function(res){
-                                            if(res != '200'){
-                                                Materialize.toast('出錯了', 2000);
-                                            }
-                                            util.set_unblock();
-                                            calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,calander_set_calander_template_callback);
-                                            var now_time = new Date();
-                                            util.set_block();
-                                            module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),calander_get_event_for_month_callback);
-                                        });
-                                    }                                    
-                                });
-
-                            })
+                            
 
                             util.set_unblock();
                             
-                        }
+                    }
+
+                    function calander_search_event_callback(res){
+                        $('.tag-enableclick').unbind("click");
+                        $('.tag-enableclick').click({ parmas1 :res },function(event){
+                            var information_block = new Information_block();                               
+                            information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
+                                if(data != undefined){
+                                    util.set_block();
+                                    module_google_script.event_send(data,function(res){
+                                        if(res != '200'){
+                                            Materialize.toast('出錯了', 2000);
+                                        }
+                                        util.set_unblock();
+                                        calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,calander_set_calander_template_callback);
+                                        var now_time = new Date();
+                                        util.set_block();
+                                        module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),calander_get_event_for_month_callback);
+                                    });
+                                }                                    
+                            });
+
+                        })
+                    }
                     console.log("calander");
                     var now_time = new Date();
                     util.set_block();
