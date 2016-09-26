@@ -175,8 +175,13 @@ Calander_controller.prototype.calander_refresh_tag = function(res,callback){
         var end_time = new Date(res[i][TAG_UTIL.ROOT_DATA_KEY.END]);
         var other_message = res[i][TAG_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE];
         var message = undefined;
-        if(this.search_info != 'all'){               
-            message = other_message[this.search_info] + '\n';                
+        if(this.search_info != 'all'){
+        	if(this.search_info == 'gender'){
+        		message = GENDER[other_message[TAG_UTIL.OTHER_MESSAGE_KEY.GENDER]] + '';   
+        	}else{
+        		message = other_message[this.search_info] + '';   
+        	}
+                         
         }else{
             message = '我是' + GENDER[other_message[TAG_UTIL.OTHER_MESSAGE_KEY.GENDER]] + '生，' +  '想從 ' + other_message[TAG_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM] + ' 坐到 ' + other_message[TAG_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO] + '，坐一次 ' + other_message[TAG_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE];     
         }
