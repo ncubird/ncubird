@@ -43,7 +43,7 @@ Calander_controller.prototype.generate_offset = function (year,month) {
 	this.offset = target_point.getDay();
 }
 
-Calander_controller.prototype.set_calander_template = function (year,month,event_callback) {
+Calander_controller.prototype.set_calander_template = function (year,month,event_callback,search_callback) {
 	this.generate_offset(year,month);
 	this.search_type = $("#calander_search_type").val();
 	this.search_info = $("#calander_search_info").val();
@@ -66,7 +66,7 @@ Calander_controller.prototype.set_calander_template = function (year,month,event
 	}
 
 	this.set_today();
-	this.set_click_event(event_callback)
+	this.set_click_event(event_callback,search_callback)
 
 	
 }
@@ -91,15 +91,13 @@ Calander_controller.prototype.set_click_event = function(event_callback,search_c
 	$("#calander_search_type").off('change')
 	$("#calander_search_type").on('change',function(){
 		self.search_type = $("#calander_search_type").val();
-		self.calander_refresh_tag(self.tmp_data);
-		search_callback();
+		self.calander_refresh_tag(self.tmp_data,search_callback);
 	})
 
 	$("#calander_search_info").off('change')
 	$("#calander_search_info").on('change',function(){
 		self.search_info = $("#calander_search_info").val();
-		self.calander_refresh_tag(self.tmp_data);
-		search_callback();
+		self.calander_refresh_tag(self.tmp_data,search_callback);
 	})
 
 	
