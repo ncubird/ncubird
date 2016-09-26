@@ -43,8 +43,9 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
             $(".blockmodal-infomation").css('height',$( document ).height()+'px');
 
             var context_height = $("#information_context").height();
-            $(".blockmodal-infomation").css('padding-top',(context_height/3 - 32)+'px');
-            $(".blockmodal-infomation").css('padding-bottom',(2*context_height/3 - 32)+'px');
+            var offset = $( document ).height() - context_height;
+            $(".blockmodal-infomation").css('padding-top',(offset/3 - 32)+'px');
+            $(".blockmodal-infomation").css('padding-bottom',(2*offset/3 - 32)+'px');
 
 			var gmap = new Google_map('block_map');
 			console.log(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG]);
