@@ -68,11 +68,11 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			}
 
 
-			// $('.blockmodal-infomation-contectpassenger').addClass('btn-disable');
+			$('.blockmodal-infomation-contectpassenger').addClass('btn-disable');
 			if(passenger.length > 0 ){
 				if(facebook_id == $('#facebook_userid').html()){
 					if (navigator.userAgent.indexOf("Mobi") < 0){ //computer
-						// $('.blockmodal-infomation-contectpassenger').removeClass('btn-disable');
+						$('.blockmodal-infomation-contectpassenger').removeClass('btn-disable');
 						$('.blockmodal-infomation-contectpassenger').unbind('click');
 						$('.blockmodal-infomation-contectpassenger').click(function(){
 							var fb_sdk = new Fb_sdk();			
@@ -80,6 +80,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 							
 						});
 					}else{
+						$('.blockmodal-infomation-contectpassenger').removeClass('btn-disable');
 						$('.blockmodal-infomation-contectpassenger').unbind('click');
 						$('.blockmodal-infomation-contectpassenger').click(function(){
 							var fb_sdk = new Fb_sdk();
