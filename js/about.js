@@ -2,6 +2,6 @@ function About_controller(){
 
 }
 
-// About_controller.prototype.test = function(callback){
-// 	$("#about_test").click(callback)
-// }
+About_controller.prototype.manager_click = function(callback){
+	$("#manager").click(callback)
+}

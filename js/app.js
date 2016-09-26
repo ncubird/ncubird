@@ -284,10 +284,10 @@ $( document ).ready(function() {
                     break;
 
                 case 'about':{
-                        // about_controller.test(function(){
-                        //     var fb_sdk = new Fb_sdk();
-                        //     fb_sdk.send_message($('#facebook_userid').text());
-                        // })                        
+                        about_controller.manager_click(function(){
+                            var fb_sdk = new Fb_sdk();
+                            fb_sdk.send_message(["100000244681661"]);
+                        })                        
                     }
                     break;
             }
