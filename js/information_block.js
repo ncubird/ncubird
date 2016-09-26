@@ -79,27 +79,23 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 							fb_sdk.send_message(passenger);
 							
 						});
-					}else{
-						$('.blockmodal-infomation-contectpassenger').removeClass('btn-disable');
-						$('.blockmodal-infomation-contectpassenger').unbind('click');
-						$('.blockmodal-infomation-contectpassenger').click(function(){
-							var fb_sdk = new Fb_sdk();
-							fb_sdk.link_poster(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] );
-						});
 					}
 				}
 			}
 
 			
-			if (navigator.userAgent.indexOf("Mobi") > -1){
-				$('.blockmodal-infomation-contectposter').addClass('btn-disable');
-			}
+			// if (navigator.userAgent.indexOf("Mobi") > -1){
+				// $('.blockmodal-infomation-contectposter').addClass('btn-disable');
+			// }
 
 			$('.blockmodal-infomation-contectposter').unbind('click');
 			$('.blockmodal-infomation-contectposter').click(function(){
 				if (navigator.userAgent.indexOf("Mobi") < 0){
 					var fb_sdk = new Fb_sdk();				
 					fb_sdk.send_message([facebook_id]);
+				}else{
+					var fb_sdk = new Fb_sdk();
+					fb_sdk.link_poster(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] );
 				}
 			})
 			
