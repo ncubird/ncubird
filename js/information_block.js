@@ -78,13 +78,13 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 							var fb_sdk = new Fb_sdk();			
 							fb_sdk.send_message(passenger);
 							
-						})
+						});
 					}else{
 						$('.blockmodal-infomation-contectpassenger').unbind('click');
 						$('.blockmodal-infomation-contectpassenger').click(function(){
 							var fb_sdk = new Fb_sdk();
 							fb_sdk.link_poster(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] );
-						}
+						});
 					}
 				}
 			}
