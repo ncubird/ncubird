@@ -45,22 +45,62 @@
 	      version    : 'v2.7'
 
 	    });
+	    FB.getLoginStatus(function(response) {
+		  if (response.status === 'connected') {
+		    console.log('Logged in.');
+		    FB.api('/me',{name_format : "Chinese"}, function(response) {
+	            console.log('Good to see you, ' + response.name + '.');
+	            $('#facebook_userid').text(response.id);
+	            $('#facebook_name').text(response.name);
+	            var data = {
+	             	facebook_id : response.id,
+	             	fbname : response.name
+	            }
+	            google_sheet_check(data);
+	        });
+		  }
+		  else {
+		    FB.login(function(response) {
+		        if (response.authResponse) {         
+		          FB.api('/me',{name_format : "Chinese"}, function(response) {
+		             console.log('Good to see you, ' + response.name + '.');
+		             $('#facebook_userid').text(response.id);
+		             $('#facebook_name').text(response.name);
+		             var data = {
+		             	facebook_id : response.id,
+		             	fbname : response.name
+		             }
+		             google_sheet_check(data);
+		          });
 
-	    FB.login(function(response) {
-	        if (response.authResponse) {         
-	          FB.api('/me',{name_format : "Chinese"}, function(response) {
-	             console.log('Good to see you, ' + response.name + '.');
-	             $('#menu').css("display","block");
-	             $('#facebook_userid').text(response.id);
-	             $('#facebook_name').text(response.name);
-	          });
-
-	        } else {
-	           $('#menu').html('Please log into this app.');
-	        }
-	    },{scope: 'public_profile,email'});    
-
+		        } else {
+		           $('#menu').html('Please log into this app.');
+		        }
+		    },{scope: 'public_profile,email'});   
+		  }
+		});
   	};
+
+  	function google_sheet_check(data){
+  		var google_app_url = "https://script.google.com/macros/s/AKfycbyF_9oM5KfzPmVVsZuJ6QYLIdL3kZTgsbojx9Zb_AySkaHYQ6ff/exec"
+  		$.ajax({
+		    url: google_app_url+"?data="+JSON.stringify(data), 
+		    type: "GET",   
+		    dataType: 'jsonp',
+		    cache: false,
+		    success: function(response){
+		        console.log("success" + JSON.stringify(response));
+		        if(response['resultcode'] == 200 || response['resultcode'] == 2001 || response['resultcode'] == 2002){
+		        	$('#menu').css("display","block");
+		        }else{
+		        	$('#menu').html('你在黑名單裡');
+		        }
+		    },
+		    error: function(response){
+		        console.log(response);
+		    }   
+		});
+  	}
   </script>
 
 
