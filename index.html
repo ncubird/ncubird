@@ -95,7 +95,7 @@
 		        if(response['resultcode'] == 200 || response['resultcode'] == 2001 || response['resultcode'] == 2002){
 		        	$('#menu').css("display","block");
 		        	$('#menu_mobile').css("display","block");
-		        	$('.context').load('./templates/home.html'function(){
+		        	$('.context').load('./templates/home.html',function(){
 		        		$(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
 		        	});
 				    $(".root-background").css('height','0xp');
