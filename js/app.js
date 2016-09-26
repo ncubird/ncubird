@@ -35,6 +35,7 @@ $( document ).ready(function() {
     }
 
     resize_event();
+    ('.context').load('./templates/home.html');
 
 
     function menu_clickevent(){
