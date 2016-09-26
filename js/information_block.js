@@ -108,8 +108,9 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-joinbtn').click({ parmas1 : facebook_id , parmas2 : data[i] , parmas3 : other_message },function(tmp){
 				$('.blockmodal-infomation').css('display','none');
 				if(facebook_id  == $('#facebook_userid').html()){
-					Materialize.toast('出錯了1', 2000);
+					Materialize.toast('不能自己載自己', 2000);
 					callback(undefined);
+					return;
 				}
 				console.log(tmp['data']['parmas2']);
 				var send_data = {};
@@ -132,11 +133,12 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-unjoinbtn').unbind('click');
 			$('.blockmodal-infomation-unjoinbtn').click({ parmas1 : facebook_id , parmas2 : data[i] , parmas3 : other_message },function(tmp){
 				$('.blockmodal-infomation').css('display','none');
-				// if(facebook_id  == $('#facebook_userid').html()){
-				// 	Materialize.toast('出錯了', 2000);
-				// 	callback(undefined);
-				// }
-				//console.log(tmp['data']['parmas2']);
+				if(facebook_id  == $('#facebook_userid').html()){
+					Materialize.toast('出錯了2', 2000);
+					callback(undefined);
+					return;
+				}
+				console.log(tmp['data']['parmas2']);
 				var send_data = {};
 				send_data[INFO_UTIL.ROOT_DATA_KEY.FUNCTION_TYPE] = INFO_UTIL.FUNCTION_TYPE_KEY.UNJOIN_EVENT;
 				send_data[INFO_UTIL.ROOT_DATA_KEY.POST_FACEBOOK_ID] = tmp['data']['parmas1'];
