@@ -84,6 +84,9 @@ var FUNCTION_TYPE_KEY = {
 
 Util.prototype.set_block = function(){
 	$('.blockmodal').css('display','table')
+	$(".blockmodal").css('height','0xp');
+    $(".blockmodal").height(0);
+    $(".blockmodal").css('height',$( document ).height()+'px');
 }
 
 Util.prototype.set_unblock = function(){
