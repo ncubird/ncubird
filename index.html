@@ -83,6 +83,7 @@
 
   	function google_sheet_check(data){
   		var google_app_url = "https://script.google.com/macros/s/AKfycbyF_9oM5KfzPmVVsZuJ6QYLIdL3kZTgsbojx9Zb_AySkaHYQ6ff/exec"
+  		console.log(JSON.stringify(data));
   		$.ajax({
 		    url: google_app_url+"?data="+JSON.stringify(data), 
 		    type: "GET",   
