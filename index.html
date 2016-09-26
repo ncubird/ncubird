@@ -74,7 +74,8 @@
 		          });
 
 		        } else {
-		           $('#menu').html('Please log into this app.');
+		           $('#menu').css("display","block");
+		           $('#menu').html('注意：允許彈出視窗登入一下');
 		        }
 		    },{scope: 'public_profile,email'});   
 		  }
@@ -95,6 +96,7 @@
 		        	$('#menu').css("display","block");
 		        	$('#menu_mobile').css("display","block");
 		        }else{
+		        	$('#menu').css("display","block");
 		        	$('#menu').html('<div class=\"col s12 m12\"><span> 你在黑名單裡 </span></div>');
 		        	Materialize.toast('你在黑名單裡', 2000);
 		        }
