@@ -75,7 +75,7 @@
 
 		        } else {
 		           $('#menu').css("display","block");
-		           $('#menu').html('注意：允許彈出視窗登入一下');
+		           $('#menu').html('注意：請開啟允許彈出視窗，使用Facebook登入');
 		        }
 		    },{scope: 'public_profile,email'});   
 		  }
@@ -95,6 +95,10 @@
 		        if(response['resultcode'] == 200 || response['resultcode'] == 2001 || response['resultcode'] == 2002){
 		        	$('#menu').css("display","block");
 		        	$('#menu_mobile').css("display","block");
+		        	$('.context').load('./templates/home.html');
+				    $(".root-background").css('height','0xp');
+				    $(".root-background").height(0);
+				    $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
 		        }else{
 		        	$('#menu').css("display","block");
 		        	$('#menu').html('<div class=\"col s12 m12\"><span> 你在黑名單裡 </span></div>');

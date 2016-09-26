@@ -35,7 +35,7 @@ $( document ).ready(function() {
     }
 
     resize_event();
-    $('.context').load('./templates/home.html');
+   
 
 
     function menu_clickevent(){
@@ -299,8 +299,8 @@ $( document ).ready(function() {
         $(".root-background").height(0);    
     }
 
-    const EVENT_TITLE = { post_have_seat:"我有位子",post_find_seat:"我找司機",post_together_seat:"找人共乘"}
-    const GENDER = { boy:"男", girl:"女"}
+    // const EVENT_TITLE = { post_have_seat:"我有位子",post_find_seat:"我找司機",post_together_seat:"找人共乘"}
+    // const GENDER = { boy:"男", girl:"女"}
 
     // function calander_add_tag(res){
     //     for(var i=0;i<res.length;i++){
