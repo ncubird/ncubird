@@ -1,0 +1,72 @@
+NCUbird webpage
+Version 0.1
+
+this is the webpage of NCUbird.
+
+architecture:
+use MVC framework;
+
+	Model :
+		1. model_google_script:
+			this file include the google script app url and use ajax to request for google calendar.
+	Contorller :
+		1. Information_controller:
+			this file controll the information box in index.html
+		2. Post_controller:
+			this file controll the post view.
+		3. Profile_controller:
+			this file controll the profile view.
+		4. Timeline_controller:
+			this file controll the timeline view.
+	View :
+		1. index.html
+		2. home.html
+		3. post.html
+		4. timeline.html
+		5. about.html
+		6. profile.html
+		7. calendar.html
+
+	Others:
+		1. util.js
+		2. google_map.js
+			this file contain the google_map,and it use factory mode to design.
+
+This project use app.js as boardcast center (use boardcast mode).
+All the controller will be new in here to control view and detect model.
+
+This project use Facebook Oauth2 to login and save login message to google sheet ( in ncubird123.google.com )
+Then, it will get the information from google calendar so you could see the event on website.
+It also use Facebook javascript sdk to get the infromation.
+
+this is the format that save in google calander.
+
+	{  
+		"gender":("boy","girl","others")
+		"facebook_id" : (string),
+		"facebook_name" : (string),
+		"location_from": (string),
+		"location_from_latlng":{  
+			"lat": (double),
+			"lng": (double)
+		},
+		"location_to":"台灣桃園市桃園區敲好ㄔㄨ拉麵、燒烤龍岡店",
+		"location_to_latlng":{  
+	    	"lat": (double),
+			"lng": (double)
+		},
+		"bonus_response": (string),
+		"people_number": (string),
+		"others": (string),
+		"peroid":[ (string : 'MON','TUE',...) 
+
+		],
+		"post_time":1474719421605,
+		"passenger":[  (facebook_id) 
+				
+		],
+		"major":(string),
+		"vehical":(string)
+	}
+
+at last, Thank's for Kmo who give me a chance to create it, and Thank's for all the friend helping test the website.
