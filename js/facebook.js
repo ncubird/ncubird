@@ -23,6 +23,10 @@ Fb_sdk.prototype.send_message = function(facebook_id){
   }
 }
 
+Fb_sdk.prototype.link_poster = function(facebook_id){
+  window.open("https://www.facebook.com/"+facebook_id);
+}
+
 
 
   
