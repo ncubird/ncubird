@@ -20,7 +20,9 @@ body {
 .blockmodal {
     display: none; /* Hidden by default */
     position: absolute; /* Stay in place */
-    padding-top: 100%;
+    padding-top: 80px;
+    padding-left: 100px;
+    padding-right: 100px;
     z-index: 100; /* Sit on top */
     left: 0;
     bottom: 0;
@@ -37,11 +39,12 @@ body {
 
 .blockmodal-child {
     background-color: #83FCD8;
-    border-radius: 22px 22px 22px 22px;
-	-moz-border-radius: 22px 22px 22px 22px;
-	-webkit-border-radius: 22px 22px 22px 22px;
-	border: 0px solid #000000;
-    border: 8px #555 solid;
+    border-radius: 8px 8px 8px 8px;
+	-moz-border-radius: 8px 8px 8px 8px;
+	-webkit-border-radius: 8px 8px 8px 8px;
+	box-shadow: 0 16px 28px 0 rgba(0,0,0,0.22),0 25px 55px 0 rgba(0,0,0,0.21);
+	border: 4px #555 solid;
+    padding-left: 24px;
     color: black;
 }
 
