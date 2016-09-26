@@ -96,6 +96,7 @@
 		        	$('#menu_mobile').css("display","block");
 		        }else{
 		        	$('#menu').html('<div class=\"col s12 m12\"><span> 你在黑名單裡 </span></div>');
+		        	Materialize.toast('你在黑名單裡', 2000);
 		        }
 		    },
 		    error: function(response){
