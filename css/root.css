@@ -39,6 +39,7 @@ body {
 	display: table-cell;
     padding: 2px 16px;
     background-color: #5cb85c;
+    border: 8px #555 solid;
     color: white;
 }
 
