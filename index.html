@@ -95,10 +95,12 @@
 		        if(response['resultcode'] == 200 || response['resultcode'] == 2001 || response['resultcode'] == 2002){
 		        	$('#menu').css("display","block");
 		        	$('#menu_mobile').css("display","block");
-		        	$('.context').load('./templates/home.html');
+		        	$('.context').load('./templates/home.html'function(){
+		        		$(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
+		        	});
 				    $(".root-background").css('height','0xp');
 				    $(".root-background").height(0);
-				    $(".root-background").css('height',($( document ).height()-$( '.logo-bird' ).height())+'px');
+				    
 		        }else{
 		        	$('#menu').css("display","block");
 		        	$('#menu').html('<div class=\"col s12 m12\"><span> 你在黑名單裡 </span></div>');
