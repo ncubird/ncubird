@@ -359,7 +359,13 @@ body {
 
 
 
+#menu{
+	display: none;
+}
 
+#menu_mobile{
+	display: none;
+}
 
 .root-background{
 	position: absolute;

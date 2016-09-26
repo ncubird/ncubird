@@ -92,6 +92,7 @@
 		        console.log("success" + JSON.stringify(response));
 		        if(response['resultcode'] == 200 || response['resultcode'] == 2001 || response['resultcode'] == 2002){
 		        	$('#menu').css("display","block");
+		        	$('#menu_mobile').css("display","block");
 		        }else{
 		        	$('#menu').html('你在黑名單裡');
 		        }
