@@ -1,3 +1,11 @@
 .timeline-search-disable{
 	display: none;
 }
+
+.timeline-month-item:hover{
+	background-color: rgb(129,194,214) !important;
+}
+
+.timeline-month-item:active{
+	background-color: rgb(129,146,214) !important;
+}

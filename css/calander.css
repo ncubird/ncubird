@@ -28,7 +28,7 @@
 }
 
 .calander-today{
-    background-color: #AAA !important;
+    background-color: rgb(220,247,161) !important;
 }
 
 /* Weekdays (Mon-Sun) */
@@ -49,7 +49,7 @@
 
 .calander-days {
     padding: 0px 0;
-    background: #eee;
+    background: rgb(131,252,216);
     margin: 0;
     letter-spacing: 0px;
 
@@ -78,6 +78,7 @@
 
 .calander-day-panel-text{
 	font-size: 16px;
+    background: rgb(129,194,214);
 }
 .calander-day-item{
 	width: 95%;
