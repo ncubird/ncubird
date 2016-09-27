@@ -92,3 +92,53 @@ Util.prototype.set_block = function(){
 Util.prototype.set_unblock = function(){
 	$('.blockmodal').css('display','none')
 }
+
+Util.prototype.html2clipboard =function (html, el) {
+    var tmpEl;
+    if (typeof el !== "undefined") {
+        // you may want some specific styling for your content - then provide a custom DOM node with classes, inline styles or whatever you want
+        tmpEl = el;
+    } else {
+        // else we'll just create one
+        tmpEl = document.createElement("div");
+
+        // since we remove the element immedeately we'd actually not have to style it - but IE 11 prompts us to confirm the clipboard interaction and until you click the confirm button, the element would show. so: still extra stuff for IE, as usual.
+        tmpEl.style.opacity = 0;
+        tmpEl.style.position = "absolute";
+        tmpEl.style.pointerEvents = "none";
+        tmpEl.style.zIndex = -1;
+    }
+
+    // fill it with your HTML
+    tmpEl.innerHTML = html;
+
+    // append the temporary node to the DOM
+    document.body.appendChild(tmpEl);
+
+    // select the newly added node
+    var range = document.createRange();
+    range.selectNode(tmpEl);
+    window.getSelection().addRange(range);
+
+    // copy
+    document.execCommand("copy");
+
+    // and remove the element immediately
+    document.body.removeChild(tmpEl);
+}
+
+Util.prototype.html2clipboard_template = function(data){
+	var UTIL_EVENT_TITLE = { post_have_seat:"我有位子",post_find_seat:"我找司機",post_together_seat:"找人共乘"};
+	var UTIL_GENDER = { boy:"男", girl:"女"}
+	var other_message = data[ROOT_DATA_KEY.OTHER_MESSAGE];
+	var time = new Date(data[ROOT_DATA_KEY.START]);
+	return "<div>[" + UTIL_EVENT_TITLE[data[ROOT_DATA_KEY.EVENT_TITLE]] +"]"
+			+"\n" + "時間：" + (time.getMonth()+1) + "/" + time.getDate() + ' ' + time.getHours() +':' + time.getMinutes()
+			+"\n" + "搭車地點：" + other_message[OTHER_MESSAGE_KEY.LOCATION_FROM]
+			+"\n" + "目的地：" + other_message[OTHER_MESSAGE_KEY.LOCATION_TO]
+			+"\n" + "性別：" + GENDER[other_message[OTHER_MESSAGE_KEY.GENDER]]
+			+"\n" + "聯絡方式：FB"
+			+"\n" + "交通工具：" + other_message[OTHER_MESSAGE_KEY.VEHICAL]
+			+"\n" + "回饋方式：" + other_message[OTHER_MESSAGE_KEY.BONUS_RESPONSE]
+			+"\n" + "其他：" + other_message[OTHER_MESSAGE_KEY.OTHERS];
+}
