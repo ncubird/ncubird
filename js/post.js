@@ -36,7 +36,7 @@ Post_controller.prototype.init = function(eventcallback){
 	$('#post_copy_button').click(function(){
 		self.event_post_button_onclick(function(data){
 			var POST_COPY_UTIL = new Util();
-			POST_COPY_UTIL.html2clipboard(INFO_COPY_UTIL.html2clipboard_template(data));
+			POST_COPY_UTIL.html2clipboard(POST_COPY_UTIL.html2clipboard_template(data));
 			Materialize.toast('已經複製到剪貼簿', 2000);
 		});
 	});
