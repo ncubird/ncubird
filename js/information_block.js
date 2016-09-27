@@ -112,11 +112,11 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-joinbtn').unbind('click');
 			$('.blockmodal-infomation-joinbtn').click({ parmas1 : facebook_id , parmas2 : data[i] , parmas3 : other_message },function(tmp){
 				$('.blockmodal-infomation').css('display','none');
-				if(facebook_id  == $('#facebook_userid').html()){
-					Materialize.toast('不能自己載自己', 2000);
-					callback(undefined);
-					return;
-				}
+				// if(facebook_id  == $('#facebook_userid').html()){
+				// 	Materialize.toast('不能自己載自己', 2000);
+				// 	callback(undefined);
+				// 	return;
+				// }
 				console.log(tmp['data']['parmas2']);
 				var send_data = {};
 				send_data[INFO_UTIL.ROOT_DATA_KEY.FUNCTION_TYPE] = INFO_UTIL.FUNCTION_TYPE_KEY.JOIN_EVENT;

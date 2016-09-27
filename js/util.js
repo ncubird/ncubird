@@ -35,6 +35,7 @@ function Util(){
 var OTHER_MESSAGE_KEY = {
 	FACEBOOK_ID : 'facebook_id',
 	FACEBOOK_NAME : 'facebook_name',
+	FLAG_POST_EMAIL: 'flag_post_email'
 	POST_EMAIL : 'post_email',
 	GENDER : 'gender',
 	LOCATION_FROM : 'location_from',
@@ -148,7 +149,7 @@ Util.prototype.html2clipboard_template = function(data){
 			+"\n" + "時間：" + (time.getMonth()+1) + "/" + time.getDate() + ' ' + time.getHours() +':' + time.getMinutes()
 			+"\n" + "搭車地點：" + other_message[OTHER_MESSAGE_KEY.LOCATION_FROM]
 			+"\n" + "目的地：" + other_message[OTHER_MESSAGE_KEY.LOCATION_TO]
-			+"\n" + "性別：" + GENDER[other_message[OTHER_MESSAGE_KEY.GENDER]]
+			+"\n" + "性別：" + UTIL_GENDER[other_message[OTHER_MESSAGE_KEY.GENDER]]
 			+"\n" + "聯絡方式：FB"
 			+"\n" + "交通工具：" + other_message[OTHER_MESSAGE_KEY.VEHICAL]
 			+"\n" + "回饋方式：" + other_message[OTHER_MESSAGE_KEY.BONUS_RESPONSE]

@@ -69,6 +69,7 @@ Post_controller.prototype.reset_value = function(){
 	$('#post_people_number').val("");
 	$('#post_bonus_response').val("");
 	$('#post_other_message').val("");
+	$("#post_email").val("");
 }
 
 const POST_MONTH = ['null','January','February','March','April','May','June','July','August','September','October','November' ,'December'];
@@ -101,12 +102,14 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 	}
 
 	var post_email = "";
+	var flag_post_email = "unable";
 
 	if($("#post_email_check").prop("checked")) {
 	    if($("#post_email").val() == "" || $("#post_email").val() == null || $("#post_email").val() == undefined ){
 	    	Materialize.toast('請輸入Email，或取消系統通知', 2000);
 	    	return;
 	    }else{
+	    	flag_post_email = "enable";
 	    	post_email = $("#post_email").val();
 	    }
 	}else{
@@ -226,6 +229,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 	other_message[POST_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] = $('#facebook_userid').html();
 	other_message[POST_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_NAME] = $('#facebook_name').html();
 	other_message[POST_UTIL.OTHER_MESSAGE_KEY.POST_EMAIL] = post_email;
+	other_message[POST_UTIL.OTHER_MESSAGE_KEY.FLAG_POST_EMAIL] = flag_post_email;
 	other_message[POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM] = location_from;
 	other_message[POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG] = location_from_latlng;
 	other_message[POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO] = location_to;
