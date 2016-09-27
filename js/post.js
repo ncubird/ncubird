@@ -106,6 +106,8 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 	    if($("#post_email").val() == "" || $("#post_email").val() == null || $("#post_email").val() == undefined ){
 	    	Materialize.toast('請輸入Email，或取消系統通知', 2000);
 	    	return;
+	    }else{
+	    	post_email = $("#post_email").val();
 	    }
 	}else{
 		post_email = $("#post_email").val();
