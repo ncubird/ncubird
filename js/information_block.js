@@ -137,7 +137,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 
 			$('.blockmodal-infomation-unjoinbtn').unbind('click');
 			$('.blockmodal-infomation-unjoinbtn').click({ parmas1 : facebook_id , parmas2 : data[i] , parmas3 : other_message },function(tmp){
-				// $('.blockmodal-infomation').css('display','none');
+				$('.blockmodal-infomation').css('display','none');
 				// if(facebook_id  == $('#facebook_userid').html()){
 				// 	Materialize.toast('出錯了2', 2000);
 				// 	callback(undefined);
