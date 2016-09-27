@@ -50,8 +50,6 @@ Post_controller.prototype.init = function(eventcallback){
 	this.gmap.add_marker(INPUT_FROM_MARKERID,'post_location_from','pin-green.png');
 	this.gmap.add_marker(INPUT_TO_MARKERID,'post_location_to','pin-red.png');
 
-
-
 	
 	
 }
