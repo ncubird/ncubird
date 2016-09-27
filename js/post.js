@@ -8,6 +8,7 @@ const INPUT_TO_MARKERID = 'to';
 
 Post_controller.prototype.init = function(eventcallback){
 	Materialize.updateTextFields();
+	var self = this;
 	$('select').material_select();
 
 
@@ -33,7 +34,7 @@ Post_controller.prototype.init = function(eventcallback){
 
 	$('#post_copy_button').unbind('click');
 	$('#post_copy_button').click(function(){
-		event_post_button_onclick(function(data){
+		self.event_post_button_onclick(function(data){
 			var POST_COPY_UTIL = new Util();
 			POST_COPY_UTIL.html2clipboard(INFO_COPY_UTIL.html2clipboard_template(data));
 			Materialize.toast('已經複製到剪貼簿', 2000);
