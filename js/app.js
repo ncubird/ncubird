@@ -46,8 +46,8 @@ $( document ).ready(function() {
 
         $('.context').load(template,function(){
             
-            $('.fixed-action-btn').closeFAB();
-            document.getElementById("facebook_name").click();
+            // $('.fixed-action-btn').closeFAB();
+            // document.getElementById("facebook_name").click();
             switch($(self).attr('id')){
                 case 'calander':{                    
                     calendar_controller.set_today_and_sync();
