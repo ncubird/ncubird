@@ -35,6 +35,7 @@ function Util(){
 var OTHER_MESSAGE_KEY = {
 	FACEBOOK_ID : 'facebook_id',
 	FACEBOOK_NAME : 'facebook_name',
+	POST_EMAIL : 'post_email',
 	GENDER : 'gender',
 	LOCATION_FROM : 'location_from',
 	LOCATION_FROM_LATLNG : 'location_from_latlng',

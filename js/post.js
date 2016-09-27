@@ -100,6 +100,17 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		return;
 	}
 
+	var post_email = "";
+
+	if($("#post_email_check").prop("checked")) {
+	    if($("#post_email").val() == "" || $("#post_email").val() == null || $("#post_email").val() == undefined ){
+	    	Materialize.toast('請輸入Email，或取消系統通知', 2000);
+	    	return;
+	    }
+	}else{
+		post_email = $("#post_email").val();
+	}
+
 	var location_from = $('#post_location_from').val();
 	var location_to = $('#post_location_to').val();
 
@@ -212,6 +223,7 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 	other_message[POST_UTIL.OTHER_MESSAGE_KEY.GENDER] = gender;
 	other_message[POST_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] = $('#facebook_userid').html();
 	other_message[POST_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_NAME] = $('#facebook_name').html();
+	other_message[POST_UTIL.OTHER_MESSAGE_KEY.POST_EMAIL] = post_email;
 	other_message[POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM] = location_from;
 	other_message[POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM_LATLNG] = location_from_latlng;
 	other_message[POST_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO] = location_to;
