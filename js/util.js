@@ -115,10 +115,10 @@ Util.prototype.html2clipboard =function (html, el) {
     // append the temporary node to the DOM
     document.body.appendChild(tmpEl);
 
-    // select the newly added node
-    var range = document.createRange();
-    range.selectNode(tmpEl);
-    window.getSelection().addRange(range);
+    // // select the newly added node
+    // var range = document.createRange();
+    // range.selectNode(tmpEl);
+    // window.getSelection().addRange(range);
 
     // copy
     document.execCommand("copy");
