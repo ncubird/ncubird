@@ -425,7 +425,7 @@ var observeDOM = (function(){
 
 // Observe a specific DOM element:
 observeDOM( document.getElementById('context') ,function(){ 
-    $('#menu_mobile').removeClass('active');
+    $('.fixed-action-btn').removeClass('active');
 });
 
 
