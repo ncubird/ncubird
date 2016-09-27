@@ -132,7 +132,7 @@ Util.prototype.html2clipboard_template = function(data){
 	var UTIL_GENDER = { boy:"男", girl:"女"}
 	var other_message = data[ROOT_DATA_KEY.OTHER_MESSAGE];
 	var time = new Date(data[ROOT_DATA_KEY.START]);
-	return "<div>[" + UTIL_EVENT_TITLE[data[ROOT_DATA_KEY.EVENT_TITLE]] +"]"
+	return "[" + UTIL_EVENT_TITLE[data[ROOT_DATA_KEY.EVENT_TITLE]] +"]"
 			+"\n" + "時間：" + (time.getMonth()+1) + "/" + time.getDate() + ' ' + time.getHours() +':' + time.getMinutes()
 			+"\n" + "搭車地點：" + other_message[OTHER_MESSAGE_KEY.LOCATION_FROM]
 			+"\n" + "目的地：" + other_message[OTHER_MESSAGE_KEY.LOCATION_TO]
