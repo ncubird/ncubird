@@ -42,7 +42,9 @@ Post_controller.prototype.init = function(eventcallback){
 	});
 
 	$('#'+this.post_button_id).unbind('click');	
-	$('#'+this.post_button_id).click(self.event_post_button_onclick(eventcallback))
+	$('#'+this.post_button_id).click(function(){
+		self.event_post_button_onclick(eventcallback)
+	));
 
 	console.log(document.getElementById('post_map'));
 
