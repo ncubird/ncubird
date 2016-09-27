@@ -26,7 +26,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-major').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.MAJOR]);
 			$('.blockmodal-infomation-gender').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.GENDER]);
 
-			$('.blockmodal-infomation-post-email').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.POST_EMAIL]);
+			$('.blockmodal-infomation-post-email').html(''+other_message[INFO_UTIL.OTHER_MESSAGE_KEY.POST_EMAIL]);
 
 			$('.blockmodal-infomation-location-from').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_FROM]);
 			$('.blockmodal-infomation-location-to').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.LOCATION_TO]);
