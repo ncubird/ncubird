@@ -27,6 +27,10 @@ $( document ).ready(function() {
             console.log("menu-card");
         }else{
             $('.mobile-menu').removeClass('disable-mobile-menu');
+            $('.fixed-action-btn').unbind('click');
+            $('.fixed-action-btn').click(function(){
+                $('.fixed-action-btn').openFAB();
+            })
             // $(".button-mobile-collapse").sideNav();
             $('.mobile-menu-item').unbind('click');
             $('.mobile-menu-item').click(menu_clickevent);
@@ -46,7 +50,7 @@ $( document ).ready(function() {
 
         $('.context').load(template,function(){
             
-            // $('.fixed-action-btn').closeFAB();
+            $('.fixed-action-btn').closeFAB();
             // document.getElementById("facebook_name").click();
             switch($(self).attr('id')){
                 case 'calander':{                    
