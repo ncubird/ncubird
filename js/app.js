@@ -96,7 +96,11 @@ $( document ).ready(function() {
                                                 var google_send_email = new Google_gmail_send();
                                                 google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else{
-                                                Materialize.toast('出錯了2', 2000);
+                                                if(res == 4001){
+                                                    Materialize.toast('人數滿了，下次請早', 2000);
+                                                }else{
+                                                    Materialize.toast('出錯了2', 2000);
+                                                }
                                             }                                            
                                         }
                                         util.set_unblock();
@@ -153,7 +157,11 @@ $( document ).ready(function() {
                                                 var google_send_email = new Google_gmail_send();
                                                 google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else{
-                                                Materialize.toast('出錯了2', 2000);
+                                                if(res == 4001){
+                                                    Materialize.toast('人數滿了，下次請早', 2000);
+                                                }else{
+                                                    Materialize.toast('出錯了2', 2000);
+                                                }
                                             }                                            
                                         }
                                         util.set_unblock();
@@ -191,7 +199,11 @@ $( document ).ready(function() {
                                                 var google_send_email = new Google_gmail_send();
                                                 google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else{
-                                                Materialize.toast('出錯了2', 2000);
+                                                if(res == 4001){
+                                                    Materialize.toast('人數滿了，下次請早', 2000);
+                                                }else{
+                                                    Materialize.toast('出錯了2', 2000);
+                                                }
                                             }                                            
                                         }
                                         util.set_unblock();
@@ -262,7 +274,11 @@ $( document ).ready(function() {
                                                 var google_send_email = new Google_gmail_send();
                                                 google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else{
-                                                Materialize.toast('出錯了2', 2000);
+                                                if(res == 4001){
+                                                    Materialize.toast('人數滿了，下次請早', 2000);
+                                                }else{
+                                                    Materialize.toast('出錯了2', 2000);
+                                                }
                                             }                                            
                                         }
                                         util.set_unblock();
@@ -309,7 +325,12 @@ $( document ).ready(function() {
                                                 var google_send_email = new Google_gmail_send();
                                                 google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else{
-                                                Materialize.toast('出錯了2', 2000);
+                                                if(res == 4001){
+                                                    Materialize.toast('人數滿了，下次請早', 2000);
+                                                }else{
+                                                    Materialize.toast('出錯了2', 2000);
+                                                }
+                                                
                                             }                                            
                                         }
                                         util.set_unblock();
