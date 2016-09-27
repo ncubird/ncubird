@@ -82,7 +82,8 @@ $( document ).ready(function() {
                     function calander_search_event_callback(res){
                         $('.tag-enableclick').unbind("click");
                         $('.tag-enableclick').click({ parmas1 :res },function(event){
-                            var information_block = new Information_block();                               
+                            var information_block = new Information_block();
+                            var tag_self  = this;        
                             information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                 if(data != undefined){
                                     util.set_block();
@@ -90,10 +91,10 @@ $( document ).ready(function() {
                                         if(res != '200'){
                                             if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'join',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else if(res == 1002){
                                                 var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else{
                                                 Materialize.toast('出錯了2', 2000);
                                             }                                            
@@ -138,7 +139,8 @@ $( document ).ready(function() {
                     function timeline_search_callback(res){
                         $('.timeline-month-item').unbind("click");
                         $('.timeline-month-item').click({ parmas1 :res },function(event){
-                            var information_block = new Information_block();                               
+                            var information_block = new Information_block();
+                            var tag_self = this;                       
                             information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                 if(data != undefined){
                                     util.set_block();
@@ -146,10 +148,10 @@ $( document ).ready(function() {
                                         if(res != '200'){
                                             if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'join',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else if(res == 1002){
                                                 var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else{
                                                 Materialize.toast('出錯了2', 2000);
                                             }                                            
@@ -175,7 +177,8 @@ $( document ).ready(function() {
                     function timeline_set_template_month_item_callback(res){
                         $('.timeline-month-item').unbind("click");
                         $('.timeline-month-item').click({ parmas1 :res },function(event){
-                            var information_block = new Information_block();                               
+                            var information_block = new Information_block(); 
+                            var tag_self = this;            
                             information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                 if(data != undefined){
                                     util.set_block();
@@ -183,10 +186,10 @@ $( document ).ready(function() {
                                         if(res != '200'){
                                             if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'join',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else if(res == 1002){
                                                 var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else{
                                                 Materialize.toast('出錯了2', 2000);
                                             }                                            
@@ -245,7 +248,8 @@ $( document ).ready(function() {
                     function profile_set_template_today_item_callback(res){
                         $('.profile-today-item').unbind("click");
                         $('.profile-today-item').click({ parmas1 :res },function(event){
-                            var information_block = new Information_block();                               
+                            var information_block = new Information_block();
+                            var tag_self = this;
                             information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                 if(data != undefined){
                                     util.set_block();
@@ -253,10 +257,10 @@ $( document ).ready(function() {
                                         if(res != '200'){
                                             if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'join',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else if(res == 1002){
                                                 var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else{
                                                 Materialize.toast('出錯了2', 2000);
                                             }                                            
@@ -291,7 +295,8 @@ $( document ).ready(function() {
                     function profile_set_template_month_item_callback(res){
                         $('.profile-month-item').unbind("click");
                         $('.profile-month-item').click({ parmas1 :res },function(event){
-                            var information_block = new Information_block();                               
+                            var information_block = new Information_block();
+                            var tag_self = this;
                             information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                 if(data != undefined){
                                     util.set_block();
@@ -299,10 +304,10 @@ $( document ).ready(function() {
                                         if(res != '200'){
                                             if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'join',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else if(res == 1002){
                                                 var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else{
                                                 Materialize.toast('出錯了2', 2000);
                                             }                                            
