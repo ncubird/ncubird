@@ -93,38 +93,50 @@ Util.prototype.set_unblock = function(){
 	$('.blockmodal').css('display','none')
 }
 
-Util.prototype.html2clipboard =function (html, el) {
-    var tmpEl;
-    if (typeof el !== "undefined") {
-        // you may want some specific styling for your content - then provide a custom DOM node with classes, inline styles or whatever you want
-        tmpEl = el;
-    } else {
-        // else we'll just create one
-        tmpEl = document.createElement("div");
+Util.prototype.html2clipboard =function (data) {
+    function copyToClipboardFF(text) {
+	  window.prompt ("Copy to clipboard: Ctrl C, Enter", text);
+	}
 
-        // since we remove the element immedeately we'd actually not have to style it - but IE 11 prompts us to confirm the clipboard interaction and until you click the confirm button, the element would show. so: still extra stuff for IE, as usual.
-        tmpEl.style.opacity = 0;
-        tmpEl.style.position = "absolute";
-        tmpEl.style.pointerEvents = "none";
-        tmpEl.style.zIndex = -1;
-    }
+	
+	var success   = true,
+	  range     = document.createRange(),
+	  selection;
 
-    // fill it with your HTML
-    tmpEl.innerHTML = html;
+	// For IE.
+	if (window.clipboardData) {
+	window.clipboardData.setData("Text", data);        
+	} else {
+	// Create a temporary element off screen.
+	var tmpElem = $('<div>');
+	tmpElem.css({
+	  position: "absolute",
+	  left:     "-1000px",
+	  top:      "-1000px",
+	});
+	// Add the input value to the temp element.
+	tmpElem.text(input.val());
+	$("body").append(tmpElem);
+	// Select temp element.
+	range.selectNodeContents(tmpElem.get(0));
+	selection = window.getSelection ();
+	selection.removeAllRanges ();
+	selection.addRange (range);
+	// Lets copy.
+	try { 
+	  success = document.execCommand ("copy", false, null);
+	}
+	catch (e) {
+	  copyToClipboardFF(data);
+	}
+	if (success) {
+	  alert ("The text is on the clipboard, try to paste it!");
+	  // remove temp element.
+	  tmpElem.remove();
+	}
+	}
+	
 
-    // append the temporary node to the DOM
-    document.body.appendChild(tmpEl);
-
-    // // select the newly added node
-    // var range = document.createRange();
-    // range.selectNode(tmpEl);
-    // window.getSelection().addRange(range);
-
-    // copy
-    document.execCommand("copy");
-
-    // and remove the element immediately
-    document.body.removeChild(tmpEl);
 }
 
 Util.prototype.html2clipboard_template = function(data){
