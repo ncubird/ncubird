@@ -29,7 +29,12 @@ $( document ).ready(function() {
             $('.mobile-menu').removeClass('disable-mobile-menu');
             $('.fixed-action-btn').unbind('click');
             $('.fixed-action-btn').click(function(){
-                $('.fixed-action-btn').openFAB();
+                if($('.fixed-action-btn').hasClass('active')){
+                    $('.fixed-action-btn').closeFAB();
+                }else{
+                    $('.fixed-action-btn').openFAB();
+                }
+                
             })
             // $(".button-mobile-collapse").sideNav();
             $('.mobile-menu-item').unbind('click');
