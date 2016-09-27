@@ -88,13 +88,15 @@ $( document ).ready(function() {
                                     util.set_block();
                                     module_google_script.event_send(data,function(res){
                                         if(res != '200'){
-                                            Materialize.toast('出錯了', 2000);
-                                        }else if(res == 1001){
+                                            if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
-                                            google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
-                                        }else if(res == 1002){
-                                            var google_send_email = new Google_gmail_send();
-                                            google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                            }else if(res == 1002){
+                                                var google_send_email = new Google_gmail_send();
+                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                            }else{
+                                                Materialize.toast('出錯了2', 2000);
+                                            }                                            
                                         }
                                         util.set_unblock();
                                         calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,calander_set_calander_template_callback,calander_search_event_callback);
@@ -142,13 +144,15 @@ $( document ).ready(function() {
                                     util.set_block();
                                     module_google_script.event_send(data,function(res){
                                         if(res != '200'){
-                                            Materialize.toast('出錯了', 2000);
-                                        }else if(res == 1001){
+                                            if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
-                                            google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
-                                        }else if(res == 1002){
-                                            var google_send_email = new Google_gmail_send();
-                                            google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                            }else if(res == 1002){
+                                                var google_send_email = new Google_gmail_send();
+                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                            }else{
+                                                Materialize.toast('出錯了2', 2000);
+                                            }                                            
                                         }
                                         util.set_unblock();
                                         var now_time = new Date();
@@ -177,13 +181,15 @@ $( document ).ready(function() {
                                     util.set_block();
                                     module_google_script.event_send(data,function(res){
                                         if(res != '200'){
-                                            Materialize.toast('出錯了', 2000);
-                                        }else if(res == 1001){
+                                            if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
-                                            google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
-                                        }else if(res == 1002){
-                                            var google_send_email = new Google_gmail_send();
-                                            google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                            }else if(res == 1002){
+                                                var google_send_email = new Google_gmail_send();
+                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                            }else{
+                                                Materialize.toast('出錯了2', 2000);
+                                            }                                            
                                         }
                                         util.set_unblock();
                                         var now_time = new Date();
@@ -245,13 +251,15 @@ $( document ).ready(function() {
                                     util.set_block();
                                     module_google_script.event_send(data,function(res){
                                         if(res != '200'){
-                                            Materialize.toast('出錯了2', 2000);
-                                        }else if(res == 1001){
+                                            if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
-                                            google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
-                                        }else if(res == 1002){
-                                            var google_send_email = new Google_gmail_send();
-                                            google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                            }else if(res == 1002){
+                                                var google_send_email = new Google_gmail_send();
+                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                            }else{
+                                                Materialize.toast('出錯了2', 2000);
+                                            }                                            
                                         }
                                         util.set_unblock();
                                         var now_time = new Date();
@@ -289,13 +297,15 @@ $( document ).ready(function() {
                                     util.set_block();
                                     module_google_script.event_send(data,function(res){
                                         if(res != '200'){
-                                            Materialize.toast('出錯了5', 2000);
-                                        }else if(res == 1001){
+                                            if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
-                                            google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
-                                        }else if(res == 1002){
-                                            var google_send_email = new Google_gmail_send();
-                                            google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                            }else if(res == 1002){
+                                                var google_send_email = new Google_gmail_send();
+                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
+                                            }else{
+                                                Materialize.toast('出錯了2', 2000);
+                                            }                                            
                                         }
                                         util.set_unblock();
                                         var now_time = new Date();

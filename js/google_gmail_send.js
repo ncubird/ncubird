@@ -26,14 +26,13 @@ Google_gmail_send.prototype.send = function(data,type,ref_facebook_id,ref_postti
 				    success: function(response){
 				        console.log("success" + JSON.stringify(response));
 				        if(response['resultcode'] == 200){
-				        	callback('200')
+				        	Materialize.toast('已經送出通知', 2000);
 				        }else{
-				        	callback(response['resultcode'])
+				        	console.log("error");
 				        }
 				    },
 				    error: function(response){
 				        console.log(response);
-				        callback(null)
 				    }   
 				});
         	}
