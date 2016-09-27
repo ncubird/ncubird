@@ -16,6 +16,7 @@ Google_gmail_send.prototype.send = function(data,type,ref_facebook_id,ref_postti
 	        		join_facebook_id : join_facebook_id,
 	        		data : data[i]
 	        	}
+	        	console.log(res);
 
 	        	var google_app_url = "https://script.google.com/macros/s/AKfycbyQFFTxWY99VsqXatukwe8aCqRq5mJ_UzfaTtMX-36Av6HbtWA/exec";
 	        	$.ajax({
