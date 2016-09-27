@@ -89,10 +89,10 @@ $( document ).ready(function() {
                                     module_google_script.event_send(data,function(res){
                                         if(res != '200'){
                                             Materialize.toast('出錯了', 2000);
-                                        }else if(ret == 1001){
+                                        }else if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
                                             google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
-                                        }else if(ret == 1002){
+                                        }else if(res == 1002){
                                             var google_send_email = new Google_gmail_send();
                                             google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
                                         }
@@ -143,10 +143,10 @@ $( document ).ready(function() {
                                     module_google_script.event_send(data,function(res){
                                         if(res != '200'){
                                             Materialize.toast('出錯了', 2000);
-                                        }else if(ret == 1001){
+                                        }else if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
                                             google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
-                                        }else if(ret == 1002){
+                                        }else if(res == 1002){
                                             var google_send_email = new Google_gmail_send();
                                             google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
                                         }
@@ -178,10 +178,10 @@ $( document ).ready(function() {
                                     module_google_script.event_send(data,function(res){
                                         if(res != '200'){
                                             Materialize.toast('出錯了', 2000);
-                                        }else if(ret == 1001){
+                                        }else if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
                                             google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
-                                        }else if(ret == 1002){
+                                        }else if(res == 1002){
                                             var google_send_email = new Google_gmail_send();
                                             google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
                                         }
@@ -246,10 +246,10 @@ $( document ).ready(function() {
                                     module_google_script.event_send(data,function(res){
                                         if(res != '200'){
                                             Materialize.toast('出錯了2', 2000);
-                                        }else if(ret == 1001){
+                                        }else if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
                                             google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
-                                        }else if(ret == 1002){
+                                        }else if(res == 1002){
                                             var google_send_email = new Google_gmail_send();
                                             google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
                                         }
@@ -290,10 +290,10 @@ $( document ).ready(function() {
                                     module_google_script.event_send(data,function(res){
                                         if(res != '200'){
                                             Materialize.toast('出錯了5', 2000);
-                                        }else if(ret == 1001){
+                                        }else if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
                                             google_send_email.send(event['data']['parmas1'],'join',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
-                                        }else if(ret == 1002){
+                                        }else if(res == 1002){
                                             var google_send_email = new Google_gmail_send();
                                             google_send_email.send(event['data']['parmas1'],'unjoin',$(this).data('facebookid'),$(this).data('posttime'),$('#facebook_userid').html());
                                         }
