@@ -47,7 +47,7 @@ $( document ).ready(function() {
         $('.context').load(template,function(){
             
             $('.fixed-action-btn').closeFAB();
-            $('.fixed-action-btn .btn-floating').blur(); 
+            $('.fixed-action-btn .btn-floating .material-icons').blur(); 
             switch($(self).attr('id')){
                 case 'calander':{                    
                     calendar_controller.set_today_and_sync();
