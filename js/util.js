@@ -130,7 +130,6 @@ Util.prototype.html2clipboard =function (data) {
 		  copyToClipboardFF(data);
 		}
 		if (success) {
-		  alert ("The text is on the clipboard, try to paste it!");
 		  // remove temp element.
 		  tmpElem.remove();
 		}
@@ -145,7 +144,7 @@ Util.prototype.html2clipboard_template = function(data){
 	var other_message = data[ROOT_DATA_KEY.OTHER_MESSAGE];
 	var time = new Date(data[ROOT_DATA_KEY.START]);
 	return "[" + UTIL_EVENT_TITLE[data[ROOT_DATA_KEY.EVENT_TITLE]] +"]"
-			+"\n" + "時間：" + (time.getMonth()+1) + "/" + time.getDate() + ' ' + time.getHours() +':' + time.getMinutes()
+			+"</br>" + "時間：" + (time.getMonth()+1) + "/" + time.getDate() + ' ' + time.getHours() +':' + time.getMinutes()
 			+"\n" + "搭車地點：" + other_message[OTHER_MESSAGE_KEY.LOCATION_FROM]
 			+"\n" + "目的地：" + other_message[OTHER_MESSAGE_KEY.LOCATION_TO]
 			+"\n" + "性別：" + GENDER[other_message[OTHER_MESSAGE_KEY.GENDER]]
