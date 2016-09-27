@@ -42,7 +42,7 @@ Post_controller.prototype.init = function(eventcallback){
 	});
 
 	$('#'+this.post_button_id).unbind('click');	
-	$('#'+this.post_button_id).click(self.event_post_button_onclick)
+	$('#'+this.post_button_id).click(self.event_post_button_onclick(eventcallback))
 
 	console.log(document.getElementById('post_map'));
 
@@ -53,7 +53,7 @@ Post_controller.prototype.init = function(eventcallback){
 
 
 	
-	this.event_post_button_onclick(eventcallback)
+	
 }
 
 Post_controller.prototype.reset_value = function(){
