@@ -31,6 +31,15 @@ Post_controller.prototype.init = function(eventcallback){
 		}
 	})
 
+	$('#post_copy_button').unbind('click');
+	$('#post_copy_button').click(function(){
+		event_post_button_onclick(function(data){
+			var POST_COPY_UTIL = new Util();
+			POST_COPY_UTIL.html2clipboard(INFO_COPY_UTIL.html2clipboard_template(data));
+			Materialize.toast('已經複製到剪貼簿', 2000);
+		});
+	});
+
 	console.log(document.getElementById('post_map'));
 
 	this.gmap = new Google_map('post_map');
@@ -222,6 +231,8 @@ Post_controller.prototype.event_post_button_onclick = function(eventcallback){
 		data[POST_UTIL.ROOT_DATA_KEY.PEROID] = peroid;
 		data[POST_UTIL.ROOT_DATA_KEY.END_PEROID] = end_peroid;
 		data[POST_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE] = other_message;
+
+
 
 		
 
