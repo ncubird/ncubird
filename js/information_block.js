@@ -192,7 +192,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 			$('.blockmodal-infomation-copytext').unbind('click');
 			$('.blockmodal-infomation-copytext').click({ parmas1 : facebook_id , parmas2 : data[i] , parmas3 : other_message },function(tmp){
 				var INFO_COPY_UTIL = new Util();
-				INFO_COPY_UTIL.html2clipboard(self.html2clipboard_template(tmp['data']['parmas2']));
+				INFO_COPY_UTIL.html2clipboard(INFO_COPY_UTIL.html2clipboard_template(tmp['data']['parmas2']));
 				Materialize.toast('已經複製到剪貼簿', 2000);
 			});
 
