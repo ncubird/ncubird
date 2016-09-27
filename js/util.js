@@ -35,7 +35,7 @@ function Util(){
 var OTHER_MESSAGE_KEY = {
 	FACEBOOK_ID : 'facebook_id',
 	FACEBOOK_NAME : 'facebook_name',
-	FLAG_POST_EMAIL: 'flag_post_email'
+	FLAG_POST_EMAIL: 'flag_post_email',
 	POST_EMAIL : 'post_email',
 	GENDER : 'gender',
 	LOCATION_FROM : 'location_from',
