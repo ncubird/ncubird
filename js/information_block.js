@@ -117,6 +117,16 @@ Information_block.prototype.show_block = function(data,i_counter,facebook_id,pos
 					callback(undefined);
 					return;
 				}
+
+				var tmp_passenger = tmp['data']['parmas3'][INFO_UTIL.OTHER_MESSAGE_KEY.PASSENGER]
+				if(var j=0;j<tmp_passenger.length;j++){
+					if(tmp_passenger[i] == $('#facebook_userid').html()){
+						Materialize.toast('你已經加入了', 2000);
+						callback(undefined);
+						return;
+					}
+				}
+
 				console.log(tmp['data']['parmas2']);
 				var send_data = {};
 				send_data[INFO_UTIL.ROOT_DATA_KEY.FUNCTION_TYPE] = INFO_UTIL.FUNCTION_TYPE_KEY.JOIN_EVENT;
