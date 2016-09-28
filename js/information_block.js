@@ -120,7 +120,7 @@ Information_block.prototype.show_block = function(data,i_counter,facebook_id,pos
 
 				var tmp_passenger = tmp['data']['parmas3'][INFO_UTIL.OTHER_MESSAGE_KEY.PASSENGER]
 				for(var j=0;j<tmp_passenger.length;j++){
-					if(tmp_passenger[i] == $('#facebook_userid').html()){
+					if(tmp_passenger[j] == $('#facebook_userid').html()){
 						Materialize.toast('你已經加入了', 2000);
 						callback(undefined);
 						return;
