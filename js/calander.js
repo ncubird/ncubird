@@ -74,11 +74,11 @@ Calander_controller.prototype.set_calander_template = function (year,month,event
 
 Calander_controller.prototype.set_click_event = function(event_callback,search_callback){
 	var self = this;
-	console.log(search_callback);
+	// console.log(search_callback);
 	$('.calander-slider-right').unbind("click");
 	$('.calander-slider-right').click(function(){
 		self.change_month(1);
-		self.set_calander_template(self.year,self.month,event_callback);
+		self.set_calander_template(self.year,self.month,event_callback,search_callback);
 		event_callback();
 		
 	})
@@ -86,14 +86,14 @@ Calander_controller.prototype.set_click_event = function(event_callback,search_c
 	$('.calander-slider-left').unbind("click");
 	$('.calander-slider-left').click(function(){
 		self.change_month(-1);
-		self.set_calander_template(self.year,self.month,event_callback);
+		self.set_calander_template(self.year,self.month,event_callback,search_callback);
 		event_callback();
 	})
 
 	$("#calander_search_type").off('change')
 	$("#calander_search_type").on('change',function(){
 		self.search_type = $("#calander_search_type").val();
-		console.log(search_callback);
+		// console.log(search_callback);
 		self.calander_refresh_tag(self.tmp_data,search_callback);
 		// console.log(search_callback);
 	})
@@ -101,7 +101,7 @@ Calander_controller.prototype.set_click_event = function(event_callback,search_c
 	$("#calander_search_info").off('change')
 	$("#calander_search_info").on('change',function(){
 		self.search_info = $("#calander_search_info").val();
-		console.log(search_callback);
+		// console.log(search_callback);
 		self.calander_refresh_tag(self.tmp_data,search_callback);
 		// console.log(search_callback);
 	})
