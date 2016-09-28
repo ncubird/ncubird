@@ -221,7 +221,7 @@ Information_block.prototype.show_block = function(data,i_counter,facebook_id,pos
 };
 
 Information_block.prototype.template_passenger_item = function(facebook_id){
-	return "<a href=\"https://www.facebook.com/"+facebook_id+"\"><img class=\"blockmodal-infomation-passenger-item\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" data-facebookid=\""+facebook_id+"\" ></img></a>";
+	return "<a href=\"https://www.facebook.com/"+facebook_id+"\" target=\"_blank\"><img class=\"blockmodal-infomation-passenger-item\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" data-facebookid=\""+facebook_id+"\" ></img></a>";
 }
 
 Information_block.prototype.is_spectial_Feb = function(year){
