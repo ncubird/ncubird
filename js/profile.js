@@ -77,8 +77,6 @@ Profile_controller.prototype.set_template_month_item = function(data,select_call
 		if(flag_show == true){
 			$('.'+this.profile_class_month).html($('.'+this.profile_class_month).html()+this.template_item('profile-month-item',data[i]));
 		}
-
-		console.log(i + ',' + flag_show);
 	}
 
 	$('#profile_month_select').off('change');

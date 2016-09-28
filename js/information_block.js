@@ -3,7 +3,7 @@ function Information_block(){
 }
 
 
-Information_block.prototype.show_block = function(data,facebook_id,post_time,callback) {
+Information_block.prototype.show_block = function(data,i_counter,facebook_id,post_time,callback) {
 	// body...
 	var self = this;
 	var INFO_UTIL = new Util();
@@ -12,7 +12,7 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 	for(var i=0;i<data.length;i++){
 		var other_message = data[i][INFO_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE];
 		console.log(JSON.stringify(data[i][INFO_UTIL.ROOT_DATA_KEY.OTHER_MESSAGE]) + '\n' +facebook_id + '\n' + post_time);
-		if(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] == facebook_id && other_message[INFO_UTIL.OTHER_MESSAGE_KEY.POST_TIME] == post_time){
+		if(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID] == facebook_id && other_message[INFO_UTIL.OTHER_MESSAGE_KEY.POST_TIME] == post_time && data[i][INFO_UTIL.TAG_COUNTER] == i_counter){
 			$('.blockmodal-infomation-titleimg').attr("src","https://graph.facebook.com/"+facebook_id+"/picture?type=large");
 			$('.blockmodal-infomation-type').html(INFO_EVENT_TITLE[data[i][INFO_UTIL.ROOT_DATA_KEY.EVENT_TITLE]]);
 			$('.blockmodal-infomation-name').html(other_message[INFO_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_NAME]);

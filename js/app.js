@@ -94,7 +94,7 @@ $( document ).ready(function() {
                         $('.tag-enableclick').click({ parmas1 :res },function(event){
                             var information_block = new Information_block();
                             var tag_self  = this;        
-                            information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
+                            information_block.show_block(event['data']['parmas1'],$(this).data('tagcounter'),$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                 if(data != undefined){
                                     util.set_block();
                                     module_google_script.event_send(data,function(res){
@@ -155,7 +155,7 @@ $( document ).ready(function() {
                         $('.timeline-month-item').click({ parmas1 :res },function(event){
                             var information_block = new Information_block();
                             var tag_self = this;                       
-                            information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
+                            information_block.show_block(event['data']['parmas1'],$(this).data('tagcounter'),$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                 if(data != undefined){
                                     util.set_block();
                                     module_google_script.event_send(data,function(res){
@@ -197,7 +197,7 @@ $( document ).ready(function() {
                         $('.timeline-month-item').click({ parmas1 :res },function(event){
                             var information_block = new Information_block(); 
                             var tag_self = this;            
-                            information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
+                            information_block.show_block(event['data']['parmas1'],$(this).data('tagcounter'),$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                 if(data != undefined){
                                     util.set_block();
                                     module_google_script.event_send(data,function(res){
@@ -272,7 +272,7 @@ $( document ).ready(function() {
                         $('.profile-today-item').click({ parmas1 :res },function(event){
                             var information_block = new Information_block();
                             var tag_self = this;
-                            information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
+                            information_block.show_block(event['data']['parmas1'],$(this).data('tagcounter'),$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                 if(data != undefined){
                                     util.set_block();
                                     module_google_script.event_send(data,function(res){
@@ -323,7 +323,7 @@ $( document ).ready(function() {
                         $('.profile-month-item').click({ parmas1 :res },function(event){
                             var information_block = new Information_block();
                             var tag_self = this;
-                            information_block.show_block(event['data']['parmas1'],$(this).data('facebookid'),$(this).data('posttime'),function(data){
+                            information_block.show_block(event['data']['parmas1'],$(this).data('tagcounter'),$(this).data('facebookid'),$(this).data('posttime'),function(data){
                                 if(data != undefined){
                                     util.set_block();
                                     module_google_script.event_send(data,function(res){
