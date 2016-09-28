@@ -77,7 +77,7 @@ $( document ).ready(function() {
                     function calander_get_event_for_month_callback(res){
                             console.log("2")
                             if(res != null){
-                                console.log(calander_search_event_callback);
+                                // console.log(calander_search_event_callback);
                                 calendar_controller.calander_refresh_tag(res,calander_search_event_callback);
                                 calendar_controller.set_data(res);                                
                             }else{
