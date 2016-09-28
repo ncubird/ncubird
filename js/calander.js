@@ -66,6 +66,7 @@ Calander_controller.prototype.set_calander_template = function (year,month,event
 	}
 
 	this.set_today();
+	console.log(search_callback);
 	this.set_click_event(event_callback,search_callback)
 
 	
@@ -73,6 +74,7 @@ Calander_controller.prototype.set_calander_template = function (year,month,event
 
 Calander_controller.prototype.set_click_event = function(event_callback,search_callback){
 	var self = this;
+	console.log(search_callback);
 	$('.calander-slider-right').unbind("click");
 	$('.calander-slider-right').click(function(){
 		self.change_month(1);
@@ -91,15 +93,17 @@ Calander_controller.prototype.set_click_event = function(event_callback,search_c
 	$("#calander_search_type").off('change')
 	$("#calander_search_type").on('change',function(){
 		self.search_type = $("#calander_search_type").val();
-		self.calander_refresh_tag(self.tmp_data,search_callback);
 		console.log(search_callback);
+		self.calander_refresh_tag(self.tmp_data,search_callback);
+		// console.log(search_callback);
 	})
 
 	$("#calander_search_info").off('change')
 	$("#calander_search_info").on('change',function(){
 		self.search_info = $("#calander_search_info").val();
-		self.calander_refresh_tag(self.tmp_data,search_callback);
 		console.log(search_callback);
+		self.calander_refresh_tag(self.tmp_data,search_callback);
+		// console.log(search_callback);
 	})
 
 	
