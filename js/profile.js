@@ -114,8 +114,9 @@ Profile_controller.prototype.template_item = function(profile_item_class,item_da
 	var post_time  = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.POST_TIME];
 	var bonus_response = other_message[PROFILE_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE];
 	var type = item_data[PROFILE_UTIL.ROOT_DATA_KEY.EVENT_TITLE];
+	var i_counter = item_data[PROFILE_UTIL.TAG_COUNTER];
 	// body...
-	template ="<li class=\"collection-item avatar "+profile_item_class+" \" style=\"padding-left:15%;\" data-facebookid=\""+facebook_id+"\" data-posttime=\""+post_time+"\">"
+	template ="<li class=\"collection-item avatar "+profile_item_class+" \" style=\"padding-left:15%;\" data-facebookid=\""+facebook_id+"\" data-posttime=\""+post_time+"\" data-tagcounter=\""+i_counter+"\">"
 			    +"<img class=\"profile-my-photo circle\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" />"
 			    +"<span class=\"title\">"
 			    	+"<span >"+date+' '+  PROFILE_EVENT_TITLE[type] +"</span>"

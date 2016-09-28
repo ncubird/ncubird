@@ -144,8 +144,9 @@ Timeline_controller.prototype.template_item = function(profile_item_class,item_d
 	var post_time  = other_message[TIMELINE_UTIL.OTHER_MESSAGE_KEY.POST_TIME];
 	var bonus_response = other_message[TIMELINE_UTIL.OTHER_MESSAGE_KEY.BONUS_RESPONSE];
 	var type = item_data[TIMELINE_UTIL.ROOT_DATA_KEY.EVENT_TITLE];
+	var i_counter = item_data[TIMELINE_UTIL.TAG_COUNTER];
 	// body...
-	template ="<li class=\"collection-item avatar "+profile_item_class+" \" style=\"padding-left:15%;\" data-facebookid=\""+facebook_id+"\" data-posttime=\""+post_time+"\">"
+	template ="<li class=\"collection-item avatar "+profile_item_class+" \" style=\"padding-left:15%;\" data-facebookid=\""+facebook_id+"\" data-posttime=\""+post_time+"\" data-tagcounter=\""+i_counter+"\">"
 			    +"<img class=\"profile-my-photo circle\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" />"
 			    +"<span class=\"title\">"
 			    	+"<span >"+date+' '+ TIMELINE_EVENT_TITLE[type] +"</span>"

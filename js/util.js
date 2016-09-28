@@ -2,6 +2,7 @@ function Util(){
 	this.OTHER_MESSAGE_KEY = OTHER_MESSAGE_KEY;
 	this.ROOT_DATA_KEY = ROOT_DATA_KEY;
 	this.FUNCTION_TYPE_KEY = FUNCTION_TYPE_KEY;
+	this.TAG_COUNTER = 'tagcounter';
 }
 
 // var TEMPLATE = [

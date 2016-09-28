@@ -122,16 +122,16 @@ Calander_controller.prototype.template_calander_box = function(year,month,day){
 		    +"</li>"
 }
 
-Calander_controller.prototype.template_calander_tag = function(facebook_id,post_time,toast_message,message){
-	return "<div class=\"tooltipped chip calander-day-people-chip tag-enableclick\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\""+toast_message+"\" data-posttime=\""+post_time+"\" data-facebookid=\""+facebook_id+"\">"
+Calander_controller.prototype.template_calander_tag = function(i,facebook_id,post_time,toast_message,message){
+	return "<div class=\"tooltipped chip calander-day-people-chip tag-enableclick\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\""+toast_message+"\" data-posttime=\""+post_time+"\" data-facebookid=\""+facebook_id+"\" data-tagcounter=\""+i+"\">"
 			  	+"<img class=\"calander-day-people-photo circle\" src=\"https://graph.facebook.com/"+facebook_id+"/picture\" data-facebookid=\""+facebook_id+"\"/>"
 			  	+message
 			+"</div>"
 }
 
-Calander_controller.prototype.set_calander_tag = function(year,month,day,facebook_id,post_time,toast_message,message){
+Calander_controller.prototype.set_calander_tag = function(year,month,day,i,facebook_id,post_time,toast_message,message){
 	if($('#'+"calender-"+year+'-'+month+'-'+day) != undefined){
-		$('#'+"calender-"+year+'-'+month+'-'+day).html($('#'+"calender-"+year+'-'+month+'-'+day).html()+this.template_calander_tag(facebook_id,post_time,toast_message,message));
+		$('#'+"calender-"+year+'-'+month+'-'+day).html($('#'+"calender-"+year+'-'+month+'-'+day).html()+this.template_calander_tag(i,facebook_id,post_time,toast_message,message));
 	}
 }
 
@@ -190,14 +190,14 @@ Calander_controller.prototype.calander_refresh_tag = function(res,callback){
             if(this.search_type != 'all'){
                 if(this.search_type == res[i][TAG_UTIL.ROOT_DATA_KEY.EVENT_TITLE]){
                 	if(this.search_info == 'gender' || this.search_info == 'all'){
-                		this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.POST_TIME],message,GENDER[other_message[TAG_UTIL.OTHER_MESSAGE_KEY.GENDER]]);
+                		this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],res[i][TAG_UTIL.TAG_COUNTER],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.POST_TIME],message,GENDER[other_message[TAG_UTIL.OTHER_MESSAGE_KEY.GENDER]]);
                 	}else{
-                		this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.POST_TIME],message,other_message[this.search_info]);
+                		this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],res[i][TAG_UTIL.TAG_COUNTER],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.POST_TIME],message,other_message[this.search_info]);
                 	}
                     
                 }
             }else{
-                this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.POST_TIME],message,EVENT_TITLE[res[i][TAG_UTIL.ROOT_DATA_KEY.EVENT_TITLE]]);
+                this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],res[i][TAG_UTIL.TAG_COUNTER],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.POST_TIME],message,EVENT_TITLE[res[i][TAG_UTIL.ROOT_DATA_KEY.EVENT_TITLE]]);
             }
         }                        
         
