@@ -95,6 +95,9 @@ Module_google_script.prototype.get_event_for_during = function(date,offset,callb
 	        console.log("success" + JSON.stringify(response));
 	        if(response['resultcode'] == 200 ){
 	        	//console.log("success" + JSON.stringify(response['data']));
+	        	for(var i=0;i<response['data'];i++){
+	        		response['data'][EVENT_UTIL.TAG_COUNTER] = i;
+	        	}
 	        	callback(response['data']);
 	        }else{
 	        	callback(null)
@@ -126,6 +129,9 @@ Module_google_script.prototype.get_event_for_day = function(date,callback) {
 	        //console.log("success" + JSON.stringify(response));
 	        if(response['resultcode'] == 200 ){
 	        	//console.log("success" + JSON.stringify(response['data']));
+	        	for(var i=0;i<response['data'];i++){
+	        		response['data'][EVENT_UTIL.TAG_COUNTER] = i;
+	        	}
 	        	callback(response['data']);
 	        }	        
 	    },
