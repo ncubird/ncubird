@@ -92,12 +92,14 @@ Calander_controller.prototype.set_click_event = function(event_callback,search_c
 	$("#calander_search_type").on('change',function(){
 		self.search_type = $("#calander_search_type").val();
 		self.calander_refresh_tag(self.tmp_data,search_callback);
+		console.log(search_callback);
 	})
 
 	$("#calander_search_info").off('change')
 	$("#calander_search_info").on('change',function(){
 		self.search_info = $("#calander_search_info").val();
 		self.calander_refresh_tag(self.tmp_data,search_callback);
+		console.log(search_callback);
 	})
 
 	
