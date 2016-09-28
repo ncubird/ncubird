@@ -190,14 +190,14 @@ Calander_controller.prototype.calander_refresh_tag = function(res,callback){
             if(this.search_type != 'all'){
                 if(this.search_type == res[i][TAG_UTIL.ROOT_DATA_KEY.EVENT_TITLE]){
                 	if(this.search_info == 'gender' || this.search_info == 'all'){
-                		this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],res[i][TAG_UTIL.TAG_COUNTER],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.POST_TIME],message,GENDER[other_message[TAG_UTIL.OTHER_MESSAGE_KEY.GENDER]]);
+                		this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),res[i][TAG_UTIL.TAG_COUNTER],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.POST_TIME],message,GENDER[other_message[TAG_UTIL.OTHER_MESSAGE_KEY.GENDER]]);
                 	}else{
-                		this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],res[i][TAG_UTIL.TAG_COUNTER],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.POST_TIME],message,other_message[this.search_info]);
+                		this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),res[i][TAG_UTIL.TAG_COUNTER],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.POST_TIME],message,other_message[this.search_info]);
                 	}
                     
                 }
             }else{
-                this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],res[i][TAG_UTIL.TAG_COUNTER],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.POST_TIME],message,EVENT_TITLE[res[i][TAG_UTIL.ROOT_DATA_KEY.EVENT_TITLE]]);
+                this.set_calander_tag(start_time.getYear()+1900,start_time.getMonth(),start_time.getDate(),res[i][TAG_UTIL.TAG_COUNTER],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.FACEBOOK_ID],other_message[TAG_UTIL.OTHER_MESSAGE_KEY.POST_TIME],message,EVENT_TITLE[res[i][TAG_UTIL.ROOT_DATA_KEY.EVENT_TITLE]]);
             }
         }                        
         

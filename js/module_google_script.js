@@ -54,11 +54,11 @@ Module_google_script.prototype.get_event_for_month = function(year,month,callbac
 	    success: function(response){
 	        //console.log("success" + JSON.stringify(response));
 	        if(response['resultcode'] == 200 ){
-	        	//console.log("success" + JSON.stringify(response['data']));
+	        	//
 	        	for(var i=0;i<response['data'];i++){
 	        		response['data'][i][EVENT_UTIL.TAG_COUNTER] = i;
 	        	}
-
+	        	console.log("success" + JSON.stringify(response['data']));
 	        	callback(response['data']);
 	        }else{
 	        	callback(null)
@@ -94,10 +94,11 @@ Module_google_script.prototype.get_event_for_during = function(date,offset,callb
 	    success: function(response){
 	        console.log("success" + JSON.stringify(response));
 	        if(response['resultcode'] == 200 ){
-	        	//console.log("success" + JSON.stringify(response['data']));
+	        	//
 	        	for(var i=0;i<response['data'];i++){
 	        		response['data'][i][EVENT_UTIL.TAG_COUNTER] = i;
 	        	}
+	        	console.log("success" + JSON.stringify(response['data']));
 	        	callback(response['data']);
 	        }else{
 	        	callback(null)
@@ -128,10 +129,11 @@ Module_google_script.prototype.get_event_for_day = function(date,callback) {
 	    success: function(response){
 	        //console.log("success" + JSON.stringify(response));
 	        if(response['resultcode'] == 200 ){
-	        	//console.log("success" + JSON.stringify(response['data']));
+	        	//
 	        	for(var i=0;i<response['data'];i++){
 	        		response['data'][i][EVENT_UTIL.TAG_COUNTER] = i;
 	        	}
+	        	console.log("success" + JSON.stringify(response['data']));
 	        	callback(response['data']);
 	        }	        
 	    },
