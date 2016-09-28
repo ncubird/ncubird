@@ -3,12 +3,12 @@ function Google_gmail_send(){
 }
 
 
-Google_gmail_send.prototype.send = function(data,type,ref_facebook_id,ref_posttime,join_facebook_id){
+Google_gmail_send.prototype.send = function(data,type,ref_i_counter,ref_facebook_id,ref_posttime,join_facebook_id){
 	var GOOGLE_GMAIL_SEND = new Util();
 	for(var i=0;i<data.length;i++){
         var other_message = data[i][GOOGLE_GMAIL_SEND.ROOT_DATA_KEY.OTHER_MESSAGE];
         console.log(JSON.stringify(data[i][GOOGLE_GMAIL_SEND.ROOT_DATA_KEY.OTHER_MESSAGE]) + '\n' +ref_facebook_id + '\n' + ref_posttime);
-        if(other_message[GOOGLE_GMAIL_SEND.OTHER_MESSAGE_KEY.FACEBOOK_ID] == ref_facebook_id && other_message[GOOGLE_GMAIL_SEND.OTHER_MESSAGE_KEY.POST_TIME] == ref_posttime){
+        if(other_message[GOOGLE_GMAIL_SEND.OTHER_MESSAGE_KEY.FACEBOOK_ID] == ref_facebook_id && other_message[GOOGLE_GMAIL_SEND.OTHER_MESSAGE_KEY.POST_TIME] == ref_posttime && data[i][GOOGLE_GMAIL_SEND.TAG_COUNTER] ==  ref_i_counter){
         	if(other_message[GOOGLE_GMAIL_SEND.OTHER_MESSAGE_KEY.FLAG_POST_EMAIL] == 'enable'){
         		var res = {
         			type : type,

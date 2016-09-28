@@ -101,10 +101,10 @@ $( document ).ready(function() {
                                         if(res != '200'){
                                             if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'join',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'join',$(tag_self).data('tagcounter'),$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else if(res == 1002){
                                                 var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('tagcounter'),$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else{
                                                 if(res == 4001){
                                                     Materialize.toast('人數滿了，下次請早', 2000);
@@ -162,10 +162,10 @@ $( document ).ready(function() {
                                         if(res != '200'){
                                             if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'join',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'join',$(tag_self).data('tagcounter'),$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else if(res == 1002){
                                                 var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('tagcounter'),$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else{
                                                 if(res == 4001){
                                                     Materialize.toast('人數滿了，下次請早', 2000);
@@ -204,10 +204,10 @@ $( document ).ready(function() {
                                         if(res != '200'){
                                             if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'join',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'join',$(tag_self).data('tagcounter'),$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else if(res == 1002){
                                                 var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('tagcounter'),$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else{
                                                 if(res == 4001){
                                                     Materialize.toast('人數滿了，下次請早', 2000);
@@ -279,10 +279,10 @@ $( document ).ready(function() {
                                         if(res != '200'){
                                             if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'join',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'join',$(tag_self).data('tagcounter'),$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else if(res == 1002){
                                                 var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('tagcounter'),$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else{
                                                 if(res == 4001){
                                                     Materialize.toast('人數滿了，下次請早', 2000);
@@ -330,10 +330,10 @@ $( document ).ready(function() {
                                         if(res != '200'){
                                             if(res == 1001){
                                             var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'join',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'join',$(tag_self).data('tagcounter'),$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else if(res == 1002){
                                                 var google_send_email = new Google_gmail_send();
-                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
+                                                google_send_email.send(event['data']['parmas1'],'unjoin',$(tag_self).data('tagcounter'),$(tag_self).data('facebookid'),$(tag_self).data('posttime'),$('#facebook_userid').html());
                                             }else{
                                                 if(res == 4001){
                                                     Materialize.toast('人數滿了，下次請早', 2000);
