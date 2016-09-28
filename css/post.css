@@ -7,9 +7,9 @@ form.post-form > div.row {
 }
 
 #post_copy_button{
-	float: right;
+	float: left;
 }
 
 #post_button{
-	float: right;
+	float: left;
 }
