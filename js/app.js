@@ -117,7 +117,7 @@ $( document ).ready(function() {
                                         calendar_controller.set_calander_template(calendar_controller.year,calendar_controller.month,calander_set_calander_template_callback,calander_search_event_callback);
                                         var now_time = new Date();
                                         util.set_block();
-                                        module_google_script.get_event_for_month(now_time.getYear()+1900,now_time.getMonth(),calander_get_event_for_month_callback);
+                                        module_google_script.get_event_for_month(calendar_controller.year,calendar_controller.month,calander_get_event_for_month_callback);
                                     });
                                 }                                    
                             });
