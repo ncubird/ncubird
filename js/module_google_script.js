@@ -56,7 +56,7 @@ Module_google_script.prototype.get_event_for_month = function(year,month,callbac
 	        if(response['resultcode'] == 200 ){
 	        	//console.log("success" + JSON.stringify(response['data']));
 	        	for(var i=0;i<response['data'];i++){
-	        		response['data'][EVENT_UTIL.TAG_COUNTER] = i;
+	        		response['data'][i][EVENT_UTIL.TAG_COUNTER] = i;
 	        	}
 
 	        	callback(response['data']);
@@ -96,7 +96,7 @@ Module_google_script.prototype.get_event_for_during = function(date,offset,callb
 	        if(response['resultcode'] == 200 ){
 	        	//console.log("success" + JSON.stringify(response['data']));
 	        	for(var i=0;i<response['data'];i++){
-	        		response['data'][EVENT_UTIL.TAG_COUNTER] = i;
+	        		response['data'][i][EVENT_UTIL.TAG_COUNTER] = i;
 	        	}
 	        	callback(response['data']);
 	        }else{
@@ -130,7 +130,7 @@ Module_google_script.prototype.get_event_for_day = function(date,callback) {
 	        if(response['resultcode'] == 200 ){
 	        	//console.log("success" + JSON.stringify(response['data']));
 	        	for(var i=0;i<response['data'];i++){
-	        		response['data'][EVENT_UTIL.TAG_COUNTER] = i;
+	        		response['data'][i][EVENT_UTIL.TAG_COUNTER] = i;
 	        	}
 	        	callback(response['data']);
 	        }	        
