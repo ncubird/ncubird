@@ -125,8 +125,9 @@ Information_block.prototype.show_block = function(data,facebook_id,post_time,cal
 
 				var time = new Date(tmp['data']['parmas2'][INFO_UTIL.ROOT_DATA_KEY.START]);
 
-				var send_starttime = new Date(time.getYear()+1900,time.getMonth(),1,0,0,0);
-				var send_endtime = new Date(time.getYear()+1900,time.getMonth(),((self.is_spectial_Feb(time.getYear()) && time.getMonth() == 1)? 29 : INFO_MONTH_DAYS[time.getMonth()]),23,59,00);
+
+				var send_starttime = new Date((time.getTime()-1000*60));
+				var send_endtime = new Date((time.getTime()+1000*60));
 				console.log(time.getYear()+' '+time.getMonth())
 				send_data[INFO_UTIL.ROOT_DATA_KEY.START] = send_starttime.getTime();
 				send_data[INFO_UTIL.ROOT_DATA_KEY.END] = send_endtime.getTime();
