@@ -77,6 +77,7 @@ Module_google_script.prototype.get_event_for_during = function(date,offset,callb
 	var reference_date = new Date(date);
 	var start_time = new Date(reference_date.getTime());
 	var end_time = new Date(reference_date.getTime()+((1000 * 60 * 60 * 24 *30)*offset));
+	var EVENT_UTIL = new Util();
 
 	var data={
 		function_type : 'get_event',
@@ -115,6 +116,7 @@ Module_google_script.prototype.get_event_for_during = function(date,offset,callb
 Module_google_script.prototype.get_event_for_day = function(date,callback) {
 
 	var reference_date = new Date(date);
+	var EVENT_UTIL = new Util();
 
 	var data={
 		function_type : 'get_event_forday',
